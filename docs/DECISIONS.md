@@ -41,3 +41,9 @@ The exhibition separates the active object and controls from the dark viewing ar
 ## Full-screen exhibition
 
 Native scrolling supplies fractional camera progress independently of the active caption. A named contact sheet presents the actual artwork in a modal and jumps to the selected stop after closing, once page scrolling is restored. The exhibition render loop pauses while the contact sheet or inspection view is open. The inspection view retains the single-badge physics rig. Reduced motion snaps the camera to the nearest stop and disables pointer parallax.
+
+## Wall exhibition
+
+Each accession carries its visible inscription, materials and two colours in the catalogue. The existing date and collector’s note feed the wall label. Unknown dates read “Undated”. STIX Two Text sets the masthead, inscriptions and italic notes. Regular and italic Latin fonts and their OFL licence are bundled locally.
+
+The exhibition moves the pegs relative to a fixed light and camera. The CSS wall supplies colour and perforations. A transparent Three.js plane receives real-time shadows. Each strip of fabric has a curved mesh from peg to clasp. The overview briefly swings around the peg on pointer entry, while close inspection retains its independent physics rig. The navigation buttons synthesize two short audio transients on activation and share a mute control.

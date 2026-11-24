@@ -2,8 +2,8 @@
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Suspense, useEffect, useMemo, useRef, type RefObject } from "react";
-import { Group, MathUtils, Object3D, Vector3 } from "three";
-import { ribbonOffsets, type BadgeConfig } from "../lib/badges";
+import { BufferGeometry, DoubleSide, Float32BufferAttribute, Group, MathUtils, Object3D, VSMShadowMap } from "three";
+import type { BadgeConfig } from "../lib/badges";
 import { BadgeAttachment, BadgeMesh, units } from "./badge-mesh";
 import { useBadgeTexture } from "./badge-texture";
 
@@ -18,73 +18,100 @@ interface Props {
   onUnavailable: () => void;
 }
 
-const spacing = 2.22;
-const depthStep = 0.86;
-
-function PrintedRibbon({ texture, repeat }: { texture: string; repeat: number }) {
+function RibbonPrint({ texture, repeat }: { texture: string; repeat: number }) {
   const map = useBadgeTexture(texture, repeat);
-  return <meshStandardMaterial map={map} roughness={0.94} />;
+  return <meshStandardMaterial map={map} roughness={0.94} side={DoubleSide} />;
 }
 
-function DisplayBadge({ config, index, active, reducedMotion, onInspect }: {
-  config: BadgeConfig; index: number; active: boolean; reducedMotion: boolean; onInspect: () => void;
-}) {
-  const pivot = useRef<Group>(null);
-  const hovering = useRef(false);
-  const lightTarget = useMemo(() => {
-    const target = new Object3D();
-    target.position.y = -1.9;
-    return target;
-  }, []);
-  const length = units(config.lanyard.length);
-  const width = units(config.lanyard.width);
-  useFrame(({ clock }, delta) => {
-    if (!pivot.current) return;
-    const elapsed = clock.elapsedTime;
-    const sway = reducedMotion ? 0 : Math.sin(elapsed * 1.07 + index * 1.8) * 0.035;
-    const yaw = active ? (hovering.current && !reducedMotion ? 0.27 : 0.13) : (index % 2 ? -0.3 : 0.35);
-    pivot.current.rotation.z = sway;
-    pivot.current.rotation.y = reducedMotion ? yaw : MathUtils.damp(pivot.current.rotation.y, yaw, 5, delta);
-  });
+// Each half turns over the peg and opens out to the width of its clasp.
+function Ribbon({ config, side }: { config: BadgeConfig; side: number }) {
+  const { width, length, clipSpread, texture, repeatAspect, colour } = config.lanyard;
+  const geometry = useMemo(() => {
+    const positions: number[] = [], uv: number[] = [], indices: number[] = [];
+    const segments = 32;
+    for (let i = 0; i <= segments; i++) {
+      const t = i / segments;
+      const bow = Math.sin(Math.PI * t);
+      const x = side * (0.025 * (1 - t) + units(clipSpread ?? 0) * t / 2 + bow * (clipSpread ? 0.065 : 0.125));
+      const z = -0.014 + side * 0.036 * bow;
+      const twist = side * (1.12 * (1 - t) + bow * 0.25);
+      for (const edge of [-1, 1]) {
+        const half = edge * units(width) / 2;
+        positions.push(x + Math.cos(twist) * half, -t * units(length), z + Math.sin(twist) * half);
+        uv.push((edge + 1) / 2, 1 - t);
+      }
+      const j = i * 2;
+      if (i < segments) indices.push(j, j + 2, j + 1, j + 1, j + 2, j + 3);
+    }
+    const mesh = new BufferGeometry();
+    mesh.setAttribute("position", new Float32BufferAttribute(positions, 3));
+    mesh.setAttribute("uv", new Float32BufferAttribute(uv, 2));
+    mesh.setIndex(indices);
+    mesh.computeVertexNormals();
+    return mesh;
+  }, [width, length, clipSpread, side]);
+  useEffect(() => () => geometry.dispose(), [geometry]);
+  return <mesh geometry={geometry} castShadow>
+    {texture ? <RibbonPrint texture={texture} repeat={Math.max(1, length / (width * (repeatAspect ?? 3)))} />
+      : <meshStandardMaterial color={colour} roughness={0.94} side={DoubleSide} />}
+  </mesh>;
+}
 
-  return (
-    <group position={[index * spacing, 1.52, -index * depthStep]}>
-      <primitive object={lightTarget} />
-      <spotLight position={[-0.65, 0.7, 2.7]} target={lightTarget} color="#fff1d8"
-        intensity={active ? 33 : 8} distance={5} angle={0.46} penumbra={0.9} decay={2} />
-      <group ref={pivot} onClick={event => { event.stopPropagation(); onInspect(); }}
-        onPointerOver={event => { event.stopPropagation(); hovering.current = true; }}
-        onPointerOut={() => { hovering.current = false; }}>
-        {ribbonOffsets(config.lanyard).map(offset => (
-          <mesh key={offset} position={[units(offset), -length / 2, 0]}>
-            <boxGeometry args={[width, length, 0.014]} />
-            {config.lanyard.texture
-              ? <PrintedRibbon texture={config.lanyard.texture} repeat={Math.max(1, length / (width * (config.lanyard.repeatAspect ?? 3)))} />
-              : <meshStandardMaterial color={config.lanyard.colour} roughness={0.96} />}
-          </mesh>
-        ))}
-        <group position={[0, -length, 0]}>
-          <BadgeAttachment config={config} />
-          <BadgeMesh config={config} />
-        </group>
+function DisplayBadge({ config, index, progress, active, reducedMotion, onInspect }: {
+  config: BadgeConfig; index: number; progress: RefObject<number>; active: number; reducedMotion: boolean; onInspect: () => void;
+}) {
+  const mount = useRef<Group>(null);
+  const pivot = useRef<Group>(null);
+  const sway = useRef({ angle: 0, speed: 0 });
+  useFrame(({ viewport }, dt) => {
+    if (!pivot.current || !mount.current) return;
+    const offset = index - (reducedMotion ? active : progress.current);
+    const away = MathUtils.smoothstep(Math.abs(offset), 0, 1);
+    const small = viewport.width < 3.3;
+    const scale = 1 - away * (small ? 0.65 : 0.46);
+    mount.current.position.set(offset * viewport.width * (small ? 0.39 : 0.355), 1.27 - away * 0.19, 0);
+    mount.current.scale.setScalar(scale);
+    const spring = sway.current;
+    const step = Math.min(dt, 0.035);
+    spring.speed += (-27 * spring.angle - 3.1 * spring.speed) * step;
+    spring.angle += spring.speed * step;
+    pivot.current.rotation.z = reducedMotion ? 0 : spring.angle + (index % 2 ? 0.014 : -0.019);
+    pivot.current.rotation.y = 0.045 + away * (index % 2 ? -0.23 : 0.21);
+  });
+  return <group ref={mount}>
+    <mesh position-z={-0.11} rotation-x={Math.PI / 2} castShadow>
+      <cylinderGeometry args={[0.036, 0.047, 0.31, 20]} />
+      <meshStandardMaterial color="#a39580" metalness={0.4} roughness={0.34} />
+    </mesh>
+    <mesh position-z={0.048} scale={[1, 1, 0.54]} castShadow>
+      <sphereGeometry args={[0.054, 20, 12]} />
+      <meshStandardMaterial color="#ded2ba" metalness={0.48} roughness={0.28} />
+    </mesh>
+    <group ref={pivot} onClick={e => { e.stopPropagation(); onInspect(); }}
+      onPointerOver={e => {
+        e.stopPropagation();
+        if (!reducedMotion) sway.current.speed = e.point.x >= (mount.current?.position.x ?? 0) ? -0.38 : 0.38;
+      }}>
+      <Ribbon config={config} side={-1} /><Ribbon config={config} side={1} />
+      <group position-y={-units(config.lanyard.length)}>
+        <BadgeAttachment config={config} /><BadgeMesh config={config} />
       </group>
     </group>
-  );
+  </group>;
 }
 
-function CameraTravel({ active, progress, reducedMotion }: Pick<Props, "active" | "progress" | "reducedMotion">) {
-  const target = useRef(new Vector3());
-  useFrame(({ camera, size, pointer }, delta) => {
-    const aspect = size.width / Math.max(1, size.height);
-    const distance = Math.max(3.65, 2.0 / Math.max(0.1, aspect));
-    const position = reducedMotion ? active : progress.current;
-    const offset = size.width >= 760 ? distance * aspect * 0.11 : 0;
-    const parallax = reducedMotion ? 0 : pointer.x * 0.11;
-    target.current.set(position * spacing - offset + parallax, -0.36, distance - position * depthStep);
-    if (reducedMotion) camera.position.copy(target.current);
-    else camera.position.lerp(target.current, 1 - Math.exp(-7 * delta));
-  });
-  return null;
+function GalleryLight() {
+  const target = useMemo(() => new Object3D(), []);
+  return <>
+    <primitive object={target} />
+    <ambientLight intensity={1.04} />
+    <spotLight target={target} position={[-1.1, 2.4, 3.4]} intensity={55}
+      angle={0.53} penumbra={0.93} color="#fff8ef" castShadow
+      shadow-mapSize={[1024, 1024]} shadow-radius={4} shadow-blurSamples={6} shadow-bias={-0.00035} shadow-normalBias={0.006} />
+    <mesh receiveShadow position-z={-0.255}>
+      <planeGeometry args={[30, 8]} /><shadowMaterial transparent opacity={0.32} />
+    </mesh>
+  </>;
 }
 
 function SceneLifecycle({ onReady, onUnavailable }: Pick<Props, "onReady" | "onUnavailable">) {
@@ -100,18 +127,15 @@ function SceneLifecycle({ onReady, onUnavailable }: Pick<Props, "onReady" | "onU
 
 export default function ExhibitionScene(props: Props) {
   return (
-    <Canvas frameloop={props.paused ? "never" : "always"} camera={{ position: [0, -0.36, 3.65], rotation: [0, 0, 0], fov: 37, near: 0.1, far: 32 }}
+    <Canvas frameloop={props.paused ? "never" : "always"} shadows={{type: VSMShadowMap}}
+      camera={{ position: [0, 0, 4.53], fov: 37, near: 0.1, far: 24 }}
       dpr={[1, 1.5]} gl={{ alpha: true, antialias: true, powerPreference: "low-power" }}>
-      <fog attach="fog" args={["#171a15", 4.25, 13]} />
-      <ambientLight color="#ded9c7" intensity={0.67} />
-      <directionalLight color="#c4c7f3" intensity={1.45} position={[1, 3, -4]} />
-      <directionalLight color="#fff0db" intensity={0.64} position={[-3, 2, 4]} />
+      <GalleryLight />
       <Suspense fallback={null}>
-        {props.badges.map((config, index) => (
-          <DisplayBadge key={config.id} config={config} index={index} active={props.active === index}
+        {props.badges.map((config, index) => Math.abs(props.active - index) <= 2 && (
+          <DisplayBadge key={config.id} config={config} index={index} active={props.active} progress={props.progress}
             reducedMotion={props.reducedMotion} onInspect={() => props.onInspect(index)} />
         ))}
-        <CameraTravel active={props.active} progress={props.progress} reducedMotion={props.reducedMotion} />
         <SceneLifecycle onReady={props.onReady} onUnavailable={props.onUnavailable} />
       </Suspense>
     </Canvas>

@@ -5,7 +5,8 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import type { ExhibitionBadge } from "../lib/badges";
 import { BadgeExhibition } from "./badge-exhibition";
-import { ArchiveMark, Arrow } from "./icons";
+import { ArchiveMark } from "./icons";
+import { useClipSound } from "./clip-sound";
 import { SceneBoundary, useReducedMotion } from "./viewer-support";
 
 const ExhibitionScene = dynamic(() => import("./exhibition-scene"), { ssr: false });
@@ -13,8 +14,8 @@ const ExhibitionScene = dynamic(() => import("./exhibition-scene"), { ssr: false
 const number = (value: number) => String(value).padStart(2, "0");
 const eventTitle = ({ event }: ExhibitionBadge) => [event.name, event.edition].filter(Boolean).join(" ");
 
-export function ExhibitionJourney({ badges, records, intro }: {
-  badges: ExhibitionBadge[]; records: ReactNode[]; intro: ReactNode;
+export function ExhibitionJourney({ badges, records }: {
+  badges: ExhibitionBadge[]; records: ReactNode[];
 }) {
   const [active, setActive] = useState(0);
   const [indexOpen, setIndexOpen] = useState(false);
@@ -34,7 +35,12 @@ export function ExhibitionJourney({ badges, records, intro }: {
   const ready = useCallback(() => setSceneState("ready"), []);
   const unavailable = useCallback(() => setSceneState("unavailable"), []);
   const badge = badges[active];
-  const date = badge.event.date === badge.event.edition ? undefined : badge.event.date;
+  const sound = useClipSound();
+
+  function step(direction: number) {
+    void sound.click();
+    navigate(active + direction);
+  }
 
   useEffect(() => {
     if (focused !== null || indexOpen) return;
@@ -116,61 +122,76 @@ export function ExhibitionJourney({ badges, records, intro }: {
   return (
     <>
       <section ref={track} className="journey" style={{ "--journey-distance": `${(badges.length - 1) * 62}svh` } as CSSProperties} id="exhibition" aria-label="Exhibition">
-        <div ref={stage} className="journey-stage">
-          <div className="journey-view">
-            {sceneState !== "ready" && (
-              <div className="journey-images">
-                {badges.map((item, index) => Math.abs(index - active) <= 1 && (
-                  <button key={item.id} type="button" className="journey-image"
-                    style={{ "--offset": index - active } as CSSProperties}
-                    data-featured={index === active}
-                    tabIndex={index === active ? 0 : -1}
-                    aria-label={`Inspect ${eventTitle(item)}`}
-                    onClick={event => inspect(index, event.currentTarget)}>
-                    <Image src={item.artwork.front} width={item.dimensions.width * 8} height={item.dimensions.height * 8}
-                      alt="" unoptimized priority={index === 0} />
-                  </button>
-                ))}
-              </div>
-            )}
-            {sceneState !== "unavailable" && (
-              <div className={`journey-canvas ${sceneState}`}>
-                <SceneBoundary onUnavailable={unavailable}>
-                  <ExhibitionScene badges={badges} active={active} progress={progress} paused={focused !== null || indexOpen}
-                    reducedMotion={reducedMotion} onInspect={inspect} onReady={ready} onUnavailable={unavailable} />
-                </SceneBoundary>
-              </div>
-            )}
-          </div>
-          <header className="gallery-bar">
-            <div className="gallery-brand"><ArchiveMark /><span>Lanyard Archive</span></div>
+        <div ref={stage} className="journey-stage" style={{ "--wall": badge.label.wall, "--pigment": badge.label.pigment } as CSSProperties}>
+          <header className="gallery-bar" data-opening={active === 0}>
+            <h1><ArchiveMark /><span>The <i>Lanyard</i> Archive</span></h1>
+            <span className="credit">Collected by Prince Kukreja</span>
             <button ref={indexButton} type="button" className="index-toggle" aria-haspopup="dialog"
               aria-controls="object-index" aria-expanded={indexOpen} onClick={openIndex}>
-              Object index <span>{number(badges.length)}</span>
+              <span className="index-icon" aria-hidden="true">▦</span> Object index
             </button>
           </header>
-          {intro}
-          <div className="journey-controls">
-            <div className="journey-record" aria-live="polite" aria-atomic="true">
-              <p className="record-count">{number(active + 1)} <span>/</span> {number(badges.length)}</p>
-              <h2>{eventTitle(badge)}</h2>
-              {(date || badge.event.pass) && <div className="record-meta">
-                {date && <time dateTime={badge.event.dateTime}>{date}</time>}
-                {badge.event.pass && <span>{badge.event.pass}</span>}
-              </div>}
+          <div className="display-wall">
+            <div className="journey-view">
+              {sceneState !== "ready" && (
+                <div className="journey-images">
+                  {badges.map((item, index) => Math.abs(index - active) <= 1 && (
+                    <button key={item.id} type="button" className="journey-image"
+                      style={{ "--offset": index - active, "--ribbon": item.lanyard.colour,
+                        "--ribbon-print": item.lanyard.texture ? `url(${item.lanyard.texture})` : "none",
+                        "--spread": item.lanyard.clipSpread ? "12deg" : "5deg" } as CSSProperties}
+                      data-featured={index === active}
+                      tabIndex={index === active ? 0 : -1}
+                      aria-label={`Inspect ${eventTitle(item)}`}
+                      onClick={event => inspect(index, event.currentTarget)}>
+                      <span className="flat-strap" aria-hidden="true"><i /><i /></span>
+                      <Image src={item.artwork.front} width={item.dimensions.width * 8} height={item.dimensions.height * 8}
+                        alt="" unoptimized priority={index === 0} />
+                    </button>
+                  ))}
+                </div>
+              )}
+              {sceneState !== "unavailable" && (
+                <div className={`journey-canvas ${sceneState}`}>
+                  <SceneBoundary onUnavailable={unavailable}>
+                    <ExhibitionScene badges={badges} active={active} progress={progress} paused={focused !== null || indexOpen}
+                      reducedMotion={reducedMotion} onInspect={inspect} onReady={ready} onUnavailable={unavailable} />
+                  </SceneBoundary>
+                </div>
+              )}
             </div>
-            {active === 0 && <span className="scroll-cue">Scroll to browse <Arrow /></span>}
-            <div className="gallery-actions">
-              <button ref={inspectButton} className="journey-inspect" type="button"
-                onClick={event => inspect(active, event.currentTarget)}>Inspect badge <Arrow /></button>
-              <nav className="step-controls" aria-label="Exhibition stops">
-                <button type="button" aria-label="Previous object" disabled={active === 0}
-                  onClick={() => navigate(active - 1)}>←</button>
-                <button type="button" aria-label="Next object" disabled={active === badges.length - 1}
-                  onClick={() => navigate(active + 1)}>→</button>
-              </nav>
-            </div>
+            <aside className="museum-label" aria-label="Museum label">
+              <div className="accession">
+                <span>Acc. {badge.id}</span>
+                {badge.event.date ? <time dateTime={badge.event.dateTime}>{badge.event.date}</time> : <span>Undated</span>}
+              </div>
+              <p className="museum-note">{badge.story.note}</p>
+              <p className="materials">{badge.label.materials}</p>
+            </aside>
           </div>
+          <footer className="journey-controls">
+            <div className="journey-record" aria-live="polite" aria-atomic="true">
+              <p className="record-kicker">What the badge called me</p>
+              <h2>{badge.label.inscription}</h2>
+              <p className="record-event">{eventTitle(badge)}</p>
+            </div>
+            <button ref={inspectButton} className="journey-inspect" type="button"
+              onClick={event => inspect(active, event.currentTarget)}>
+              <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><circle cx="8" cy="8" r="5" stroke="currentColor" strokeWidth="1.5"/><path d="m12 12 5 5" stroke="currentColor" strokeWidth="1.5"/></svg>
+              Inspect badge
+            </button>
+            <nav className="step-controls" aria-label="Exhibition stops">
+              <button type="button" aria-label="Previous object" disabled={active === 0} onClick={() => step(-1)}>‹</button>
+              <span>{number(active + 1)} / {number(badges.length)}</span>
+              <button type="button" aria-label="Next object" disabled={active === badges.length - 1} onClick={() => step(1)}>›</button>
+            </nav>
+            <button className="sound-toggle" type="button" aria-label="Clip sound" aria-pressed={!sound.muted} onClick={sound.toggle}>
+              <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4">
+                <path d="M3 8h3l4-4v12l-4-4H3z" />
+                {sound.muted ? <path d="m13 8 4 4m0-4-4 4"/> : <path d="M13 7a5 5 0 0 1 0 6m2-8a8 8 0 0 1 0 10"/>}
+              </svg>
+            </button>
+          </footer>
         </div>
       </section>
       <dialog className="index-dialog" id="object-index" ref={indexDialog} aria-labelledby="index-title" onClose={closeIndex}>
@@ -191,7 +212,7 @@ export function ExhibitionJourney({ badges, records, intro }: {
           ))}
         </div>
       </dialog>
-      <dialog ref={dialog} className="focus-dialog" aria-labelledby="focus-title" onClose={close}>
+      <dialog ref={dialog} className="focus-dialog" style={{ "--wall": badge.label.wall, "--pigment": badge.label.pigment } as CSSProperties} aria-labelledby="focus-title" onClose={close}>
         {focused !== null && (
           <>
             <header className="focus-header">

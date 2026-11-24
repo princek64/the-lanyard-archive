@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import { archiveTitle } from "../lib/badges";
 import "./globals.css";
+
+const exhibitionDisplay = localFont({
+  src: [
+    { path: "./fonts/stix-two-text-regular.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/stix-two-text-italic.woff2", weight: "400", style: "italic" },
+  ],
+  display: "swap",
+  variable: "--archive-display",
+});
 
 export const metadata: Metadata = {
   title: archiveTitle,
@@ -8,5 +18,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en-GB"><body>{children}</body></html>;
+  return <html lang="en-GB"><body className={exhibitionDisplay.variable}>{children}</body></html>;
 }

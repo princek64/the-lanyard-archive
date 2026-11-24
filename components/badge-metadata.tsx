@@ -13,7 +13,7 @@ export function BadgeMetadata({ config }: { config: ExhibitionBadge }) {
         <div><dt>Dimensions</dt><dd>{dimensions.width} × {dimensions.height} mm{story.estimatedDimensions ? " (estimated)" : ""}</dd></div>
       </dl>
       {story.note && <>
-        <h3>Why it mattered</h3>
+        <h3>Collector’s note</h3>
         <p>{story.note}</p>
       </>}
     </article>

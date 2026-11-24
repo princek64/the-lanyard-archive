@@ -1,8 +1,8 @@
 # Design
 
-The opening view is the exhibition. Oversized type and a small set of controls sit over a full-viewport scene of suspended badges. Lighting and depth distinguish the active object from its neighbours. The bottom edge carries the current event, position in the collection, inspection button and sequential controls. On phones, the objects occupy the space between the title and controls.
+A row of curved ribbons hangs from metal pegs on a perforated wall. A single warm spotlight casts the shadows of the pegs, straps, clips and badges. Each stop brings its object into the centre and takes its wall colour from the printed artwork. The opening masthead becomes a small running title after the first stop.
 
-Scroll moves the camera continuously along the collection while the caption follows the nearest badge. Previous and Next advance one stop. The Object index opens a contact sheet of the badge fronts. Selecting a print takes visitors to its stop. Escape closes the sheet and restores focus to its trigger.
+Native scrolling moves the hanging objects past the visitor. The caption leads with the inscription from the nearest badge, followed by its event. A paper label gives the accession number, known date, visible materials and a short collector’s note. The label sits beneath the objects on a phone. Previous and Next advance one stop with a quiet clip sound that visitors can mute. Brushing a badge with the pointer gives it a brief swing. The Object index opens a contact sheet of the badge fronts. Selecting a print takes visitors to its stop. Escape closes the sheet and restores focus to its trigger.
 
 Clicking a badge or choosing Inspect badge opens a full-screen close-up beside the event record. On mobile, the record follows the viewer in the same scrollable panel. Escape or Back to exhibition returns to the same stop and restores focus.
 
