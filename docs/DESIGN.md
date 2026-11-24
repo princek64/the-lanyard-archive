@@ -1,11 +1,11 @@
 # Design
 
-The exhibition pairs a paper-coloured catalogue column with a dark viewing area. The archive title sits above the current object record. The viewing area gives the suspended badge room, with a small figure number for reference. On narrow screens the title, viewing area and catalogue controls stack.
+The opening view is the exhibition. Oversized type and a small set of controls sit over a full-viewport scene of suspended badges. Lighting and depth distinguish the active object from its neighbours. The bottom edge carries the current event, position in the collection, inspection button and sequential controls. On phones, the objects occupy the space between the title and controls.
 
-Scroll or use Previous and Next to move through the fifteen exhibits. Object index lists every badge by event name and number. Selecting a row goes directly to its stop. Escape closes the list and restores focus to its trigger.
+Scroll moves the camera continuously along the collection while the caption follows the nearest badge. Previous and Next advance one stop. The Object index opens a contact sheet of the badge fronts. Selecting a print takes visitors to its stop. Escape closes the sheet and restores focus to its trigger.
 
-Clicking a badge or choosing Inspect badge opens a close-up viewer beside the event record. Escape or Back to exhibition restores the same stop and returns focus to the opening control. On mobile, the record follows the viewer in the same scrollable panel.
+Clicking a badge or choosing Inspect badge opens a full-screen close-up beside the event record. On mobile, the record follows the viewer in the same scrollable panel. Escape or Back to exhibition returns to the same stop and restores focus.
 
-Drag the badge to move it and release it to watch it settle. Shift-drag with a mouse to rotate and snap to the nearer face. Flip badge and the Front and Back controls also work with touch and keyboard. Only the focused badge hit target captures gestures, so the rest of the panel scrolls normally.
+Drag the badge to move it and release it to watch it settle. Shift-drag with a mouse to rotate and snap to the nearer face. Flip badge and the Front and Back controls work with touch and keyboard. Only the focused badge hit target captures gestures, so the rest of the panel scrolls normally.
 
-With reduced motion enabled, the exhibition camera and face changes are immediate, idle sway stops, release momentum is suppressed and the focused badge damps more quickly. The static viewer preserves all fifteen stops, both faces and their records when WebGL is unavailable.
+Reduced motion uses immediate stop and face changes, removes camera parallax and idle sway, and damps the focused badge more quickly. The static viewer preserves all fifteen stops, both faces and their records when WebGL is unavailable.

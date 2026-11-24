@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Suspense, useEffect, useMemo, useRef } from "react";
+import { Suspense, useEffect, useMemo, useRef, type RefObject } from "react";
 import { Group, MathUtils, Object3D, Vector3 } from "three";
 import { ribbonOffsets, type BadgeConfig } from "../lib/badges";
 import { BadgeAttachment, BadgeMesh, units } from "./badge-mesh";
@@ -10,6 +10,7 @@ import { useBadgeTexture } from "./badge-texture";
 interface Props {
   badges: BadgeConfig[];
   active: number;
+  progress: RefObject<number>;
   paused: boolean;
   reducedMotion: boolean;
   onInspect: (index: number) => void;
@@ -17,8 +18,8 @@ interface Props {
   onUnavailable: () => void;
 }
 
-const spacing = 2.48;
-const depthStep = 0.76;
+const spacing = 2.22;
+const depthStep = 0.86;
 
 function PrintedRibbon({ texture, repeat }: { texture: string; repeat: number }) {
   const map = useBadgeTexture(texture, repeat);
@@ -47,10 +48,10 @@ function DisplayBadge({ config, index, active, reducedMotion, onInspect }: {
   });
 
   return (
-    <group position={[index * spacing, 1.43, -index * depthStep]}>
+    <group position={[index * spacing, 1.52, -index * depthStep]}>
       <primitive object={lightTarget} />
-      <spotLight position={[-0.65, 0.7, 2.7]} target={lightTarget} color="#f4eaff"
-        intensity={active ? 26 : 4} distance={5} angle={0.46} penumbra={0.9} decay={2} />
+      <spotLight position={[-0.65, 0.7, 2.7]} target={lightTarget} color="#fff1d8"
+        intensity={active ? 33 : 8} distance={5} angle={0.46} penumbra={0.9} decay={2} />
       <group ref={pivot} onClick={event => { event.stopPropagation(); onInspect(); }}
         onPointerOver={event => { event.stopPropagation(); hovering.current = true; }}
         onPointerOut={() => { hovering.current = false; }}>
@@ -71,14 +72,17 @@ function DisplayBadge({ config, index, active, reducedMotion, onInspect }: {
   );
 }
 
-function CameraTravel({ active, reducedMotion }: Pick<Props, "active" | "reducedMotion">) {
+function CameraTravel({ active, progress, reducedMotion }: Pick<Props, "active" | "progress" | "reducedMotion">) {
   const target = useRef(new Vector3());
-  const { size } = useThree();
-  useFrame(({ camera }, delta) => {
-    const distance = Math.max(3.7, 2.5 * size.height / Math.max(1, size.width));
-    target.current.set(active * spacing, -0.38, distance - active * depthStep);
+  useFrame(({ camera, size, pointer }, delta) => {
+    const aspect = size.width / Math.max(1, size.height);
+    const distance = Math.max(3.65, 2.0 / Math.max(0.1, aspect));
+    const position = reducedMotion ? active : progress.current;
+    const offset = size.width >= 760 ? distance * aspect * 0.11 : 0;
+    const parallax = reducedMotion ? 0 : pointer.x * 0.11;
+    target.current.set(position * spacing - offset + parallax, -0.36, distance - position * depthStep);
     if (reducedMotion) camera.position.copy(target.current);
-    else camera.position.lerp(target.current, 1 - Math.exp(-5 * delta));
+    else camera.position.lerp(target.current, 1 - Math.exp(-7 * delta));
   });
   return null;
 }
@@ -96,17 +100,18 @@ function SceneLifecycle({ onReady, onUnavailable }: Pick<Props, "onReady" | "onU
 
 export default function ExhibitionScene(props: Props) {
   return (
-    <Canvas frameloop={props.paused ? "never" : "always"} camera={{ position: [0, -0.38, 3.7], rotation: [0, 0, 0], fov: 37, near: 0.1, far: 32 }}
+    <Canvas frameloop={props.paused ? "never" : "always"} camera={{ position: [0, -0.36, 3.65], rotation: [0, 0, 0], fov: 37, near: 0.1, far: 32 }}
       dpr={[1, 1.5]} gl={{ alpha: true, antialias: true, powerPreference: "low-power" }}>
-      <ambientLight color="#dddafa" intensity={0.64} />
-      <directionalLight color="#c8d3ff" intensity={1.15} position={[1, 3, -4]} />
-      <directionalLight color="#fff0db" intensity={0.72} position={[-3, 2, 4]} />
+      <fog attach="fog" args={["#171a15", 4.25, 13]} />
+      <ambientLight color="#ded9c7" intensity={0.67} />
+      <directionalLight color="#c4c7f3" intensity={1.45} position={[1, 3, -4]} />
+      <directionalLight color="#fff0db" intensity={0.64} position={[-3, 2, 4]} />
       <Suspense fallback={null}>
         {props.badges.map((config, index) => (
           <DisplayBadge key={config.id} config={config} index={index} active={props.active === index}
             reducedMotion={props.reducedMotion} onInspect={() => props.onInspect(index)} />
         ))}
-        <CameraTravel active={props.active} reducedMotion={props.reducedMotion} />
+        <CameraTravel active={props.active} progress={props.progress} reducedMotion={props.reducedMotion} />
         <SceneLifecycle onReady={props.onReady} onUnavailable={props.onUnavailable} />
       </Suspense>
     </Canvas>

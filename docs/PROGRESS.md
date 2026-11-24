@@ -71,3 +71,9 @@ SVG parsing, ESLint, TypeScript and the production build passed. Chromium verifi
 Rebuilt the live exhibition around a paper catalogue column and an uninterrupted dark viewing area. Added a named, keyboard-accessible index, reduced the scroll distance between stops and restyled the inspection panel. The badge camera has a straight viewing angle and leaves clearance below the card.
 
 ESLint, TypeScript and the production build passed. Chromium verified all fifteen objects, keyboard flipping, Escape, index selection, 320-pixel touch scrolling and drag release, and the WebGL fallback. The final framing was also checked with direct mesh selection, index focus restoration, next and previous controls, and portrait and landscape layout. Screenshots show the production build in Codex Cloud.
+
+## Full-screen exhibition and contact sheet
+
+Replaced the split opening page with a full-viewport exhibition. The camera follows scroll continuously in the default motion mode, with lit objects at different depths, and the object index now uses the front artwork for all fifteen badges. The close-up opens as a full-screen inspection with the original physics controls.
+
+ESLint, TypeScript and the production build passed. Chromium exercised the fifteen-stop inspection flow, direct mesh selection, sequential navigation, contact-sheet jumps and focus restoration, keyboard flip and Escape, mobile layout and native touch scrolling at 320 pixels, touch drag and release, and static fallback. Desktop, contact-sheet, inspection and mobile captures are in the Cloud workspace.

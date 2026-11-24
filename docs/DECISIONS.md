@@ -37,3 +37,7 @@ The fifteen-stop exhibition retains every direct stop control. The layout stacks
 ## Catalogue redesign
 
 The exhibition separates the active object and controls from the dark viewing area. A named index replaces the persistent numbered button rows while preserving direct access to every stop, sequential buttons and native scroll. The index restores focus on dismissal and reveals the selected row when reopened. The focus viewer shares the same paper and studio surfaces. The loading and WebGL fallback view renders the selected object and its immediate neighbours.
+
+## Full-screen exhibition
+
+Native scrolling supplies fractional camera progress independently of the active caption. A named contact sheet presents the actual artwork in a modal and jumps to the selected stop after closing, once page scrolling is restored. The exhibition render loop pauses while the contact sheet or inspection view is open. The inspection view retains the single-badge physics rig. Reduced motion snaps the camera to the nearest stop and disables pointer parallax.
