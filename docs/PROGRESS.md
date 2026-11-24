@@ -95,3 +95,9 @@ Chromium verified all fifteen inscriptions and front images, five viewport sizes
 Acc. 016–018 bring the exhibition to eighteen stops. Each has two reconstructed faces and a ribbon texture based on the supplied photographs. The London Tech Week and Open House passes use two snap hooks. Devoxx uses a single hook. Measurements are estimates. The public artwork omits QR payloads, badge identifiers and Wi-Fi passwords.
 
 Lint and typechecking passed. Turbopack could not open its local CSS worker socket in this environment. An isolated webpack production build passed. Chromium verified all nine new textures, index selection, keyboard flipping, the final navigation boundary and all three reverse faces at 320 px without WebGL.
+
+## Security LIVE! Europe, OpenAI DevDay London and Caffè Culture Show
+
+Stops 019–021 bring the archive to twenty-one. The collector identified the purple-ribbon badge as OpenAI DevDay London. Its name sticker faces forward and the multicoloured circles fill the reverse. The Security LIVE! pass carries alternating AWS and event marks on the ribbon. Its reverse omits the Wi-Fi password. Caffè Culture uses the matching visitor print shown in both close-ups, with the badge identifier and barcode omitted. The September dates come from the pass. All three sets of measurements are estimates.
+
+ESLint, TypeScript and an isolated webpack production build passed. Turbopack’s CSS worker could not bind a local socket in the cloud shell. Chromium checked the twenty-one-entry index, the three new stops, keyboard face selection, the final navigation boundary and the reverse views at 320 px without WebGL.

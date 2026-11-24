@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="1024" viewBox="0 0 640 1024">
+  <defs><linearGradient id="indigo" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#17152a"/><stop offset=".65" stop-color="#312c4e"/><stop offset="1" stop-color="#414373"/></linearGradient></defs>
+  <rect width="640" height="1024" fill="#f5f4f2"/><rect width="640" height="341" fill="url(#indigo)"/>
+  <g fill="#faf8f6" font-family="Arial, Helvetica, sans-serif">
+    <text x="44" y="210" font-size="56">Security</text><text x="40" y="292" font-size="84" letter-spacing="-5">LIVE!</text>
+    <g fill="none" stroke="#f2ecef" stroke-width="2.7"><rect x="236" y="235" width="19" height="32" rx="9.5"/><path d="M231 252v6a14 14 0 0 0 28 0v-6m-14 21v16m-9 0h18"/></g>
+    <g transform="rotate(-4 322 155)"><path d="M268 129h126v62h-80l-24 18v-18h-22z" fill="none" stroke="#6c667f" stroke-width="2"/><text x="277" y="169" font-size="26">EUROPE</text></g>
+  </g>
+  <g fill="#141316" font-family="Arial, Helvetica, sans-serif" font-weight="700">
+    <text x="59" y="474" font-size="106">Prince</text><text x="59" y="595" font-size="106">Kukreja</text>
+    <text x="50" y="690" font-size="53">Birkbeck</text><text x="50" y="777" font-size="53">Attendee</text>
+    <text x="48" y="994" font-size="39">[B]</text>
+    <g transform="translate(486 903)"><text y="39" font-size="59" font-weight="400" letter-spacing="-4">aws</text><path d="M1 50q48 25 96 0m-14-4q12-3 17-1l-3 14" fill="none" stroke="#161518" stroke-width="5" stroke-linecap="round"/></g>
+  </g>
+</svg>

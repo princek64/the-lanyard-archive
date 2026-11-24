@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="1000" viewBox="0 0 740 1000">
+  <defs>
+    <clipPath id="giant"><circle cx="635" cy="535" r="187"/></clipPath>
+    <clipPath id="little"><circle cx="380" cy="471" r="44"/></clipPath>
+    <clipPath id="ash"><circle cx="212" cy="554" r="120"/></clipPath>
+    <clipPath id="violet"><circle cx="23" cy="675" r="70"/></clipPath>
+    <clipPath id="scarlet"><circle cx="436" cy="858" r="128"/></clipPath>
+    <clipPath id="bottom"><circle cx="648" cy="920" r="125"/></clipPath>
+  </defs>
+  <rect width="740" height="1000" fill="#faf9f6"/>
+  <g fill="#151418"><circle cx="77" cy="94" r="62"/><circle cx="710" cy="3" r="71"/></g>
+  <circle cx="372" cy="-110" r="271" fill="#6946a0"/><circle cx="635" cy="202" r="112" fill="#dbd7d9"/>
+  <circle cx="175" cy="268" r="117" fill="#41904e"/><circle cx="418" cy="304" r="108" fill="#e44f0c"/>
+  <circle cx="-136" cy="386" r="168" fill="#de4810"/><circle cx="635" cy="535" r="187" fill="#19181c"/>
+  <circle cx="380" cy="471" r="44" fill="#6946a0"/><circle cx="212" cy="554" r="120" fill="#d9d5d6"/>
+  <circle cx="17" cy="547" r="45" fill="#304382"/><circle cx="23" cy="675" r="70" fill="#67429a"/>
+  <circle cx="382" cy="652" r="59" fill="#408c4d"/><circle cx="254" cy="755" r="64" fill="#27396f"/>
+  <circle cx="436" cy="858" r="128" fill="#d8480d"/><circle cx="648" cy="920" r="125" fill="#69469c"/>
+  <circle cx="34" cy="1008" r="239" fill="#45904f"/>
+  <g font-family="Arial,sans-serif" fill="#0e1010">
+    <text x="45" y="98" fill="#fff" font-size="49">^ /</text><text x="669" y="10" fill="#fff" font-size="52">o</text>
+    <text x="616" y="241" font-size="87" font-weight="700">*</text>
+    <path d="m61 270 45 6" stroke="#101212" stroke-width="9"/><ellipse cx="191" cy="293" rx="24" ry="27" fill="none" stroke="#101212" stroke-width="9"/>
+    <path d="M311 300h23v20m71-20h42v18" fill="none" stroke="#111" stroke-width="9"/>
+    <text x="286" y="218" font-size="39" font-weight="700" fill="#376b47">⁂</text>
+    <g clip-path="url(#giant)" fill="none" stroke="#fff" stroke-width="17"><ellipse cx="590" cy="476" rx="40" ry="45"/><ellipse cx="776" cy="436" rx="33" ry="41"/></g>
+    <g clip-path="url(#little)" fill="none" stroke="#141219" stroke-width="4"><circle cx="380" cy="462" r="9"/><circle cx="424" cy="483" r="9"/></g>
+    <text clip-path="url(#ash)" x="187" y="609" font-size="89" font-weight="700">*　*</text>
+    <text x="-12" y="559" font-size="38">&gt; &lt;</text><g clip-path="url(#violet)"><text x="-34" y="709" font-size="71">o o</text></g>
+    <path d="m352 639 21-2-13 17m54-40-13 15 22-1m-176 102 27 13m35 19 13 6" fill="none" stroke="#101211" stroke-width="7"/>
+    <g clip-path="url(#scarlet)" fill="none" stroke="#101211" stroke-width="13"><path d="M306 863h35v23m81-23h49v22"/></g>
+    <g clip-path="url(#bottom)"><text x="545" y="854" font-size="85" font-weight="700">&gt;　&lt;</text></g>
+    <path d="m147 861 73 19m-28-57-19 96m-177-104 17 4" fill="none" stroke="#121413" stroke-width="18"/>
+  </g>
+</svg>

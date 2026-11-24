@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="720" viewBox="0 0 128 720">
+  <rect width="128" height="720" fill="#161618"/>
+  <g transform="translate(63 34) rotate(90)" fill="#f5f3ef" font-family="Arial,sans-serif">
+    <text y="12" font-size="80" letter-spacing="-4">aws</text>
+    <path d="M3 23q52 30 115 0m-16-4q17-3 22 0l-6 14" fill="none" stroke="#f5f3ef" stroke-width="4" stroke-linecap="round"/>
+    <g transform="translate(352)"><text y="-3" font-size="30">Security</text><text y="37" font-size="43">LIVE!</text><text x="109" y="-25" font-size="15">EUROPE</text></g>
+  </g>
+</svg>

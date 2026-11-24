@@ -8,4 +8,4 @@ Clicking a badge or choosing Inspect badge opens a full-screen close-up beside t
 
 Drag the badge to move it and release it to watch it settle. Shift-drag with a mouse to rotate and snap to the nearer face. Flip badge and the Front and Back controls work with touch and keyboard. Only the focused badge hit target captures gestures, so the rest of the panel scrolls normally.
 
-Reduced motion uses immediate stop and face changes, removes camera parallax and idle sway, and damps the focused badge more quickly. The static viewer preserves all eighteen stops, both faces and their records when WebGL is unavailable.
+Reduced motion uses immediate stop and face changes, removes camera parallax and idle sway, and damps the focused badge more quickly. The static viewer preserves all twenty-one stops, both faces and their records when WebGL is unavailable.

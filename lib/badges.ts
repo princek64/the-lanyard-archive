@@ -230,6 +230,36 @@ export const exhibition: ExhibitionBadge[] = [
     event: { name: "Open House by ClickHouse", edition: "2026", date: "2026", dateTime: "2026", location: "London, UK", pass: "Attendee" },
     story: { estimatedDimensions: true, note: "Design Engineer sits under my name. Attendee is tucked into the corner." },
   },
+  {
+    id: "019",
+    label: { inscription: "Prince Kukreja · Attendee", materials: "Printed pass, satin ribbon, metal clip", wall: "#aaa8bd", pigment: "#3d345c" },
+    dimensions: { width: 75, height: 120, thickness: 0.9, radius: 4 },
+    artwork: { front: "/badges/security-live-front.svg", back: "/badges/security-live-back.svg", edge: "#322f48" },
+    lanyard: { width: 20, length: 110, colour: "#18181a", texture: "/badges/security-live-strap.svg", repeatAspect: 5.625 },
+    attachment: "snap-hook",
+    event: { name: "Security LIVE! Europe", pass: "Attendee" },
+    story: { estimatedDimensions: true, note: "My name takes two lines. Birkbeck and Attendee get one each." },
+  },
+  {
+    id: "020",
+    label: { inscription: "Prince · Design Engineer", materials: "Printed card, paper label, purple ribbon", wall: "#bcaed1", pigment: "#603d83" },
+    dimensions: { width: 85, height: 115, thickness: 0.65, radius: 1 },
+    artwork: { front: "/badges/openai-devday-front.svg", back: "/badges/openai-devday-back.svg", edge: "#d4cdd7" },
+    lanyard: { width: 11, length: 110, colour: "#54287f", sleeveColour: "#b7afab" },
+    attachment: "snap-hook",
+    event: { name: "OpenAI DevDay London", location: "London, UK" },
+    story: { estimatedDimensions: true, note: "One big purple face under my name. A whole crowd on the back." },
+  },
+  {
+    id: "021",
+    label: { inscription: "PRINCE KUKREJA · DESIGN ENGINEER", materials: "Printed pass, red woven ribbon, metal clip", wall: "#d0b7af", pigment: "#8a2737" },
+    dimensions: { width: 100, height: 81, thickness: 0.85, radius: 4 },
+    artwork: { front: "/badges/caffe-culture-front.svg", back: "/badges/caffe-culture-front.svg", edge: "#c6c4be" },
+    lanyard: { width: 12, length: 110, colour: "#b10c29", sleeveColour: "#aaa4a0" },
+    attachment: "snap-hook",
+    event: { name: "Caffè Culture Show", edition: "2026", date: "29–30 September 2026", dateTime: "2026-09-29", pass: "Visitor" },
+    story: { estimatedDimensions: true, note: "My job sits in the middle. VISITOR gets the bottom corner." },
+  },
 ];
 
 /** Horizontal offsets from the badge centre, in millimetres. */

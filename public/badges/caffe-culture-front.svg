@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="780" viewBox="0 0 960 780">
+  <rect width="960" height="780" fill="#f7f6f1"/>
+  <g fill="#171719" font-family="Arial,Helvetica,sans-serif">
+    <path d="M21 72q0-22 18-22v55q-18 0-18-22zm21-22q17 1 17 20v6H42zm0 30h17v6q0 17-17 19z"/>
+    <text x="70" y="74" font-size="33" font-weight="700" letter-spacing="-1.8">CaffèCultureShow</text><text x="70" y="102" font-size="30" letter-spacing="-1.6">29–30 September 2026</text>
+    <g text-anchor="middle">
+      <text x="480" y="302" font-size="77" textLength="512" lengthAdjust="spacingAndGlyphs">PRINCE KUKREJA</text>
+      <text x="480" y="398" font-size="70" textLength="477" lengthAdjust="spacingAndGlyphs">DESIGN ENGINEER</text>
+      <text x="480" y="502" font-size="77" textLength="259" lengthAdjust="spacingAndGlyphs">BIRKBECK</text>
+      <text x="669" y="662" font-size="85" textLength="274" lengthAdjust="spacingAndGlyphs">VISITOR</text>
+    </g>
+  </g>
+</svg>

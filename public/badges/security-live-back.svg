@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="1024" viewBox="0 0 640 1024">
+  <defs><linearGradient id="ink" x1="0" y1="1" x2=".6" y2="0"><stop stop-color="#211225"/><stop offset=".65" stop-color="#29263c"/><stop offset="1" stop-color="#413c66"/></linearGradient></defs>
+  <rect width="640" height="1024" fill="url(#ink)"/>
+  <rect x="68" y="254" width="504" height="75" fill="none" stroke="#e3dce6" stroke-width="2.4"/>
+  <g font-family="Arial,sans-serif" fill="#f2eaf3" font-size="20">
+    <text x="320" y="298" text-anchor="middle" font-weight="700">Wi-Fi: Hilton Honors</text>
+    <text x="69" y="368"><tspan x="69">Keep your badge with you at all times; you will need</tspan><tspan x="69" dy="24">to wear your badge and event-issued lanyard</tspan><tspan x="69" dy="24">to access all summit activities.</tspan></text>
+    <text x="69" y="453" font-size="19"><tspan x="69">If you offer to have your badge scanned by sponsor(s)</tspan><tspan x="69" dy="24">or at sponsor-branded activities or sessions, you are</tspan><tspan x="69" dy="24">instructing AWS to share your Contact Information</tspan><tspan x="69" dy="24">and Company Information that you provided at</tspan><tspan x="69" dy="24">registration with the sponsor(s) so they may contact</tspan><tspan x="69" dy="24">you by email, phone, and post for marketing purposes.</tspan><tspan x="69" dy="24">This is optional - you may choose not to offer your</tspan><tspan x="69" dy="24">badge. For questions, please refer to the AWS Privacy</tspan><tspan x="69" dy="24">Notice. Contact the sponsor(s) to unsubscribe from</tspan><tspan x="69" dy="24">their marketing communications. Providing sponsor(s)</tspan><tspan x="69" dy="24">with your information may involve transferring it to</tspan><tspan x="69" dy="24">another country. For questions about how sponsor(s)</tspan><tspan x="69" dy="24">will handle your information, please contact them</tspan><tspan x="69" dy="24">directly or refer to their privacy policies.</tspan></text>
+  </g>
+</svg>
