@@ -107,3 +107,9 @@ ESLint, TypeScript and an isolated webpack production build passed. Turbopack’
 Accession 022 reproduces the printed welcome message, red Birkbeck ribbon and a simplified drawing of the Bloomsbury campus map. Its caption quotes the guide. The record is undated, dimensions are estimated and the prospectus QR code is omitted.
 
 Lint, typechecking and an isolated webpack production build passed. Chromium verified the 22-entry index, the guide’s caption and textures, keyboard flipping, the last-stop control and the reverse face on the 320-pixel static viewer. The default Turbopack build could not bind its CSS worker socket in the cloud shell.
+
+## Hanging rail and enlarged print
+
+All 22 stops share a metal rail. The paper label and collector commentary have been removed from the wall. Visitors can drag across the ribbon samples to select a pass. Picking up a pass opens its record and the Read print control for inspecting either face.
+
+Lint, TypeScript and an isolated webpack production build passed. Chromium verified all 22 inscriptions and front images, five viewport sizes from 320 to 1440 pixels, touch and mouse scrubbing, keyboard range controls, physical badge selection, native page scrolling, touch release, keyboard flipping, focus restoration, clip sound and mute. The enlarged print scrolls and preserves the selected face when returning to the whole pass, including with WebGL disabled. The default Turbopack build remains unverified in this environment because the CSS worker cannot bind its local socket. Mobile checks used emulation.

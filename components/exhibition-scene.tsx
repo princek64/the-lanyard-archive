@@ -68,15 +68,16 @@ function DisplayBadge({ config, index, progress, active, reducedMotion, onInspec
     const offset = index - (reducedMotion ? active : progress.current);
     const away = MathUtils.smoothstep(Math.abs(offset), 0, 1);
     const small = viewport.width < 3.3;
-    const scale = 1 - away * (small ? 0.65 : 0.46);
-    mount.current.position.set(offset * viewport.width * (small ? 0.39 : 0.355), 1.27 - away * 0.19, 0);
+    const scale = 1 - away * (small ? 0.48 : 0.22);
+    const pitch = Math.min(viewport.width * 0.42, 1.38);
+    mount.current.position.set(offset * pitch, 1.27, 0);
     mount.current.scale.setScalar(scale);
     const spring = sway.current;
     const step = Math.min(dt, 0.035);
     spring.speed += (-27 * spring.angle - 3.1 * spring.speed) * step;
     spring.angle += spring.speed * step;
     pivot.current.rotation.z = reducedMotion ? 0 : spring.angle + (index % 2 ? 0.014 : -0.019);
-    pivot.current.rotation.y = 0.045 + away * (index % 2 ? -0.23 : 0.21);
+    pivot.current.rotation.y = 0.06 + Math.sign(offset) * away * 0.64;
   });
   return <group ref={mount}>
     <mesh position-z={-0.11} rotation-x={Math.PI / 2} castShadow>
@@ -100,16 +101,32 @@ function DisplayBadge({ config, index, progress, active, reducedMotion, onInspec
   </group>;
 }
 
+function HangingRail() {
+  const { viewport } = useThree();
+  return (
+    <group position={[0, 1.30, -0.22]}>
+      <mesh castShadow receiveShadow>
+        <boxGeometry args={[viewport.width * 1.2, 0.061, 0.065]} />
+        <meshStandardMaterial color="#c4c2ba" metalness={0.17} roughness={0.49} />
+      </mesh>
+      <mesh position-z={0.034}>
+        <planeGeometry args={[viewport.width * 1.2, 0.015]} />
+        <meshStandardMaterial color="#464440" />
+      </mesh>
+    </group>
+  );
+}
+
 function GalleryLight() {
   const target = useMemo(() => new Object3D(), []);
   return <>
     <primitive object={target} />
     <ambientLight intensity={1.04} />
     <spotLight target={target} position={[-1.1, 2.4, 3.4]} intensity={55}
-      angle={0.53} penumbra={0.93} color="#fff8ef" castShadow
-      shadow-mapSize={[1024, 1024]} shadow-radius={4} shadow-blurSamples={6} shadow-bias={-0.00035} shadow-normalBias={0.006} />
+      angle={0.95} penumbra={0.93} color="#fff8ef" castShadow
+      shadow-mapSize={[1024, 1024]} shadow-radius={7} shadow-blurSamples={6} shadow-bias={-0.00035} shadow-normalBias={0.006} />
     <mesh receiveShadow position-z={-0.255}>
-      <planeGeometry args={[30, 8]} /><shadowMaterial transparent opacity={0.32} />
+      <planeGeometry args={[30, 8]} /><shadowMaterial transparent opacity={0.24} />
     </mesh>
   </>;
 }
@@ -131,8 +148,9 @@ export default function ExhibitionScene(props: Props) {
       camera={{ position: [0, 0, 4.53], fov: 37, near: 0.1, far: 24 }}
       dpr={[1, 1.5]} gl={{ alpha: true, antialias: true, powerPreference: "low-power" }}>
       <GalleryLight />
+      <HangingRail />
       <Suspense fallback={null}>
-        {props.badges.map((config, index) => Math.abs(props.active - index) <= 2 && (
+        {props.badges.map((config, index) => Math.abs(props.active - index) <= 4 && (
           <DisplayBadge key={config.id} config={config} index={index} active={props.active} progress={props.progress}
             reducedMotion={props.reducedMotion} onInspect={() => props.onInspect(index)} />
         ))}

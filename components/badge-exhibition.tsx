@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { SceneBoundary, useReducedMotion } from "./viewer-support";
 import type { BadgeConfig } from "../lib/badges";
 import { Flip, Hand } from "./icons";
@@ -10,16 +10,32 @@ import { Flip, Hand } from "./icons";
 const BadgeScene = dynamic(() => import("./badge-scene"), { ssr: false });
 export function BadgeExhibition({ config }: { config: BadgeConfig }) {
   const [back, setBack] = useState(false);
+  const [reading, setReading] = useState(false);
+  const print = useRef<HTMLDivElement>(null);
   const [status, setStatus] = useState<"loading" | "ready" | "unavailable">("loading");
   const reducedMotion = useReducedMotion();
   const flip = useCallback(() => setBack(value => !value), []);
   const ready = useCallback(() => setStatus("ready"), []);
   const unavailable = useCallback(() => setStatus("unavailable"), []);
+  useEffect(() => {
+    if (!reading || !print.current) return;
+    const sheet = print.current;
+    sheet.scrollTo({ left: (sheet.scrollWidth - sheet.clientWidth) / 2, top: 0 });
+    sheet.focus({ preventScroll: true });
+  }, [reading]);
 
   return (
     <section className="exhibition" aria-label="Badge viewer">
       <div className="studio">
-        {status !== "ready" && (
+        {reading && (
+          <div ref={print} className="enlarged-print" role="region" tabIndex={0}
+            aria-label={`Enlarged ${back ? "back" : "front"} print`}>
+            <Image src={back ? config.artwork.back : config.artwork.front}
+              alt={`${config.event.name} badge, ${back ? "back" : "front"}`}
+              width={config.dimensions.width * 8} height={config.dimensions.height * 8} unoptimized />
+          </div>
+        )}
+        {!reading && status !== "ready" && (
           <div className={`flat-badge ${status}`}>
             <Image src={back ? config.artwork.back : config.artwork.front}
               alt={`${config.event.name} badge, ${back ? "back" : "front"}`}
@@ -27,7 +43,7 @@ export function BadgeExhibition({ config }: { config: BadgeConfig }) {
               unoptimized priority />
           </div>
         )}
-        {status !== "unavailable" && (
+        {!reading && status !== "unavailable" && (
           <div className="scene">
             <SceneBoundary onUnavailable={unavailable}>
               <BadgeScene config={config} back={back} reducedMotion={reducedMotion}
@@ -35,7 +51,10 @@ export function BadgeExhibition({ config }: { config: BadgeConfig }) {
             </SceneBoundary>
           </div>
         )}
-        <div className="studio-caption"><span>{back ? "BACK" : "FRONT"} VIEW</span></div>
+        <button type="button" className="read-print" aria-pressed={reading} onClick={() => {
+          if (reading && status === "ready") setStatus("loading");
+          setReading(!reading);
+        }}>{reading ? "Whole pass" : "Read print"} <span aria-hidden="true">{reading ? "−" : "+"}</span></button>
         <button type="button" className="flip-button" onClick={flip}
           aria-label={`Flip badge to the ${back ? "front" : "back"}`}>
           <Flip /> Flip badge
@@ -43,7 +62,7 @@ export function BadgeExhibition({ config }: { config: BadgeConfig }) {
       </div>
       <div className="viewer-footer">
         <span className="viewer-instruction">
-          {status === "unavailable" ? <span>Static preview</span> : <><Hand /><span>Drag to pick up</span></>}
+          {reading ? "Scroll to read" : status === "unavailable" ? "Static preview" : <><Hand /><span>Drag to pick up</span></>}
         </span>
         <div className="view-controls" role="group" aria-label="Badge face">
           <button type="button" aria-pressed={!back} onClick={() => setBack(false)}>Front</button>

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import type { ExhibitionBadge } from "../lib/badges";
 import { BadgeExhibition } from "./badge-exhibition";
-import { ArchiveMark } from "./icons";
+import { Hand } from "./icons";
 import { useClipSound } from "./clip-sound";
 import { SceneBoundary, useReducedMotion } from "./viewer-support";
 
@@ -13,6 +13,13 @@ const ExhibitionScene = dynamic(() => import("./exhibition-scene"), { ssr: false
 
 const number = (value: number) => String(value).padStart(2, "0");
 const eventTitle = ({ event }: ExhibitionBadge) => [event.name, event.edition].filter(Boolean).join(" ");
+
+function ribbonStyle(item: ExhibitionBadge) {
+  return {
+    "--ribbon": item.lanyard.colour,
+    "--ribbon-print": item.lanyard.texture ? `url(${item.lanyard.texture})` : "none",
+  } as CSSProperties;
+}
 
 export function ExhibitionJourney({ badges, records }: {
   badges: ExhibitionBadge[]; records: ReactNode[];
@@ -124,21 +131,21 @@ export function ExhibitionJourney({ badges, records }: {
       <section ref={track} className="journey" style={{ "--journey-distance": `${(badges.length - 1) * 62}svh` } as CSSProperties} id="exhibition" aria-label="Exhibition">
         <div ref={stage} className="journey-stage" style={{ "--wall": badge.label.wall, "--pigment": badge.label.pigment } as CSSProperties}>
           <header className="gallery-bar" data-opening={active === 0}>
-            <h1><ArchiveMark /><span>The <i>Lanyard</i> Archive</span></h1>
-            <span className="credit">Collected by Prince Kukreja</span>
+            <h1><span>The</span> <i>Lanyard</i> Archive</h1>
+            <span className="credit">Prince Kukreja’s collection</span>
             <button ref={indexButton} type="button" className="index-toggle" aria-haspopup="dialog"
               aria-controls="object-index" aria-expanded={indexOpen} onClick={openIndex}>
-              <span className="index-icon" aria-hidden="true">▦</span> Object index
+              <span className="index-icon" aria-hidden="true">▦</span> Object index <small>{badges.length}</small>
             </button>
           </header>
           <div className="display-wall">
             <div className="journey-view">
               {sceneState !== "ready" && (
                 <div className="journey-images">
-                  {badges.map((item, index) => Math.abs(index - active) <= 1 && (
+                  <div className="flat-rail" aria-hidden="true" />
+                  {badges.map((item, index) => Math.abs(index - active) <= 3 && (
                     <button key={item.id} type="button" className="journey-image"
-                      style={{ "--offset": index - active, "--ribbon": item.lanyard.colour,
-                        "--ribbon-print": item.lanyard.texture ? `url(${item.lanyard.texture})` : "none",
+                      style={{ "--offset": index - active, ...ribbonStyle(item),
                         "--spread": item.lanyard.clipSpread ? "12deg" : "5deg" } as CSSProperties}
                       data-featured={index === active}
                       tabIndex={index === active ? 0 : -1}
@@ -160,37 +167,42 @@ export function ExhibitionJourney({ badges, records }: {
                 </div>
               )}
             </div>
-            <aside className="museum-label" aria-label="Museum label">
-              <div className="accession">
-                <span>Acc. {badge.id}</span>
-                {badge.event.date ? <time dateTime={badge.event.dateTime}>{badge.event.date}</time> : <span>Undated</span>}
-              </div>
-              <p className="museum-note">{badge.story.note}</p>
-              <p className="materials">{badge.label.materials}</p>
-            </aside>
           </div>
           <footer className="journey-controls">
-            <div className="journey-record" aria-live="polite" aria-atomic="true">
-              <p className="record-kicker">{badge.label.captionHeading ?? "What the badge called me"}</p>
-              <h2>{badge.label.inscription}</h2>
-              <p className="record-event">{eventTitle(badge)}</p>
+            <div className="control-row">
+              <div className="journey-record" aria-live="polite" aria-atomic="true">
+                <h2 className="inscription">{badge.label.inscription}</h2>
+                <p className="record-event">{eventTitle(badge)}</p>
+              </div>
+              <button ref={inspectButton} className="journey-inspect" type="button"
+                onClick={event => inspect(active, event.currentTarget)}>
+                <Hand /> Pick up pass
+              </button>
+              <nav className="step-controls" aria-label="Exhibition stops">
+                <button type="button" aria-label="Previous object" disabled={active === 0} onClick={() => step(-1)}>‹</button>
+                <span>{number(active + 1)} / {number(badges.length)}</span>
+                <button type="button" aria-label="Next object" disabled={active === badges.length - 1} onClick={() => step(1)}>›</button>
+              </nav>
+              <button className="sound-toggle" type="button" aria-label="Clip sound" aria-pressed={!sound.muted} onClick={sound.toggle}>
+                <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4">
+                  <path d="M3 8h3l4-4v12l-4-4H3z" />
+                  {sound.muted ? <path d="m13 8 4 4m0-4-4 4"/> : <path d="M13 7a5 5 0 0 1 0 6m2-8a8 8 0 0 1 0 10"/>}
+                </svg>
+              </button>
             </div>
-            <button ref={inspectButton} className="journey-inspect" type="button"
-              onClick={event => inspect(active, event.currentTarget)}>
-              <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><circle cx="8" cy="8" r="5" stroke="currentColor" strokeWidth="1.5"/><path d="m12 12 5 5" stroke="currentColor" strokeWidth="1.5"/></svg>
-              Inspect badge
-            </button>
-            <nav className="step-controls" aria-label="Exhibition stops">
-              <button type="button" aria-label="Previous object" disabled={active === 0} onClick={() => step(-1)}>‹</button>
-              <span>{number(active + 1)} / {number(badges.length)}</span>
-              <button type="button" aria-label="Next object" disabled={active === badges.length - 1} onClick={() => step(1)}>›</button>
-            </nav>
-            <button className="sound-toggle" type="button" aria-label="Clip sound" aria-pressed={!sound.muted} onClick={sound.toggle}>
-              <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4">
-                <path d="M3 8h3l4-4v12l-4-4H3z" />
-                {sound.muted ? <path d="m13 8 4 4m0-4-4 4"/> : <path d="M13 7a5 5 0 0 1 0 6m2-8a8 8 0 0 1 0 10"/>}
-              </svg>
-            </button>
+            <label className="ribbon-browser">
+              <span className="ribbon-prompt">Slide through the ribbons</span>
+              <span className="swatch-track" style={{ "--swatch-count": badges.length } as CSSProperties}>
+                <span className="swatches" aria-hidden="true">
+                  {badges.map((item, index) => (
+                    <span key={item.id} className="swatch" data-selected={active === index} style={ribbonStyle(item)} />
+                  ))}
+                </span>
+                <input aria-label="Browse by ribbon" aria-valuetext={`${active + 1} of ${badges.length}, ${eventTitle(badge)}`}
+                  type="range" min={0} max={badges.length - 1} step={1} value={active}
+                  onChange={e => navigate(e.currentTarget.valueAsNumber, true)} />
+              </span>
+            </label>
           </footer>
         </div>
       </section>
@@ -203,7 +215,8 @@ export function ExhibitionJourney({ badges, records }: {
           {badges.map((item, index) => (
             <button type="button" key={item.id} aria-current={index === active ? "step" : undefined}
               onClick={() => { selectedIndex.current = index; indexDialog.current?.close(); }}>
-              <span className="index-print">
+              <span className="index-print" style={ribbonStyle(item)}>
+                <span className="index-ribbon" aria-hidden="true" />
                 {indexOpen && <Image src={item.artwork.front} width={item.dimensions.width * 3} height={item.dimensions.height * 3}
                   alt="" unoptimized loading="lazy" />}
               </span>

@@ -11,7 +11,7 @@ export interface BadgeConfig {
 export const archiveTitle = "The Lanyard Archive";
 
 export type ExhibitionBadge = BadgeConfig & {
-  label: { captionHeading?: string; inscription: string; materials: string; wall: string; pigment: string };
+  label: { inscription: string; materials: string; wall: string; pigment: string };
   story: { venue?: string; note?: string; fictional?: boolean; estimatedDimensions?: boolean };
 };
 
@@ -29,7 +29,7 @@ export const exhibition: ExhibitionBadge[] = [
     },
     attachment: "snap-hook",
     event: { name: "Breakpoint", edition: "2026", date: "2026", dateTime: "2026", pass: "Attendee" },
-    story: { estimatedDimensions: true, note: "I’m Prince in the middle and PixelPrince one line down." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "002",
@@ -47,7 +47,7 @@ export const exhibition: ExhibitionBadge[] = [
     body: "electronic",
     attachment: "swivel-clip",
     event: { name: "Solana electronic badge" },
-    story: { estimatedDimensions: true, note: "My name fits on a screen. So does my battery level." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "003",
@@ -64,7 +64,7 @@ export const exhibition: ExhibitionBadge[] = [
     },
     attachment: "swivel-clip",
     event: { name: "Houdini HIVEalt", edition: "2026", date: "2026", dateTime: "2026", location: "London, UK" },
-    story: { estimatedDimensions: true, note: "My surname gets a whole line here." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "004",
@@ -76,7 +76,7 @@ export const exhibition: ExhibitionBadge[] = [
     },
     attachment: "snap-hook",
     event: { name: "Git Nation", pass: "Crew" },
-    story: { estimatedDimensions: true, note: "My job fits in the white strip at the bottom." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "005",
@@ -88,7 +88,7 @@ export const exhibition: ExhibitionBadge[] = [
     },
     attachment: "snap-hook",
     event: { name: "CityJS London", edition: "2026", date: "2026", dateTime: "2026", location: "London, UK" },
-    story: { estimatedDimensions: true, note: "I wrote my name in green under the globe." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "006",
@@ -98,7 +98,7 @@ export const exhibition: ExhibitionBadge[] = [
     lanyard: { width: 10, length: 114, colour: "#222228", texture: "/badges/plain-black-strap.svg" },
     attachment: "swivel-clip",
     event: { name: "CampAI", pass: "Attendee" },
-    story: { estimatedDimensions: true, note: "My name and my job both went on the sticker." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "007",
@@ -121,7 +121,7 @@ export const exhibition: ExhibitionBadge[] = [
     lanyard: { width: 12, length: 108, colour: "#222228", texture: "/badges/plain-black-strap.svg", sleeveColour: "#bbb9b5" },
     attachment: "snap-hook",
     event: { name: "BrainStation" },
-    story: { estimatedDimensions: true, note: "Just my first name. It fills the sticker." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "009",
@@ -131,7 +131,7 @@ export const exhibition: ExhibitionBadge[] = [
     lanyard: { width: 12, length: 110, colour: "#222228", texture: "/badges/plain-black-strap.svg", sleeveColour: "#1686a4" },
     attachment: "snap-hook",
     event: { name: "Flower AI Summit", edition: "2026", date: "2026", dateTime: "2026", pass: "Attendee" },
-    story: { estimatedDimensions: true, note: "My name runs across the orange. Attendee runs up the edge." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "010",
@@ -144,7 +144,7 @@ export const exhibition: ExhibitionBadge[] = [
       name: "droidcon London", edition: "2025", date: "30–31 October 2025", dateTime: "2025-10",
       location: "London, UK", pass: "Team",
     },
-    story: { estimatedDimensions: true, note: "Student on the sticker. Team along the bottom." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "011",
@@ -156,7 +156,7 @@ export const exhibition: ExhibitionBadge[] = [
     },
     attachment: "snap-hook",
     event: { name: "SEV0", pass: "Attendee" },
-    story: { estimatedDimensions: true, note: "Attendee ended up right next to my name." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "012",
@@ -166,7 +166,7 @@ export const exhibition: ExhibitionBadge[] = [
     lanyard: { width: 20, length: 110, colour: "#222228", texture: "/badges/plain-black-strap.svg" },
     attachment: "snap-hook",
     event: { name: "Ship LDN", location: "London, UK" },
-    story: { estimatedDimensions: true, note: "This one had room for Birkbeck’s full name." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "013",
@@ -178,7 +178,7 @@ export const exhibition: ExhibitionBadge[] = [
     },
     attachment: "snap-hook",
     event: { name: "AI DevCon", pass: "Crew" },
-    story: { estimatedDimensions: true, note: "My job is on the sticker. Crew is on the green strip." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "014",
@@ -188,7 +188,7 @@ export const exhibition: ExhibitionBadge[] = [
     lanyard: { width: 18, length: 110, colour: "#1a191e", texture: "/badges/rnlconf-strap.svg", repeatAspect: 5 },
     attachment: "snap-hook",
     event: { name: "RNLConf" },
-    story: { estimatedDimensions: true, note: "My name sits just above Tower Bridge." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "015",
@@ -198,7 +198,7 @@ export const exhibition: ExhibitionBadge[] = [
     lanyard: { width: 17, length: 110, colour: "#1a191e", texture: "/badges/design-ai-strap.svg", repeatAspect: 5 },
     attachment: "snap-hook",
     event: { name: "design+AI", pass: "Volunteer" },
-    story: { estimatedDimensions: true, note: "The crease runs right through my name." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "016",
@@ -208,7 +208,7 @@ export const exhibition: ExhibitionBadge[] = [
     lanyard: { width: 19, length: 112, colour: "#669b9e", texture: "/badges/london-tech-week-strap.svg", repeatAspect: 10.5, clipSpread: 57 },
     attachment: "snap-hook",
     event: { name: "London Tech Week", edition: "2026", date: "2026", dateTime: "2026", location: "London, UK", pass: "Expo" },
-    story: { estimatedDimensions: true, note: "My name, then Birkbeck, then EXPO. A line to itself for each." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "017",
@@ -218,7 +218,7 @@ export const exhibition: ExhibitionBadge[] = [
     lanyard: { width: 18, length: 111, colour: "#eec622", texture: "/badges/devoxx-strap.svg", repeatAspect: 6.33 },
     attachment: "snap-hook",
     event: { name: "Devoxx UK", edition: "2026", date: "2026", dateTime: "2026", pass: "Crew" },
-    story: { estimatedDimensions: true, note: "My sticker says ‘None’. The pink strip says ‘CREW’." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "018",
@@ -228,7 +228,7 @@ export const exhibition: ExhibitionBadge[] = [
     lanyard: { width: 18, length: 110, colour: "#151518", texture: "/badges/open-house-strap.svg", repeatAspect: 5.19, clipSpread: 52 },
     attachment: "snap-hook",
     event: { name: "Open House by ClickHouse", edition: "2026", date: "2026", dateTime: "2026", location: "London, UK", pass: "Attendee" },
-    story: { estimatedDimensions: true, note: "Design Engineer sits under my name. Attendee is tucked into the corner." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "019",
@@ -238,7 +238,7 @@ export const exhibition: ExhibitionBadge[] = [
     lanyard: { width: 20, length: 110, colour: "#18181a", texture: "/badges/security-live-strap.svg", repeatAspect: 5.625 },
     attachment: "snap-hook",
     event: { name: "Security LIVE! Europe", pass: "Attendee" },
-    story: { estimatedDimensions: true, note: "My name takes two lines. Birkbeck and Attendee get one each." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "020",
@@ -248,7 +248,7 @@ export const exhibition: ExhibitionBadge[] = [
     lanyard: { width: 11, length: 110, colour: "#54287f", sleeveColour: "#b7afab" },
     attachment: "snap-hook",
     event: { name: "OpenAI DevDay London", location: "London, UK" },
-    story: { estimatedDimensions: true, note: "One big purple face under my name. A whole crowd on the back." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "021",
@@ -258,17 +258,17 @@ export const exhibition: ExhibitionBadge[] = [
     lanyard: { width: 12, length: 110, colour: "#b10c29", sleeveColour: "#aaa4a0" },
     attachment: "snap-hook",
     event: { name: "Caffè Culture Show", edition: "2026", date: "29–30 September 2026", dateTime: "2026-09-29", pass: "Visitor" },
-    story: { estimatedDimensions: true, note: "My job sits in the middle. VISITOR gets the bottom corner." },
+    story: { estimatedDimensions: true },
   },
   {
     id: "022",
-    label: { captionHeading: "Printed on the guide", inscription: "Your Birkbeck Journey Starts Here", materials: "Printed campus guide, satin ribbon, metal clip", wall: "#aaa9bd", pigment: "#5c2f69" },
+    label: { inscription: "Your Birkbeck Journey Starts Here", materials: "Printed campus guide, satin ribbon, metal clip", wall: "#aaa9bd", pigment: "#5c2f69" },
     dimensions: { width: 90, height: 127.5, thickness: 1.3, radius: 1 },
     artwork: { front: "/badges/birkbeck-front.svg", back: "/badges/birkbeck-back.svg", edge: "#7e2954" },
     lanyard: { width: 18, length: 112, colour: "#b41b23", texture: "/badges/birkbeck-strap.svg", repeatAspect: 3.98 },
     attachment: "snap-hook",
     event: { name: "Birkbeck campus guide", location: "Bloomsbury, London" },
-    story: { estimatedDimensions: true, note: "Birkbeck usually sits under my name. Here it takes the whole card, with a campus map on the back." },
+    story: { estimatedDimensions: true },
   },
 ];
 

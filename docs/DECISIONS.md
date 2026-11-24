@@ -47,3 +47,11 @@ Native scrolling supplies fractional camera progress independently of the active
 Each accession carries its visible inscription, materials and two colours in the catalogue. The existing date and collector’s note feed the wall label. Unknown dates read “Undated”. STIX Two Text sets the masthead, inscriptions and italic notes. Regular and italic Latin fonts and their OFL licence are bundled locally.
 
 The exhibition moves the pegs relative to a fixed light and camera. The CSS wall supplies colour and perforations. A transparent Three.js plane receives real-time shadows. Each strip of fabric has a curved mesh from peg to clasp. The overview briefly swings around the peg on pointer entry, while close inspection retains its independent physics rig. The navigation buttons synthesize two short audio transients on activation and share a mute control.
+
+## Ribbon browsing
+
+The wall uses a continuous rail and leaves the space around the passes clear. Materials and measurements appear in the inspection view. The caption uses the inscription and event name from the catalogue.
+
+Ribbon samples reuse each object's strap texture or fabric colour. One native range input tracks the entire strip and scrolls the existing exhibition to the selected stop. The rail, caption, strip and object index share one selection. The static viewer uses the same navigation and records.
+
+Reading the print uses the same face artwork at a larger scale in a native scroll region. It releases the close-up physics scene while open and works in the static viewer. Returning to the whole pass keeps the selected face.

@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-Open [localhost:3000](http://localhost:3000). Scroll, use the arrows, or choose a badge from Object index to move through the exhibition. Choose **Inspect badge**, then drag and release to watch it swing. Shift-drag to rotate with a mouse, or use **Flip badge**, **Front** and **Back**. Use Escape or **Back to exhibition** to return to the same stop.
+Open [localhost:3000](http://localhost:3000). Scroll along the rail, drag across the ribbon samples, use the arrows, or choose a badge from **Object index**. Choose **Pick up pass**, then drag and release to watch it swing. Shift-drag to rotate with a mouse, or use **Flip badge**, **Front** and **Back**. Choose **Read print** for an enlarged, scrollable view of either face. Use Escape or **Back to exhibition** to return to the same stop.
 
 ```sh
 npm run lint
