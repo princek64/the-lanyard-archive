@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="640" viewBox="0 0 128 640">
+ <defs><pattern id="weave" width="4" height="5" patternUnits="userSpaceOnUse"><path d="M1 0v5" stroke="#3a3a41"/><path d="M0 1h4" stroke="#0c0c10"/></pattern></defs>
+ <path fill="#19191d" d="M0 0h128v640H0z"/><path fill="url(#weave)" d="M0 0h128v640H0z"/>
+ <g transform="translate(27 65) rotate(90)" fill="#efedf6">
+  <path d="M4-66h102l-20 18H-16zm-20 27H86l20 18H4zM4-12h102L86 6H-16z"/>
+  <text x="129" y="0" font-family="Arial,sans-serif" font-weight="700" font-size="79" textLength="345" lengthAdjust="spacingAndGlyphs" letter-spacing="5">SOLANA</text>
+ </g>
+</svg>

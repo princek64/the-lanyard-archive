@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="560" viewBox="0 0 128 560">
+ <defs><pattern id="weave" width="5" height="6" patternUnits="userSpaceOnUse"><path d="M1 0v6m2-6v6" stroke="#383940" stroke-width=".65"/></pattern></defs>
+ <rect width="128" height="560" fill="#202126"/><rect width="128" height="560" fill="url(#weave)"/>
+ <g transform="translate(22 75) scale(2.45)" fill="#e9e6ef"><path d="M0 0l17 14L34 0v7L17 21 0 7zm0 37V26l17-14 17 14v11l-17-14zm0 20V46l17-14 17 14v11L17 43z"/></g>
+ <g transform="translate(106 475) rotate(180) scale(2.45)" fill="#e9e6ef"><path d="M0 0l17 14L34 0v7L17 21 0 7zm0 37V26l17-14 17 14v11l-17-14zm0 20V46l17-14 17 14v11L17 43z"/></g>
+</svg>

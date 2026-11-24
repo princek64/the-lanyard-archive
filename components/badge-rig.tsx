@@ -133,7 +133,7 @@ export function BadgeRig({ config, back, reducedMotion, onFlip }: {
             onContextMenu={event => event.preventDefault()} />
         </Html>
       </RigidBody>
-      <Lanyard bodies={bodies} config={config.lanyard} />
+      <Lanyard bodies={bodies} config={config.lanyard} pivot={pivot} />
     </>
   );
 }

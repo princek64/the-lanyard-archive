@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="625" height="1000" viewBox="0 0 625 1000">
+ <defs><pattern id="grain" width="11" height="9" patternUnits="userSpaceOnUse"><path d="M2 4h1m5 2h1" stroke="#bcb5be" stroke-opacity=".14"/></pattern><pattern id="motif" width="86" height="60" patternUnits="userSpaceOnUse"><path d="M10 12h7v7h-7zM55 13l5 8H50zm14 22h8v7h-8z" fill="#77757d"/><circle cx="29" cy="37" r="3.5" fill="#848089"/></pattern></defs>
+ <rect width="625" height="1000" fill="#131419"/><rect width="625" height="1000" fill="url(#grain)"/>
+ <g fill="none" stroke="#4e4c55" stroke-width="2" stroke-dasharray="15 9"><path d="M0 0h72v79H0zm99 0h87v79H99zm116 0h84v79h-84zm241 0h169v79H456zm102 104h67v87h-67zm0 113h67v87h-67zM0 453h64v88H0zm447 0h87v88h-87zm115 0h63v88h-63zM91 570h91v90H91z"/></g>
+ <path d="M314 0h121v103H314zm124 108h107v108H438zM195 566h430v109H195z" fill="url(#motif)" opacity=".62"/>
+ <g fill="#f1eff5" font-family="Arial,sans-serif"><text x="123" y="252" font-size="59">Prince</text><text x="123" y="319" font-size="59">Kukreja</text><text x="126" y="398" font-size="29">Design Engineer</text><text x="126" y="439" font-size="29">Birkbeck, University of</text><text x="126" y="477" font-size="29">London</text>
+ <text x="124" y="810" font-size="54" font-weight="800">Ship</text><rect x="232" y="775" width="59" height="40" rx="7" fill="none" stroke="#f1eff5" stroke-width="3"/><text x="262" y="802" text-anchor="middle" font-size="20" font-weight="700">LDN</text></g>
+ <path d="M476 772l26 46h-52z" fill="#f1eff5"/>
+</svg>

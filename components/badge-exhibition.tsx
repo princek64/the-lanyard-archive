@@ -19,9 +19,6 @@ export function BadgeExhibition({ config }: { config: BadgeConfig }) {
   return (
     <section className="exhibition" aria-label="Badge viewer">
       <div className="studio">
-        <div className="studio-frame" aria-hidden="true" />
-        <div className="studio-label"><span /> INTERACTIVE OBJECT</div>
-        <div className="studio-id">NO. {config.id}</div>
         {status !== "ready" && (
           <div className={`flat-badge ${status}`}>
             <Image src={back ? config.artwork.back : config.artwork.front}
@@ -38,8 +35,7 @@ export function BadgeExhibition({ config }: { config: BadgeConfig }) {
             </SceneBoundary>
           </div>
         )}
-        <div className="studio-caption"><span>FIG. {config.id}</span><span aria-hidden="true">/</span>
-          <span>{back ? "BACK" : "FRONT"} VIEW</span></div>
+        <div className="studio-caption"><span>{back ? "BACK" : "FRONT"} VIEW</span></div>
         <button type="button" className="flip-button" onClick={flip}
           aria-label={`Flip badge to the ${back ? "front" : "back"}`}>
           <Flip /> Flip badge

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1000" viewBox="0 0 720 1000">
+ <rect width="720" height="1000" fill="#eeece7"/>
+ <g fill="#1a191c" font-family="Arial,sans-serif" text-anchor="middle">
+  <text x="407" y="268" font-size="88">CityJS</text>
+  <text x="360" y="380" font-size="48" font-weight="700">Schedule</text>
+  <text x="252" y="762" font-size="23" font-weight="700">Diamond sponsors</text>
+  <text x="549" y="762" font-size="23" font-weight="700">Gold sponsor</text>
+  <text x="252" y="831" font-size="28">imagekit.io · Zephyr Cloud</text>
+  <text x="549" y="831" font-size="29" font-weight="800">tether.</text>
+ </g>
+ <g stroke="#1a191c" stroke-width="4" fill="none"><circle cx="211" cy="237" r="43"/><path d="M171 246h80m-73 12h66m-57-47v67m47-67v67m-45-65l22 26 22-26"/></g>
+</svg>

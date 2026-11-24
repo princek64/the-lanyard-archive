@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="1000" viewBox="0 0 780 1000">
+ <defs><linearGradient id="print" x2="0" y2="1"><stop stop-color="#a9166d"/><stop offset=".35" stop-color="#552d77"/><stop offset=".65" stop-color="#193c7c"/><stop offset="1" stop-color="#d6d1df"/></linearGradient></defs>
+ <rect width="780" height="1000" fill="url(#print)"/>
+ <g font-family="Arial,sans-serif" text-anchor="middle" font-weight="700">
+  <text x="390" y="142" fill="#f6eef2" font-size="126">next<tspan fill="#171420">.app</tspan></text>
+  <text x="362" y="250" fill="#171420" font-size="121">dev<tspan fill="#f6eef2">con</tspan></text>
+  <text x="390" y="337" fill="#f1eaf3" font-size="47">7–9 OCT, 2026 | BERLIN</text>
+  <text x="390" y="585" fill="#f1eaf3" font-size="62">SAVE THE DATE</text>
+ </g>
+ <g font-family="Arial,sans-serif" fill="#f0eaf2" font-size="34">
+  <text x="156" y="412">ONE EVENT.</text><text x="156" y="455">ALL MOBILE ECOSYSTEMS.</text><text x="156" y="498">BUILD WHAT’S NEXT.</text>
+  <text x="312" y="659">Get your</text><text x="312" y="699">SUPER EARLY BIRD</text><text x="312" y="739">ticket now!</text>
+ </g>
+ <g font-family="Arial,sans-serif" font-weight="800" text-anchor="middle" font-size="24" fill="#211d2a">
+  <text x="82" y="925">droid</text><text x="204" y="925">flutter</text><text x="328" y="925">react</text><text x="457" y="925">xr&amp;games</text><text x="582" y="925">swift</text><text x="704" y="925">ai dev</text>
+  <text x="82" y="956">con</text><text x="204" y="956">con</text><text x="328" y="956">con</text><text x="457" y="956">con</text><text x="582" y="956">con</text><text x="704" y="956">con</text>
+ </g>
+ <g fill="none" stroke-width="9"><path d="M46 869q36-57 72 0m-61-45 15 17m36-17-15 17" stroke="#49764d"/><path d="M170 821q52 16 0 48m32-25 33-13m-33 13 33 13" stroke="#2c7eae"/><path d="M328 820v51m-22-39 44 25m-44 0 44-25" stroke="#62527e"/><path d="M435 823h45v44h-45z" stroke="#9c225c"/><path d="M554 824q28 4 28 44m28-44q-28 4-28 44m-28 0q28-4 28-44m28 44q-28-4-28-44" stroke="#b44349"/><circle cx="704" cy="846" r="24" stroke="#b16826"/></g>
+</svg>

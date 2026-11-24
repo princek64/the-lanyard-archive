@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="1000" viewBox="0 0 780 1000">
+ <rect width="780" height="1000" fill="#dedde1"/>
+ <g fill="none" stroke="#4b706d" stroke-width="3"><path d="M0 5l150 92M0 5l81 158M0 5v154M0 5h158"/><path d="M28 5q-1 12-15 21Q7 30 0 30M58 5q-11 20-10 30-14 3-29 15L0 57M85 5q-19 25-11 43-18 3-37 27Q22 77 0 88M119 5q-21 25-13 62-22 2-52 40-22-9-54 12M151 5q-27 24-16 79-34 8-58 66-35-12-77 6"/></g>
+ <g font-family="Arial,sans-serif" fill="#25262d">
+  <text x="43" y="260" font-size="27">#dcldn25</text><text x="546" y="239" font-weight="800" fill="#347c74" font-size="62">dc</text>
+  <text x="627" y="213" font-size="24">30–31</text><text x="627" y="237" font-size="22">october</text>
+  <text x="551" y="267" font-size="26" fill="#4b605e">london 25</text>
+ </g>
+ <g transform="translate(230 239)" stroke="#252341" stroke-width="5" fill="none"><path d="M0 37a35 35 0 0 1 70 0H0zm15-28L8 0m47 9 7-9M22 39v8m26-8v8"/><circle cx="23" cy="24" r="2" fill="#252341"/><circle cx="47" cy="24" r="2" fill="#252341"/></g>
+ <rect x="42" y="344" width="693" height="451" rx="23" fill="#d1c8b8" stroke="#bdb3a4" stroke-width="1.7"/>
+ <g font-family="Arial,sans-serif" fill="#242124"><text x="72" y="435" font-size="65" font-weight="800">Prince</text><text x="72" y="537" font-size="45" font-weight="800">KUKREJA</text><text x="72" y="637" font-size="32">Student</text><text x="72" y="722" font-size="36">Birkbeck, University of</text><text x="72" y="766" font-size="36">London</text></g>
+ <path d="M0 847l780 25v128H0z" fill="#111216"/><path d="M0 837q114-44 222 12 99 47 158 115L0 1000z" fill="#387d75"/>
+ <text x="622" y="946" text-anchor="middle" fill="#fcf9f4" font-family="Arial,sans-serif" font-size="48" font-weight="800">TEAM</text>
+</svg>

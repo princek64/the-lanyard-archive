@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="1000" viewBox="0 0 560 1000">
+ <defs><pattern id="grain" width="9" height="7" patternUnits="userSpaceOnUse"><path d="M2 1h1m3 3h1" stroke="#b4acba" stroke-opacity=".18"/></pattern></defs>
+ <rect width="560" height="1000" fill="#141418"/><rect width="560" height="1000" fill="url(#grain)"/>
+ <g fill="none" stroke="#f6f1fb" stroke-width="5" stroke-linejoin="round">
+  <path d="M269 154l-24-4-26 31-5 45 26 34 29-8zm17 0l24-4 26 31 5 45-26 34-29-8zm-17 0l-50 27 50 22-55 23 55 26m17-98l50 27-50 22 55 23-55 26"/>
+ </g>
+ <rect x="32" y="400" width="496" height="327" rx="54" fill="#e8e3f0"/><rect x="32" y="400" width="496" height="327" rx="54" fill="url(#grain)"/>
+ <text x="270" y="636" text-anchor="middle" fill="#18161c" font-family="cursive" font-style="italic" font-size="140" textLength="390" lengthAdjust="spacingAndGlyphs">Prince</text>
+ <text x="280" y="918" text-anchor="middle" fill="#e9e4ee" font-family="Arial,sans-serif" font-size="31">BrainStation</text>
+</svg>

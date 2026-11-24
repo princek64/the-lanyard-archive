@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo } from "react";
 import { ExtrudeGeometry, Shape } from "three";
-import type { BadgeConfig } from "../lib/badges";
+import { ribbonOffsets, type BadgeConfig } from "../lib/badges";
 import { useBadgeTexture } from "./badge-texture";
 
 export const units = (millimetres: number) => millimetres / 100;
@@ -54,11 +54,36 @@ export function BadgeMesh({ config }: { config: BadgeConfig }) {
   useEffect(() => () => geometry.dispose(), [geometry]);
 
   return (
-    <mesh geometry={geometry} position-y={-clipLength - units(height) / 2} castShadow receiveShadow>
-      <meshStandardMaterial attach="material-0" map={front} roughness={0.68} />
-      <meshStandardMaterial attach="material-1" map={back} roughness={0.72} />
-      <meshStandardMaterial attach="material-2" color={config.artwork.edge} roughness={0.49} />
-    </mesh>
+    <group position-y={-clipLength - units(height) / 2}>
+      <mesh geometry={geometry} castShadow receiveShadow>
+        <meshStandardMaterial attach="material-0" map={front} roughness={0.68} />
+        <meshStandardMaterial attach="material-1" map={back} roughness={0.72} />
+        <meshStandardMaterial attach="material-2" color={config.artwork.edge} roughness={0.49} />
+      </mesh>
+      {config.body === "electronic" && <ElectronicControls config={config} />}
+    </group>
+  );
+}
+
+const controlCentres = [[208, 715], [115, 788], [288, 787], [208, 862], [579, 727], [481, 824]];
+
+function ElectronicControls({ config }: { config: BadgeConfig }) {
+  const { width, height, thickness } = config.dimensions;
+  return (
+    <group position-z={units(thickness) / 2}>
+      {controlCentres.map(([x, y]) => (
+        <group key={`${x},${y}`} position={[(x / 720 - 0.5) * units(width), (0.5 - y / 1000) * units(height), 0.013]} rotation-x={Math.PI / 2}>
+          <mesh castShadow>
+            <cylinderGeometry args={[0.041, 0.047, 0.025, 8]} />
+            <meshStandardMaterial color="#55525e" roughness={0.68} metalness={0.22} />
+          </mesh>
+          <mesh position-y={0.016} castShadow>
+            <cylinderGeometry args={[0.033, 0.038, 0.014, 8]} />
+            <meshStandardMaterial color="#27262e" roughness={0.76} />
+          </mesh>
+        </group>
+      ))}
+    </group>
   );
 }
 
@@ -100,10 +125,45 @@ function SwivelClip({ thickness, ribbonWidth }: { thickness: number; ribbonWidth
   );
 }
 
+function SnapHook({ thickness, ribbonWidth }: { thickness: number; ribbonWidth: number }) {
+  const front = units(thickness) / 2 + 0.012;
+  return (
+    <group>
+      <mesh position={[0, -0.033, 0]} scale={[units(ribbonWidth) / 0.13, 0.86, 1]} castShadow>
+        <torusGeometry args={[0.064, 0.008, 10, 28]} />
+        <meshStandardMaterial color="#c7c2bd" metalness={0.68} roughness={0.27} />
+      </mesh>
+      <mesh position={[0, -0.122, front]} castShadow>
+        <capsuleGeometry args={[0.023, 0.063, 5, 12]} />
+        <meshStandardMaterial color="#9e9792" metalness={0.62} roughness={0.28} />
+      </mesh>
+      <mesh position={[-0.022, -0.139, front]} rotation-z={-0.96} castShadow>
+        <capsuleGeometry args={[0.01, 0.044, 4, 10]} />
+        <meshStandardMaterial color="#a49d95" metalness={0.64} roughness={0.29} />
+      </mesh>
+      <mesh position={[0.005, -0.207, front]} rotation-z={0.66} scale={[0.83, 1.18, 1]} castShadow>
+        <torusGeometry args={[0.049, 0.0085, 10, 32, Math.PI * 1.78]} />
+        <meshStandardMaterial color="#d2ceca" metalness={0.68} roughness={0.25} />
+      </mesh>
+    </group>
+  );
+}
+
 export function BadgeAttachment({ config }: { config: BadgeConfig }) {
   const { thickness } = config.dimensions;
-  if (config.attachment === "swivel-clip") {
-    return <SwivelClip thickness={thickness} ribbonWidth={config.lanyard.width} />;
+  if (config.attachment) {
+    const Attachment = config.attachment === "snap-hook" ? SnapHook : SwivelClip;
+    return ribbonOffsets(config.lanyard).map(offset => (
+      <group key={offset} position-x={units(offset)}>
+        <Attachment thickness={thickness} ribbonWidth={config.lanyard.width} />
+        {config.lanyard.sleeveColour && (
+          <mesh position-y={0.035} castShadow>
+            <boxGeometry args={[units(config.lanyard.width) + 0.006, 0.045, 0.02]} />
+            <meshStandardMaterial color={config.lanyard.sleeveColour} metalness={0.62} roughness={0.32} />
+          </mesh>
+        )}
+      </group>
+    ));
   }
 
   return (

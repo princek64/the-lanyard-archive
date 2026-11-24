@@ -3,8 +3,8 @@
 import { useFrame } from "@react-three/fiber";
 import { BallCollider, RigidBody, useSphericalJoint, type RapierRigidBody } from "@react-three/rapier";
 import { type RefObject, useEffect, useMemo } from "react";
-import { BufferAttribute, BufferGeometry, CatmullRomCurve3, DoubleSide, Vector3 } from "three";
-import type { BadgeConfig } from "../lib/badges";
+import { BufferAttribute, BufferGeometry, CatmullRomCurve3, DoubleSide, Group, Quaternion, Vector3 } from "three";
+import { ribbonOffsets, type BadgeConfig } from "../lib/badges";
 import { units } from "./badge-mesh";
 import { useBadgeTexture } from "./badge-texture";
 
@@ -26,12 +26,14 @@ function PrintedFabric({ url, repeat }: { url: string; repeat: number }) {
   return <meshStandardMaterial map={map} roughness={0.95} side={DoubleSide} />;
 }
 
-export function Lanyard({ bodies, config }: {
-  bodies: BodyRef[]; config: BadgeConfig["lanyard"];
+function Ribbon({ bodies, config, offset, pivot }: {
+  bodies: BodyRef[];
+  config: BadgeConfig["lanyard"];
+  offset: number;
+  pivot: RefObject<Group | null>;
 }) {
-  const step = units(config.length) / linkCount;
   const width = units(config.width);
-  const { geometry, curve, point, tangent, side } = useMemo(() => {
+  const { geometry, curve, point, tangent, side, rotation, clipOffset } = useMemo(() => {
     const geometry = new BufferGeometry();
     const positions = new Float32Array((subdivisions + 1) * 6);
     const uv = new Float32Array((subdivisions + 1) * 4);
@@ -47,13 +49,20 @@ export function Lanyard({ bodies, config }: {
     geometry.setAttribute("position", new BufferAttribute(positions, 3));
     geometry.setAttribute("uv", new BufferAttribute(uv, 2));
     geometry.setIndex(indices);
-    return { geometry, curve, point: new Vector3(), tangent: new Vector3(), side: new Vector3() };
+    return { geometry, curve, point: new Vector3(), tangent: new Vector3(), side: new Vector3(), rotation: new Quaternion(), clipOffset: new Vector3() };
   }, [bodies]);
   useEffect(() => () => geometry.dispose(), [geometry]);
 
   useFrame(() => {
     if (bodies.some(body => !body.current)) return;
-    bodies.forEach((body, index) => curve.points[index].copy(body.current!.translation()));
+    clipOffset.set(offset, 0, 0);
+    if (offset && pivot.current) clipOffset.applyQuaternion(pivot.current.getWorldQuaternion(rotation));
+    bodies.forEach((body, index) => {
+      const amount = index / linkCount;
+      const centre = curve.points[index].copy(body.current!.translation());
+      centre.x += offset * (1 - amount);
+      centre.addScaledVector(clipOffset, amount);
+    });
     const positions = geometry.getAttribute("position");
     for (let i = 0; i <= subdivisions; i++) {
       const t = i / subdivisions;
@@ -69,6 +78,21 @@ export function Lanyard({ bodies, config }: {
   });
 
   return (
+    <mesh geometry={geometry} frustumCulled={false}>
+      {config.texture
+        ? <PrintedFabric url={config.texture} repeat={Math.max(1, config.length / (config.width * (config.repeatAspect ?? 3)))} />
+        : <meshStandardMaterial color={config.colour} roughness={0.95} side={DoubleSide} />}
+    </mesh>
+  );
+}
+
+export function Lanyard({ bodies, config, pivot }: {
+  bodies: BodyRef[];
+  config: BadgeConfig["lanyard"];
+  pivot: RefObject<Group | null>;
+}) {
+  const step = units(config.length) / linkCount;
+  return (
     <>
       {bodies.slice(0, -1).map((body, index) => (
         <RigidBody key={index} ref={body} type={index === 0 ? "fixed" : "dynamic"}
@@ -80,11 +104,9 @@ export function Lanyard({ bodies, config }: {
       {bodies.slice(1).map((body, index) => (
         <LinkJoint key={index} upper={bodies[index]} lower={body} distance={step} />
       ))}
-      <mesh geometry={geometry} frustumCulled={false}>
-        {config.texture
-          ? <PrintedFabric url={config.texture} repeat={Math.max(1, config.length / (config.width * (config.repeatAspect ?? 3)))} />
-          : <meshStandardMaterial color={config.colour} roughness={0.95} side={DoubleSide} />}
-      </mesh>
+      {ribbonOffsets(config).map(offset => (
+        <Ribbon key={offset} bodies={bodies} config={config} pivot={pivot} offset={units(offset)} />
+      ))}
     </>
   );
 }

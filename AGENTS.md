@@ -1,6 +1,6 @@
 # The Lanyard Archive
 
-The current milestone is a three-stop exhibition with a suspended, inspectable badge at each stop. Read [the concept](docs/CONCEPT.md) and [the design notes](docs/DESIGN.md) before changing the experience.
+The current milestone is a fifteen-stop exhibition with a suspended, inspectable badge at each stop. Read [the concept](docs/CONCEPT.md) and [the design notes](docs/DESIGN.md) before changing the experience.
 
 - Use the Next.js App Router and keep the page and metadata server rendered. Load Three.js and Rapier in the client viewer.
 - Keep artwork, dimensions in millimetres, and event data in `lib/badges.ts`. The scene modules should accept a badge configuration without knowing the event or asset names.

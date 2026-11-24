@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="625" height="1000" viewBox="0 0 625 1000">
+ <defs><pattern id="grain" width="11" height="9" patternUnits="userSpaceOnUse"><path d="M2 4h1m5 2h1" stroke="#bcb5be" stroke-opacity=".14"/></pattern></defs>
+ <rect width="625" height="1000" fill="#121318"/><rect width="625" height="1000" fill="url(#grain)"/>
+ <g fill="none" stroke="#818087" stroke-width="2.2" stroke-linejoin="round">
+  <path d="M181 213l163-97 115 65-163 99zm0 0v9l115 68 163-99v-10m-163 99v10"/>
+  <path d="M122 565l193-116 184 100-193 119zm0 0v58l184 101 193-115v-60m-193 119v56m-119-140l163-99 116 66-161 100z"/>
+  <path d="M181 221v355m278-385v352M243 399v121m34-141v122m33-142v123" stroke-dasharray="6 6"/>
+  <path d="M224 373l19-11 18 10-18 11zm0 0v19l19 10 18-11v-19m-18 11v19m15-49l19-11 18 10-18 11zm0 0v19l19 10 18-11v-19m-18 11v19m14-48l19-11 18 10-18 11zm0 0v19l19 10 18-11v-19m-18 11v19"/>
+ </g>
+ <path d="M249 204l25-15 56 33-25 15zm65-38l25-15 54 31-25 15z" fill="#818087"/>
+ <path d="M234 796l23 41h-47z" fill="#f5f3f7"/><text x="268" y="837" fill="#f5f3f7" font-family="Arial,sans-serif" font-size="51" font-weight="800">Vercel</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="690" height="1000" viewBox="0 0 690 1000">
+ <defs><pattern id="grain" width="7" height="9" patternUnits="userSpaceOnUse"><path d="M2 2h1m3 4h1" stroke="#833d23" stroke-opacity=".21"/></pattern></defs>
+ <rect width="690" height="1000" fill="#df8318"/><rect width="690" height="1000" fill="url(#grain)"/>
+ <g fill="#21160e" font-family="monospace"><text x="55" y="135" font-size="29">View Program</text><text x="96" y="535" font-size="25">@flwrlabs</text><text x="96" y="580" font-size="25">flower.ai</text><text x="96" y="625" font-size="25">github.com/adap/flower</text><text x="96" y="670" font-size="25">linkedin.com/company/flwrlabs/</text><text x="66" y="920" font-size="25">Advance Collaborative Superintelligence</text></g>
+ <g fill="#f5e4c5"><circle cx="70" cy="528" r="11"/><circle cx="70" cy="573" r="11"/><circle cx="70" cy="618" r="11"/><circle cx="70" cy="663" r="11"/></g>
+ <text x="55" y="865" font-family="Arial,sans-serif" font-size="143" font-weight="700" fill="#f6e7d0">Flower</text>
+</svg>

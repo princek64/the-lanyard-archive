@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="1000" viewBox="0 0 750 1000">
+ <defs>
+  <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#641e1a"/><stop offset=".37" stop-color="#a52e22"/><stop offset="1" stop-color="#361712"/></linearGradient>
+  <pattern id="cloth" width="7" height="6" patternUnits="userSpaceOnUse"><path d="M0 1h7M2 0v6" opacity=".22" stroke="#130e0e" stroke-width=".7"/></pattern>
+ </defs>
+ <rect width="750" height="1000" fill="url(#sky)"/>
+ <path fill="#331613" d="M0 444h16v-26h31v-38h22v-65h13v-42h8l8-75 9 75h8v42h14v65h15v67h35v-29h28v34h35v-48h36v-24h15v27h28v30h29v-76h23v-32h10v-19h12v19h16v37h25v55h22v-45h33v-23h21v23h26v66h36v-75h21v-19h15v20h23v71h27v-31h35v31h43v52H0z"/>
+ <path d="M0 561q197-96 410-70 212 11 340 89v161H0z" fill="#241210"/>
+ <path d="M0 785h750m-750 20h750m-750 31h750m-750 20h750m-750 51h750" stroke="#9f3225" stroke-opacity=".42" stroke-width="3"/>
+ <rect width="750" height="1000" fill="url(#cloth)"/>
+ <g fill="#fff2e9" text-anchor="middle"><text x="375" y="158" font-family="Arial,sans-serif" font-size="35" font-weight="800">ATTENDEE PASS</text><text x="375" y="340" font-family="Georgia,serif" font-size="129" font-weight="700">CampAI</text><text x="292" y="370" font-family="Arial,sans-serif" font-size="21">Presented by ◈ auth0</text></g>
+ <rect x="105" y="464" width="544" height="439" rx="17" fill="#eae7f1"/>
+ <g fill="#1a151a"><text x="135" y="618" font-family="cursive" font-style="italic" font-size="112" textLength="410" lengthAdjust="spacingAndGlyphs">Prince</text><text x="134" y="789" font-family="Arial,sans-serif" font-weight="800" font-size="22">ROLE / COMPANY</text><text x="131" y="871" font-family="cursive" font-style="italic" font-size="68" textLength="486" lengthAdjust="spacingAndGlyphs">Design Engineer</text></g>
+</svg>

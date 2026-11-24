@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1000" viewBox="0 0 720 1000">
+ <defs><pattern id="marks" width="54" height="54" patternUnits="userSpaceOnUse"><path d="M23 25h4v-4h4v4h4v4h-4v4h-4v-4h-4z" fill="#d4cfd8" transform="rotate(45 29 27)"/></pattern></defs>
+ <rect width="720" height="1000" fill="#191a1d"/><rect x="26" y="31" width="668" height="126" fill="url(#marks)"/>
+ <g fill="#f0edf4" font-family="Arial,sans-serif" text-anchor="middle">
+  <text x="360" y="203" font-size="26" letter-spacing="3">SPONSORS</text>
+  <text x="203" y="286" font-size="60" font-weight="900">WISE</text><text x="490" y="286" font-size="62" font-weight="800">askable</text>
+  <text x="192" y="423" font-size="53" font-weight="800">mpb</text><text x="489" y="423" font-size="46">exactly.ai</text>
+  <text x="360" y="558" font-size="24" letter-spacing="3">COMMUNITY PARTNERS</text>
+  <text x="182" y="620" font-size="26" font-weight="700">Fearless</text><text x="362" y="620" font-size="37">d.MBA</text><text x="537" y="620" font-size="29" font-weight="800">PD Ladies</text>
+  <text x="360" y="724" font-size="27" letter-spacing="3">EVENT PROGRAMME</text>
+ </g>
+ <path d="M67 486h586" stroke="#777680" stroke-opacity=".3"/>
+</svg>

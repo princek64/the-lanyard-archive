@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1000" viewBox="0 0 720 1000">
+ <defs><path id="mark" d="M0 0l17 14L34 0v7L17 21 0 7zm0 37V26l17-14 17 14v11l-17-14zm0 20V46l17-14 17 14v11L17 43z"/></defs>
+ <rect width="720" height="1000" fill="#111216"/>
+ <path d="M55 0h177l-16 20H37zM276 0h169l-18 20H259zM490 0h52l-17 20h-52zm112 0h52l18 20h-53z" fill="#eae7f0"/>
+ <g transform="translate(553 51) scale(1.08)"><use href="#mark" fill="#292d36"/><use href="#mark" x="41" fill="#f4f1f5"/><use href="#mark" x="82" fill="#eac247"/></g>
+ <g fill="#f3f0f5" font-family="Arial,sans-serif"><text x="36" y="65" font-size="15" letter-spacing="2">20 NOVEMBER / 2026</text><text x="36" y="107" font-size="34" font-weight="800">DDX LONDON 26</text><text x="37" y="142" font-size="24" fill="#ccb28f">Leadership Circle</text>
+ <text x="360" y="305" text-anchor="middle" font-size="30" font-weight="700">Fable   ·   dscout   ·   Huge   ·   experience haus.</text></g>
+ <path d="M57 368h164l82 80h-45l-68-44H90zm209 0h172l85 80h-51l-69-44H299zm222 0h45l62 66 70-66h34l-90 94h-25z" fill="#20232a"/>
+ <rect x="27" y="431" width="666" height="546" rx="27" fill="#eeecef"/>
+ <path d="M27 459a28 28 0 0 1 28-28h610a28 28 0 0 1 28 28v66H27z" fill="#aa130f"/>
+ <g font-family="Arial,sans-serif"><text x="68" y="482" fill="#fae9ea" font-size="15">ddxconference.com/london</text><text x="652" y="482" text-anchor="end" fill="#fae9ea" font-size="15">#ddx26</text>
+ <rect x="69" y="554" width="168" height="43" rx="22" fill="#a51915"/><text x="153" y="581" text-anchor="middle" fill="#fff0ed" font-size="14" letter-spacing="2" font-weight="700">TEAM MEMBER</text>
+ <text x="67" y="687" fill="#141317" font-size="78" font-weight="800">Prince</text><text x="78" y="805" fill="#171418" font-family="cursive" font-style="italic" font-size="76" textLength="556" lengthAdjust="spacingAndGlyphs">Design Engineer</text><path d="M76 819h570" stroke="#242127" stroke-width="1.5"/></g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1000" viewBox="0 0 720 1000">
+ <defs><path id="mark" d="M0 0l17 14L34 0v7L17 21 0 7zm0 37V26l17-14 17 14v11l-17-14zm0 20V46l17-14 17 14v11L17 43z"/></defs>
+ <rect width="720" height="1000" fill="#111216"/>
+ <g transform="translate(470 47) scale(1.7)"><use href="#mark" fill="#232630"/><use href="#mark" x="38" fill="#323642"/><use href="#mark" x="76" fill="#f1edf3"/></g>
+ <g fill="#f5f1f4" font-family="Arial,sans-serif" font-size="43" font-weight="800"><text x="49" y="100">Think.</text><text x="49" y="148">Innovate.</text><text x="49" y="196" font-family="Georgia,serif" font-style="italic">Repeat.</text></g>
+ <text x="360" y="334" text-anchor="middle" fill="#eee9ef" font-family="Arial,sans-serif" font-size="26" font-weight="700">Fable   ·   dscout   ·   Huge   ·   experience haus.</text>
+ <g fill="#1b1e26" stroke="#2b2c35"><rect x="40" y="412" width="308" height="182" rx="17"/><rect x="372" y="412" width="308" height="182" rx="17"/><rect x="40" y="612" width="308" height="261" rx="17"/><rect x="372" y="612" width="308" height="261" rx="17"/></g>
+ <g fill="#e9e5ef" font-family="Arial,sans-serif"><text x="69" y="494" font-size="32" font-weight="700">Website</text><text x="69" y="535" font-size="18">Event information</text><text x="401" y="494" font-size="32" font-weight="700">WhatsApp</text><text x="401" y="535" font-size="18">Connect with the audience</text><text x="69" y="714" font-size="30" font-weight="700">Feedback</text><text x="69" y="758" font-size="18">Share your thoughts</text><text x="401" y="714" font-size="30" font-weight="700">Social media</text><text x="401" y="758" font-size="18">Instagram · LinkedIn</text></g>
+ <path d="M35 964a27 27 0 0 1 27-27h596a27 27 0 0 1 27 27v36H35z" fill="#ac1714"/><path d="M65 907h170l83 93h-49l-52-60H128l52 60h-45zm203 0h171l86 93h-50l-51-60h-96l55 60h-44zm194 0h48l58 61 54-61h48l-82 93h-44z" fill="#e9e4ed"/>
+</svg>

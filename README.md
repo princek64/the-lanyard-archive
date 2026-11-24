@@ -1,6 +1,6 @@
 # The Lanyard Archive
 
-A personal exhibition of lanyards and conference badges from London. The prototype presents one real badge and two fictional examples in a scrollable 3D space, with a physics-driven close-up viewer and a short story for each object.
+A personal exhibition of lanyards and conference badges from London. The prototype presents fifteen real badges in a scrollable 3D space, with a physics-driven close-up viewer and a catalogue record for each object.
 
 ## Development
 
@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-Open [localhost:3000](http://localhost:3000). Scroll or use the stop buttons to move through the exhibition. Choose **Inspect badge**, then drag and release to watch it swing. Shift-drag to rotate with a mouse, or use **Flip badge**, **Front** and **Back**. Use Escape or **Back to exhibition** to return to the same stop.
+Open [localhost:3000](http://localhost:3000). Scroll, use the arrows, or choose a badge from Object index to move through the exhibition. Choose **Inspect badge**, then drag and release to watch it swing. Shift-drag to rotate with a mouse, or use **Flip badge**, **Front** and **Back**. Use Escape or **Back to exhibition** to return to the same stop.
 
 ```sh
 npm run lint

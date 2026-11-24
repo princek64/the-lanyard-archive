@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="384" viewBox="0 0 128 384">
+ <defs><pattern id="icons" width="64" height="64" patternUnits="userSpaceOnUse"><circle cx="17" cy="17" r="12" fill="none" stroke="#b66258" stroke-width="1.5"/><path d="M17 11l2 4 4 2-4 2-2 4-2-4-4-2 4-2z" fill="#773641"/><circle cx="48" cy="44" r="14" fill="none" stroke="#b66258" stroke-width="1.5"/><circle cx="48" cy="44" r="5" fill="#833c41"/></pattern></defs>
+ <rect width="128" height="384" fill="#f2e6e4"/><rect width="128" height="384" fill="url(#icons)"/>
+ <g transform="translate(37 134) rotate(90)"><rect x="0" y="-51" width="121" height="59" rx="17" fill="#c35442"/><text x="60" y="-13" text-anchor="middle" font-family="Arial,sans-serif" fill="#fff1eb" font-size="32" font-weight="800">SEV0</text></g>
+</svg>

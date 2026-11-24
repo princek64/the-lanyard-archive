@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="580" viewBox="0 0 128 580">
+ <defs><pattern id="weave" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M1 0v5m2-5v5" stroke="#333338" stroke-width=".7"/></pattern></defs>
+ <rect width="128" height="580" fill="#19191d"/><rect width="128" height="580" fill="url(#weave)"/>
+ <g transform="translate(33 55) rotate(90)" fill="#f2effa" color="#f2effa"><path d="M20-56l24 11c0 27-12 43-24 47C8-2-4-18-4-45z" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="12" cy="-28" r="3"/><path d="M24-29h10m-20 11q6 9 13 0" fill="none" stroke="currentColor" stroke-width="3"/>
+  <text x="90" y="0" font-family="Arial,sans-serif" font-size="69" font-weight="700" textLength="380" lengthAdjust="spacingAndGlyphs">Git Nation</text>
+ </g>
+</svg>

@@ -3,7 +3,7 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Suspense, useEffect, useMemo, useRef } from "react";
 import { Group, MathUtils, Object3D, Vector3 } from "three";
-import type { BadgeConfig } from "../lib/badges";
+import { ribbonOffsets, type BadgeConfig } from "../lib/badges";
 import { BadgeAttachment, BadgeMesh, units } from "./badge-mesh";
 import { useBadgeTexture } from "./badge-texture";
 
@@ -50,16 +50,18 @@ function DisplayBadge({ config, index, active, reducedMotion, onInspect }: {
     <group position={[index * spacing, 1.43, -index * depthStep]}>
       <primitive object={lightTarget} />
       <spotLight position={[-0.65, 0.7, 2.7]} target={lightTarget} color="#f4eaff"
-        intensity={active ? 22 : 9} distance={5} angle={0.46} penumbra={0.9} decay={2} />
+        intensity={active ? 26 : 4} distance={5} angle={0.46} penumbra={0.9} decay={2} />
       <group ref={pivot} onClick={event => { event.stopPropagation(); onInspect(); }}
         onPointerOver={event => { event.stopPropagation(); hovering.current = true; }}
         onPointerOut={() => { hovering.current = false; }}>
-        <mesh position={[0, -length / 2, 0]}>
-          <boxGeometry args={[width, length, 0.014]} />
-          {config.lanyard.texture
-            ? <PrintedRibbon texture={config.lanyard.texture} repeat={Math.max(1, length / (width * (config.lanyard.repeatAspect ?? 3)))} />
-            : <meshStandardMaterial color={config.lanyard.colour} roughness={0.96} />}
-        </mesh>
+        {ribbonOffsets(config.lanyard).map(offset => (
+          <mesh key={offset} position={[units(offset), -length / 2, 0]}>
+            <boxGeometry args={[width, length, 0.014]} />
+            {config.lanyard.texture
+              ? <PrintedRibbon texture={config.lanyard.texture} repeat={Math.max(1, length / (width * (config.lanyard.repeatAspect ?? 3)))} />
+              : <meshStandardMaterial color={config.lanyard.colour} roughness={0.96} />}
+          </mesh>
+        ))}
         <group position={[0, -length, 0]}>
           <BadgeAttachment config={config} />
           <BadgeMesh config={config} />
@@ -73,8 +75,8 @@ function CameraTravel({ active, reducedMotion }: Pick<Props, "active" | "reduced
   const target = useRef(new Vector3());
   const { size } = useThree();
   useFrame(({ camera }, delta) => {
-    const distance = size.width < 650 ? 4.95 : 4.45;
-    target.current.set(active * spacing, 0.09, distance - active * depthStep);
+    const distance = Math.max(3.7, 2.5 * size.height / Math.max(1, size.width));
+    target.current.set(active * spacing, -0.38, distance - active * depthStep);
     if (reducedMotion) camera.position.copy(target.current);
     else camera.position.lerp(target.current, 1 - Math.exp(-5 * delta));
   });
@@ -94,7 +96,7 @@ function SceneLifecycle({ onReady, onUnavailable }: Pick<Props, "onReady" | "onU
 
 export default function ExhibitionScene(props: Props) {
   return (
-    <Canvas frameloop={props.paused ? "never" : "always"} camera={{ position: [0, 0.09, 4.45], fov: 37, near: 0.1, far: 32 }}
+    <Canvas frameloop={props.paused ? "never" : "always"} camera={{ position: [0, -0.38, 3.7], rotation: [0, 0, 0], fov: 37, near: 0.1, far: 32 }}
       dpr={[1, 1.5]} gl={{ alpha: true, antialias: true, powerPreference: "low-power" }}>
       <ambientLight color="#dddafa" intensity={0.64} />
       <directionalLight color="#c8d3ff" intensity={1.15} position={[1, 3, -4]} />

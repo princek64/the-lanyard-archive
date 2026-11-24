@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="1000" viewBox="0 0 700 1000">
+ <defs><pattern id="grain" width="9" height="7" patternUnits="userSpaceOnUse"><path d="M1 2h1m3 3h1" stroke="#ffe5db" opacity=".13"/></pattern></defs>
+ <rect width="700" height="1000" fill="#ac100b"/><rect width="700" height="1000" fill="url(#grain)"/>
+ <path d="M350 195q43 23 93 36c0 111-29 208-93 217-63-9-93-106-93-217q50-13 93-36z" stroke="#f6f2ed" stroke-width="22" fill="none"/>
+ <circle cx="315" cy="297" r="18" fill="none" stroke="#f6f2ed" stroke-width="15"/><path d="M359 295h51m-93 77a34 34 0 0 0 68 0" fill="none" stroke="#f6f2ed" stroke-width="17"/>
+ <text x="350" y="733" font-family="Arial,sans-serif" text-anchor="middle" font-weight="800" font-size="68" fill="#f6f2ed">PRINCE</text>
+ <path d="M0 905h700v95H0z" fill="#f1edea"/>
+ <text x="350" y="966" font-family="Arial,sans-serif" text-anchor="middle" font-weight="800" font-size="42" fill="#98130e">CREW</text>
+</svg>

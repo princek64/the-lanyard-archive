@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="1000" viewBox="0 0 640 1000">
+ <rect width="640" height="1000" fill="#211b38"/>
+ <path d="M48 39h546v25h26v857h-20v38H83v-23H21V64h27z" fill="#eeecf0"/>
+ <g font-family="Arial,sans-serif" fill="#191820" font-weight="700">
+  <text x="59" y="115" font-size="31">Ground floor</text>
+  <text x="59" y="508" font-size="31">First floor</text>
+ </g>
+ <g stroke="#302e37" stroke-width="3">
+  <path d="M55 325q17-143 171-167h348v163H55z" fill="#e1dfe4"/>
+  <path d="M62 307h506m-470-42h124m-74-73v130m62-159v160m24-166v168m284-164v165m32-166v164" fill="none"/>
+  <path d="M251 168h103v119H251z" fill="#b0a11c"/><path d="M371 168h149v119H371z" fill="#873d68"/><path d="M520 170h48v69h-48z" fill="#3886a5"/><path d="M558 242h20v66h-20z" fill="#79964d"/><path d="M414 288h78v41h-78z" fill="#51477e"/>
+  <path d="M71 701q31-111 152-144h344v156H71z" fill="#e1dfe4"/>
+  <path d="M127 617h107v82H105zm109-62h53v44h-53z" fill="#873d68"/><path d="M236 554h55v45h-55z" fill="#b0a11c"/>
+  <path d="M291 553h124v42H291z" fill="#51477e"/><path d="M415 554h135v41H415z" fill="#3886a5"/><path d="M448 664h101v51H448z" fill="#79964d"/>
+  <path d="M291 595h124v99H291zm0 0l124 99m0-99l-124 99" fill="none"/>
+ </g>
+ <g font-family="Arial,sans-serif" font-weight="700" font-size="20" fill="#24212a">
+  <text x="66" y="374">1  Entrance/Exit</text><text x="329" y="374">4  Frontier Trading Pub</text>
+  <text x="66" y="411">2  Sponsor Activations</text><text x="329" y="411">5  Food &amp; Beverage</text>
+  <text x="66" y="448">3  Main Stage</text>
+  <text x="66" y="768">1  AI Zone</text><text x="329" y="768">4  Builder Zone</text>
+  <text x="66" y="805">2  Sponsor Activations</text><text x="329" y="805">5  Food &amp; Beverage</text>
+  <text x="66" y="842">3  Royal Exchange</text>
+ </g>
+</svg>

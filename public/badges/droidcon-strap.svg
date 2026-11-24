@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="770" viewBox="0 0 128 770">
+ <defs><pattern id="weave" width="5" height="6" patternUnits="userSpaceOnUse"><path d="M1 0v6m2-6v6" stroke="#383940" stroke-width=".65"/></pattern></defs>
+ <rect width="128" height="770" fill="#191a20"/><rect width="128" height="770" fill="url(#weave)"/>
+ <g transform="translate(30 32) rotate(90)" fill="#ececf3" font-family="Arial,sans-serif" font-size="66">
+  <text x="0" y="0" textLength="385" lengthAdjust="spacingAndGlyphs"><tspan fill="#6bb9bb" font-weight="700">droidcon</tspan>london</text>
+  <text x="440" y="0" font-size="61" textLength="243" lengthAdjust="spacingAndGlyphs">#<tspan fill="#6bb9bb" font-weight="700">dc</tspan>ldn25</text>
+ </g>
+</svg>

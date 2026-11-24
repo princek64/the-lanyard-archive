@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1000" viewBox="0 0 720 1000">
+ <defs><pattern id="layers" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(42)"><path d="M0 0v7" stroke="#d9c9ff" stroke-opacity=".18"/></pattern></defs>
+ <rect width="720" height="1000" fill="#9a73db"/>
+ <rect x="22" y="28" width="676" height="956" rx="24" fill="#141419"/>
+ <path d="M4 124h35V61h118v64h31V4h344v121h31V61h118v63h35v509H4z" fill="#9c76dc"/>
+ <path d="M4 124h35V61h118v64h31V4h344v121h31V61h118v63h35v509H4z" fill="url(#layers)"/>
+ <rect x="205" y="67" width="310" height="28" rx="5" fill="#272035"/>
+ <path d="M224 80h10m41 0h10m41 0h10m41 0h10m41 0h10m41 0h10" stroke="#ac8ce4" stroke-width="8"/>
+ <rect x="115" y="228" width="490" height="344" rx="12" fill="#654a94"/>
+ <rect x="124" y="237" width="472" height="326" rx="7" fill="#10121b"/>
+ <path d="M125 274h470" stroke="#716aaa" stroke-width="2"/><path d="M242 361h233" stroke="#65bdad" stroke-width="3"/>
+ <g fill="#edf0fb" font-family="monospace">
+  <text x="141" y="261" font-size="19">≡ My Badge</text><text x="581" y="261" text-anchor="end" font-size="15">76%</text>
+  <text x="360" y="324" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="38">@pixelprincedev</text>
+  <text x="360" y="350" text-anchor="middle" fill="#989bb5" font-size="16">MY BADGE · LV 0</text>
+  <g text-anchor="middle" font-size="25"><text x="186" y="408" fill="#71dbbd">200</text><text x="299" y="408">0</text><text x="413" y="408">–</text><text x="534" y="408">0</text></g>
+  <g text-anchor="middle" font-size="15" fill="#9799b0"><text x="186" y="434">LAMPS</text><text x="299" y="434">LEVEL</text><text x="413" y="434">PAGES</text><text x="534" y="434">PACKS</text></g>
+  <text x="360" y="527" text-anchor="middle" fill="#9799b0" font-size="16">Wi-Fi is off · saved data</text>
+ </g>
+ <path d="M246 381v68m112-68v68m114-68v68" stroke="#282a3a"/>
+ <rect x="646" y="255" width="20" height="24" rx="4" fill="#34264e"/><rect x="646" y="520" width="20" height="24" rx="4" fill="#34264e"/>
+ <g fill="#292831" stroke="#777480" stroke-width="3">
+  <circle cx="208" cy="715" r="29"/><circle cx="115" cy="788" r="29"/><circle cx="288" cy="787" r="29"/>
+  <circle cx="208" cy="862" r="29"/><circle cx="579" cy="727" r="29"/><circle cx="481" cy="824" r="29"/>
+ </g>
+ <g fill="#e0dfe6" font-family="monospace" font-size="13" font-weight="bold">
+  <text x="236" y="738">UP</text><text x="137" y="808">LEFT</text><text x="319" y="807">RIGHT</text><text x="231" y="884">DOWN</text>
+  <text x="609" y="755">CANCEL</text><text x="511" y="848">SELECT</text>
+ </g>
+</svg>

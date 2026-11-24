@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="640" viewBox="0 0 128 640">
+ <defs><pattern id="weave" width="5" height="6" patternUnits="userSpaceOnUse"><path d="M1 0v6m2-6v6" stroke="#3d3c45" stroke-width=".65"/></pattern></defs>
+ <rect width="128" height="640" fill="#1a191e"/><rect width="128" height="640" fill="url(#weave)"/>
+ <text transform="translate(34 57) rotate(90)" fill="#e24f32" font-family="Arial,sans-serif" font-size="78" textLength="521" lengthAdjust="spacingAndGlyphs">theodo.</text>
+</svg>

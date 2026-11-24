@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="690" height="1000" viewBox="0 0 690 1000">
+ <defs><radialGradient id="top" cx=".52" cy="0" r=".67"><stop stop-color="#8a200c"/><stop offset="1" stop-color="#e49421"/></radialGradient><radialGradient id="bottom" cx=".48" cy="1" r=".56"><stop stop-color="#8a2810"/><stop offset="1" stop-color="#d97512" stop-opacity="0"/></radialGradient><pattern id="grain" width="7" height="9" patternUnits="userSpaceOnUse"><path d="M2 2h1m3 4h1" stroke="#833d23" stroke-opacity=".21"/></pattern></defs>
+ <rect width="690" height="1000" fill="url(#top)"/><rect width="690" height="1000" fill="url(#bottom)"/><rect width="690" height="1000" fill="url(#grain)"/>
+ <path d="M117 56l10 7 12-3 7 10 12 3 3 13 9 8-5 12 2 12-11 6-5 12-13-2-11 7-10-7-13 2-5-12-11-6 2-12-5-12 9-8 3-13 12-3 7-10 12 3z" transform="translate(-4 10)" fill="none" stroke="#f8efe2" stroke-width="8"/><rect x="106" y="98" width="30" height="20" rx="8" fill="none" stroke="#f8efe2" stroke-width="7"/>
+ <g font-family="monospace" fill="#f7eddf" font-weight="700" font-size="72"><text x="563" y="101">20</text><text x="563" y="163">26</text></g>
+ <text x="72" y="466" fill="#171312" font-family="cursive" font-style="italic" font-size="185" textLength="512" lengthAdjust="spacingAndGlyphs">Prince</text>
+ <circle cx="588" cy="561" r="25" fill="#efdfca" opacity=".88"/>
+ <text x="63" y="840" font-family="Arial,sans-serif" font-size="78" fill="#fff3e1" font-weight="700">Flower</text>
+ <g fill="#fff0d5" font-family="monospace"><text x="66" y="890" font-size="44">AI SUMMIT</text><text x="343" y="814" font-size="28">Open-Source</text><text x="343" y="852" font-size="28">Federated AI</text><text x="343" y="890" font-size="28">Agentic AI</text></g>
+ <text x="650" y="915" transform="rotate(-90 650 915)" font-family="monospace" font-size="45" fill="#1b1512">ATTENDEE</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+ <defs><path id="pixel" d="M38 0h42a8 8 0 0 1 8 8v25h28a8 8 0 0 1 8 8v33a8 8 0 0 1-8 8H88v25a8 8 0 0 1-8 8H38a8 8 0 0 1-8-8V82H8a8 8 0 0 1-8-8V41a8 8 0 0 1 8-8h22V8a8 8 0 0 1 8-8z"/><linearGradient id="warm" x2="0" y2="1"><stop stop-color="#eac041"/><stop offset=".55" stop-color="#d86526"/><stop offset="1" stop-color="#c14566"/></linearGradient></defs>
+ <rect width="800" height="1000" fill="#1c1d20"/>
+ <use href="#pixel" transform="translate(-44 9) scale(1.56)" fill="#7cc09d"/><use href="#pixel" transform="translate(236 14) scale(1.45)" fill="#6c63bf"/><use href="#pixel" transform="translate(344 14) scale(1.45)" fill="#6c63bf"/><use href="#pixel" transform="translate(646 -5) scale(1.54)" fill="url(#warm)"/>
+ <path d="M0 117h800" stroke="#777784" stroke-opacity=".5"/>
+ <rect x="47" y="411" width="706" height="281" rx="23" fill="none" stroke="#50505a"/>
+ <rect x="47" y="816" width="706" height="207" rx="23" fill="none" stroke="#50505a"/>
+ <g font-family="Arial,sans-serif" fill="#efedf5"><text x="91" y="509" font-size="27" font-weight="700">GET THE APP →</text><text x="91" y="543" font-size="23">View the schedule,</text><text x="91" y="573" font-size="23">win prizes &amp; more</text><text x="91" y="637" font-size="24" fill="#9bc3a8">app.ainativedevcon.io</text><text x="93" y="900" font-size="26">@ainativedev</text><text x="93" y="932" font-size="26">#ainativedevcon</text>
+ <text x="444" y="915" font-size="16" font-weight="700" letter-spacing="2">POWERED BY</text><text x="616" y="927" font-size="43">Tessl</text></g>
+ <path d="M588 888l-16 9v24l16 9 16-9v-24zm0 0v19m-16-10 16 10 16-10m-16 10v23" fill="none" stroke="#efedf5" stroke-width="3" stroke-linejoin="round"/>
+</svg>

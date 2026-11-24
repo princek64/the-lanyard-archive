@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+ <defs><path id="pixel" d="M38 0h42a8 8 0 0 1 8 8v25h28a8 8 0 0 1 8 8v33a8 8 0 0 1-8 8H88v25a8 8 0 0 1-8 8H38a8 8 0 0 1-8-8V82H8a8 8 0 0 1-8-8V41a8 8 0 0 1 8-8h22V8a8 8 0 0 1 8-8z"/><linearGradient id="crew"><stop stop-color="#6cb367"/><stop offset="1" stop-color="#9bc4b5"/></linearGradient><linearGradient id="warm" x2="0" y2="1"><stop stop-color="#eac041"/><stop offset=".55" stop-color="#d86526"/><stop offset="1" stop-color="#c14566"/></linearGradient></defs>
+ <rect width="800" height="1000" fill="#141416"/>
+ <use href="#pixel" x="-6" y="-56" fill="#827ac8"/><use href="#pixel" x="694" y="-20" fill="url(#warm)"/>
+ <use href="#pixel" transform="translate(-35 703) scale(1.65)" fill="#7fbf9a"/>
+ <use href="#pixel" transform="translate(235 700) scale(1.6)" fill="#6762b9"/><use href="#pixel" transform="translate(343 700) scale(1.6)" fill="#6762b9"/>
+ <use href="#pixel" transform="translate(640 702) scale(1.65)" fill="url(#warm)"/>
+ <rect x="96" y="207" width="137" height="134" rx="23" fill="#f0eef2"/>
+ <g font-family="Arial,sans-serif"><text x="165" y="311" text-anchor="middle" fill="#17171b" font-size="119">AI</text><text x="249" y="309" fill="#f4f1f6" font-size="113" letter-spacing="-7">DevCon</text><text x="687" y="363" text-anchor="end" fill="#f4f1f6" font-size="44">by Tessl</text></g>
+ <rect x="69" y="436" width="662" height="291" rx="29" fill="#e8e5ed"/>
+ <g font-family="Arial,sans-serif" fill="#1d1b20"><text x="117" y="551" font-size="89" font-weight="800">Prince</text><text x="122" y="611" font-size="41" font-weight="700">Kukreja</text><text x="122" y="655" font-size="29">Design Engineer</text><text x="122" y="685" font-size="29">Birkbeck</text></g>
+ <rect y="910" width="800" height="90" fill="url(#crew)"/><text x="400" y="966" text-anchor="middle" font-family="Arial,sans-serif" fill="#161d19" font-size="42" letter-spacing="3">CREW</text>
+</svg>

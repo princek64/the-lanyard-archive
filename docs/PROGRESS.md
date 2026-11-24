@@ -35,3 +35,39 @@ One cold local Chromium run measured about 1.23 seconds to first contentful pain
 Replaced the third fictional stop with the first real badge. The card face and branded woven strap are vector reconstructions from the submitted reference photos, and the rectangular swivel clip is modelled from the front and reverse views. Both badge faces use the same design shown in the references. Dimensions are estimated and the catalogue records the year and city from the badge.
 
 ESLint, TypeScript and the Next.js production build passed. Chromium verified the new record, drag and release, keyboard face switching, touch browsing and panel scrolling, and the static artwork fallback. The update remains in the Cloud workspace for review before publishing the named badge.
+
+## Solana electronic badge
+
+Replaced the Relay placeholder at stop 02 with a vector reconstruction of the photographed electronic badge. The front shows the recorded screen, the back shows the vent pattern, and the 3D model adds a thicker purple enclosure, six raised controls, two clips and two branded ribbons. Dimensions are estimates. The catalogue uses a descriptive title because the event and date have not been supplied.
+
+ESLint, TypeScript and the production build passed. Chromium verified desktop and touch navigation, mesh selection, keyboard face switching, pointer release, touch dragging and scrolling on the electronic exhibit, and the static back artwork with WebGL disabled. The update is in the Cloud workspace for review.
+
+## Breakpoint, Git Nation and CityJS
+
+Added Breakpoint 2026 at stop 01, replacing the final fictional badge, and added the Git Nation crew pass and CityJS London 2026 at stops 04 and 05. The face and strap textures are reconstructions from the references. Breakpoint has two purple straps and a schematic floor plan on the back. Git Nation uses the matching red artwork shown in both views. CityJS has a white printed strap and a distinct schedule reverse. The catalogue marks all new measurements as estimated and includes event details only where known.
+
+Lint, TypeScript and the production build passed. Chromium verified 3D inspection and keyboard flipping at all five stops, touch scrolling and drag release at 320 pixels, and the CityJS reverse with WebGL disabled. This update remains in Codex Cloud for review.
+
+## CampAI, DDX London, BrainStation and Flower AI Summit
+
+Added four photo-based reconstructions as stops 06–09. CampAI has a blank light reverse, DDX includes the 20 November 2026 date printed on its face, BrainStation has a blank label on the reverse, and Flower uses its distinct orange programme reverse and blue strap fitting. All four sets of dimensions are estimated. QR codes are omitted.
+
+SVGs parsed successfully. ESLint, TypeScript and the production build passed. Chromium verified keyboard face switching and Escape at all nine stops, visible navigation at 320 pixels, native touch browsing, drag release and the Flower reverse without WebGL. The update is in the Cloud workspace for review.
+
+## droidcon London, SEV0 and Ship LDN
+
+Added photo-based reconstructions at stops 10–12. droidcon London uses its 30–31 October 2025 catalogue date and preserves the separate 2026 Berlin advertisement on the reverse. SEV0 uses the matching print on both photographed faces and a printed double lanyard. Ship LDN features the attendee artwork on the front and the exploded diagram and Vercel mark on the reverse. QR codes and printed Wi-Fi credentials are excluded. Physical measurements are estimated.
+
+SVG parsing, ESLint, TypeScript and the production build passed. Chromium verified all twelve records and keyboard flipping, two-row navigation at 320 pixels, native touch browsing, touch release and the Ship LDN reverse without WebGL. The update is in the Cloud workspace for review.
+
+## AI DevCon, RNLConf and design+AI
+
+Added three photo-based reconstructions at stops 13–15. AI DevCon uses its crew artwork and double lanyard, RNLConf uses the matching Tower Bridge artwork on both faces, and design+AI has separate volunteer and sponsor faces. Dimensions are estimated, and unconfirmed dates and venues are omitted.
+
+SVG parsing, ESLint, TypeScript and the production build passed. Chromium verified all fifteen records, keyboard flipping and Escape, two-row navigation at 320 pixels, native touch browsing, touch release and the design+AI reverse without WebGL. The update is in the Cloud workspace for review.
+
+## Exhibition interface redesign
+
+Rebuilt the live exhibition around a paper catalogue column and an uninterrupted dark viewing area. Added a named, keyboard-accessible index, reduced the scroll distance between stops and restyled the inspection panel. The badge camera has a straight viewing angle and leaves clearance below the card.
+
+ESLint, TypeScript and the production build passed. Chromium verified all fifteen objects, keyboard flipping, Escape, index selection, 320-pixel touch scrolling and drag release, and the WebGL fallback. The final framing was also checked with direct mesh selection, index focus restoration, next and previous controls, and portrait and landscape layout. Screenshots show the production build in Codex Cloud.

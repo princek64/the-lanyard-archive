@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="1050" viewBox="0 0 128 1050">
+ <defs><pattern id="weave" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M1 0v5m2-5v5" stroke="#c8c7cf" stroke-width=".7"/></pattern></defs>
+ <rect width="128" height="1050" fill="#eeeef0"/><rect width="128" height="1050" fill="url(#weave)"/>
+ <g transform="translate(33 55) rotate(90)" fill="#23212c" color="#23212c">
+  <text x="0" y="0" font-family="Arial,sans-serif" font-size="57" font-weight="700" textLength="940" lengthAdjust="spacingAndGlyphs">CityJS  ·  tether.  ·  Zephyr Cloud  ·  imagekit.io</text>
+ </g>
+</svg>

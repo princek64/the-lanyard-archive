@@ -17,3 +17,23 @@
 ## First real badge
 
 Houdini HIVEalt London 2026 uses one artwork texture on both faces because both reference photographs show matching print. Artwork and the woven Houdini ribbon are redrawn from the photos. An optional attachment variant selects the rectangular swivel clip in the browse and focus views, and a configurable repeat aspect keeps printed strap artwork proportional. The event panel omits unavailable pass type and personal notes and marks the dimensions as estimated.
+
+## Electronic badge
+
+The Solana exhibit uses an estimated thick enclosure, separate face textures and raised control meshes. The screen and rear vent pattern are recorded as artwork. Two clips and ribbons branch from the existing suspended physics chain and follow the rotating badge in focus. The event name, date and location are omitted until supplied.
+
+## Five-stop exhibition
+
+Scroll travel scales with the number of transitions so adding stops preserves the existing scroll distance between badges. The three latest card exhibits share a snap-hook attachment model with a configurable single or double ribbon. Breakpoint's illustrated reverse is a schematic based on the photo. Personal and schedule QR codes are omitted because their destinations were not supplied.
+
+## Nine-stop navigation
+
+The numbered navigation wraps into two rows at narrow widths and reserves space below the canvas. A configurable metal sleeve reuses the snap-hook assembly for the satin BrainStation and blue Flower strap fittings. DDX reverse panels retain the printed section labels and omit the reference QR codes. The Flower programme QR code is also omitted.
+
+The twelve-stop exhibition uses two rows of seven navigation controls on narrow phones. The wider stacked layout also covers tablets where the event label and fourteen controls would compete for space. The droidcon reverse keeps the Berlin promotion separate from the London event record. Ship LDN retains the artwork and Vercel mark, with its printed Wi-Fi credentials omitted.
+
+The fifteen-stop exhibition retains every direct stop control. The layout stacks controls on tablets and uses two rows on smaller screens. RNLConf shares one texture across its matching photographed faces. The AI DevCon and design+AI reverse reconstructions retain the printed app and programme labels with QR codes omitted.
+
+## Catalogue redesign
+
+The exhibition separates the active object and controls from the dark viewing area. A named index replaces the persistent numbered button rows while preserving direct access to every stop, sequential buttons and native scroll. The index restores focus on dismissal and reveals the selected row when reopened. The focus viewer shares the same paper and studio surfaces. The loading and WebGL fallback view renders the selected object and its immediate neighbours.

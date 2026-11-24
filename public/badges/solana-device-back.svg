@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1000" viewBox="0 0 720 1000">
+ <defs>
+  <pattern id="weave" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(42)"><path d="M0 0v6" stroke="#bf9ff6" opacity=".27"/></pattern>
+  <pattern id="vents" x="0" y="0" width="54" height="44" patternUnits="userSpaceOnUse">
+   <path id="vent" d="M9 0l3 6 6 3-6 3-3 6-3-6-6-3 6-3z" fill="#1d1430"/>
+   <use href="#vent" x="27" y="22"/>
+  </pattern>
+ </defs>
+ <rect width="720" height="1000" fill="#7751bd"/>
+ <path fill="#8660ce" d="M5 120h22V53h128v68h42V5h326v116h42V53h128v67h22v875H5z"/>
+ <path fill="url(#weave)" d="M5 120h22V53h128v68h42V5h326v116h42V53h128v67h22v875H5z"/>
+ <path d="M28 49h122v68H28zm542 0h122v68H570z" fill="#261b39"/>
+ <path fill="url(#vents)" d="M98 170h495v107l-99 114-119 129H218l-47 155v200H93V485l94-115-89-52z"/>
+ <path fill="#302140" stroke="#a584dd" stroke-width="6" stroke-linejoin="round" d="M267 554h27v-16h42v13h43v-14h37v15h32v25h27v18h-38v24h-30v28h36v22h-27v20h-19v30h-21v29h-18v26h-27v30h-36v32h-37v-18h-19v-25h26v-31h53v-34h-27v-48h-36v-26h42v-24h19v-28h-61z"/>
+ <path fill="#a380dc" d="M350 575h19v178h-19z"/>
+ <text x="360" y="941" text-anchor="middle" fill="#6c47ac" stroke="#a987e2" stroke-width=".8" font-family="monospace" font-size="45">frames.ag</text>
+</svg>

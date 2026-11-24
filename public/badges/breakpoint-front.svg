@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="1000" viewBox="0 0 640 1000">
+ <defs><pattern id="columns" width="116" height="188" patternUnits="userSpaceOnUse"><path fill="#171421" d="M0 0h116v188H0z"/><path fill="#282435" d="M9 0h13v150H9zm49 0h10v188H58zm44 0h14v131h-14z"/><path fill="#0e0d13" d="M30 0h26v160H30zm47 14h19v142H77z"/></pattern></defs>
+ <rect width="640" height="1000" fill="#433972"/>
+ <path fill="#1b1728" d="M0 575h130v32h112v61h40v-58h170l188-78v468H0z"/>
+ <path fill="url(#columns)" d="M0 596h130v32h109v70h43v-65h170l188-78v430H0z"/>
+ <path d="M0 812l255-172 63 28-195 332H0zm640-89l-211-54-21 47 150 284h82z" fill="#110f18" opacity=".65"/>
+ <path d="M575 232h24v78h-24zm31 146h34v19h-34zm3 57h31v51h-31z" fill="#161321"/>
+ <g fill="#e7e5f1">
+  <path d="M80 77h83l-17 18H62zm-18 25h84l17 18H80zm18 25h83l-17 18H62z"/>
+  <text x="176" y="146" font-family="Arial,sans-serif" font-weight="900" font-size="99" textLength="388" lengthAdjust="spacingAndGlyphs">BP26</text>
+  <g font-family="Arial,sans-serif" text-anchor="middle">
+   <text x="320" y="306" font-size="66" font-weight="700">Prince</text>
+   <text x="320" y="410" font-size="46">Design Engineer</text>
+   <text x="320" y="472" font-size="46">PixelPrince</text>
+  </g>
+ </g>
+ <path d="M48 817h544v105h-20v12H69v-18H39v-33h9z" fill="#4d4380"/>
+ <text x="320" y="885" text-anchor="middle" font-family="monospace" font-size="36" fill="#efedf6">ATTENDEE</text>
+</svg>
