@@ -13,3 +13,7 @@
 - **Physics budget.** The exhibition uses mesh-only objects with lightweight sway. Opening focus pauses its render loop and mounts the Phase 1 Rapier rig for one badge. Closing focus disposes that viewer and resumes the exhibition.
 - **Focus and content.** A native modal dialog handles keyboard containment and Escape. The active stop and opening control are preserved. Event record components are rendered on the server and passed to the client shell.
 - **Fallback.** The exhibition initially shows the badge artwork. Canvas readiness replaces it with the scene. If WebGL is unavailable or lost, the artwork remains selectable and the focused viewer provides front and back images.
+
+## First real badge
+
+Houdini HIVEalt London 2026 uses one artwork texture on both faces because both reference photographs show matching print. Artwork and the woven Houdini ribbon are redrawn from the photos. An optional attachment variant selects the rectangular swivel clip in the browse and focus views, and a configurable repeat aspect keeps printed strap artwork proportional. The event panel omits unavailable pass type and personal notes and marks the dimensions as estimated.

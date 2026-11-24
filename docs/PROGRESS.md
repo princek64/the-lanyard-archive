@@ -29,3 +29,9 @@ Fixed the pinned exhibition height on short landscape screens, aligned the stop 
 The rebuilt production server passed ESLint, TypeScript and Next.js build. Chromium and axe-core checked the normal and static views at nine viewport sizes from 320 × 568 to 1920 × 1080, including 667 × 375 and 844 × 390 landscape. The automated scans reported no selected WCAG A/AA violations in the browse view or sampled focus panels. Keyboard containment, repeated dialog cleanup, focus restoration, normal WebGL rendering, WebGL context loss in both viewers, emitted resource requests and the existing desktop and touch smoke checks passed.
 
 One cold local Chromium run measured about 1.23 seconds to first contentful paint and 375 KiB of encoded JavaScript through first scene readiness. These are lab observations on the Cloud runtime, without Vercel delivery or real-device performance data. WebKit could not run because the Cloud host lacked libraries, and Firefox exited during profile startup. Safari on a physical iPhone and a deployed Vercel preview still need verification.
+
+## Houdini HIVEalt London 2026
+
+Replaced the third fictional stop with the first real badge. The card face and branded woven strap are vector reconstructions from the submitted reference photos, and the rectangular swivel clip is modelled from the front and reverse views. Both badge faces use the same design shown in the references. Dimensions are estimated and the catalogue records the year and city from the badge.
+
+ESLint, TypeScript and the Next.js production build passed. Chromium verified the new record, drag and release, keyboard face switching, touch browsing and panel scrolling, and the static artwork fallback. The update remains in the Cloud workspace for review before publishing the named badge.

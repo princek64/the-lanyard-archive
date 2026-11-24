@@ -82,7 +82,7 @@ export function Lanyard({ bodies, config }: {
       ))}
       <mesh geometry={geometry} frustumCulled={false}>
         {config.texture
-          ? <PrintedFabric url={config.texture} repeat={Math.max(1, config.length / (config.width * 3))} />
+          ? <PrintedFabric url={config.texture} repeat={Math.max(1, config.length / (config.width * (config.repeatAspect ?? 3)))} />
           : <meshStandardMaterial color={config.colour} roughness={0.95} side={DoubleSide} />}
       </mesh>
     </>

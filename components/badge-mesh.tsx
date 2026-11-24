@@ -62,7 +62,50 @@ export function BadgeMesh({ config }: { config: BadgeConfig }) {
   );
 }
 
-export function BadgeAttachment({ thickness }: { thickness: number }) {
+function SwivelClip({ thickness, ribbonWidth }: { thickness: number; ribbonWidth: number }) {
+  const depth = units(thickness) / 2;
+  const loopWidth = units(ribbonWidth) + 0.027;
+
+  return (
+    <group>
+      {[-1, 1].map(side => (
+        <mesh key={side} position={[side * loopWidth / 2, -0.035, 0]} castShadow>
+          <boxGeometry args={[0.018, 0.092, 0.023]} />
+          <meshStandardMaterial color="#c8c6c1" metalness={0.63} roughness={0.25} />
+        </mesh>
+      ))}
+      {[-0.073, 0.003].map(y => (
+        <mesh key={y} position={[0, y, 0]} castShadow>
+          <boxGeometry args={[loopWidth + 0.018, 0.017, 0.023]} />
+          <meshStandardMaterial color="#c8c6c1" metalness={0.63} roughness={0.25} />
+        </mesh>
+      ))}
+      <mesh position={[0, -0.112, 0.006]} rotation={[0, 0.45, -0.23]} castShadow>
+        <torusGeometry args={[0.032, 0.009, 10, 24]} />
+        <meshStandardMaterial color="#c8c6c1" metalness={0.63} roughness={0.25} />
+      </mesh>
+      {[-1, 1].map(side => (
+        <group key={side} position-z={side * (depth + 0.014)}>
+          <mesh position-y={-0.19} castShadow>
+            <boxGeometry args={[0.078, 0.127, 0.024]} />
+            <meshStandardMaterial color={side === 1 ? "#8c817b" : "#aaa39b"} metalness={0.52} roughness={0.32} />
+          </mesh>
+          <mesh position-y={-0.25} castShadow>
+            <boxGeometry args={[0.094, 0.015, 0.027]} />
+            <meshStandardMaterial color="#cdc7c0" metalness={0.61} roughness={0.25} />
+          </mesh>
+        </group>
+      ))}
+    </group>
+  );
+}
+
+export function BadgeAttachment({ config }: { config: BadgeConfig }) {
+  const { thickness } = config.dimensions;
+  if (config.attachment === "swivel-clip") {
+    return <SwivelClip thickness={thickness} ribbonWidth={config.lanyard.width} />;
+  }
+
   return (
     <group>
       <mesh position={[0, -0.026, 0]} castShadow>

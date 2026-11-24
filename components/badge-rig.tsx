@@ -120,7 +120,7 @@ export function BadgeRig({ config, back, reducedMotion, onFlip }: {
         <CuboidCollider args={[width / 2, height / 2, units(config.dimensions.thickness) / 2]}
           position={[0, -clipLength - height / 2, 0]} mass={0.24} />
         <group ref={pivot}>
-          <BadgeAttachment thickness={config.dimensions.thickness} />
+          <BadgeAttachment config={config} />
           <BadgeMesh config={config} />
         </group>
         <Html center position={[0, -clipLength - height / 2, 0]} zIndexRange={[4, 4]}

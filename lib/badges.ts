@@ -2,8 +2,9 @@ export interface BadgeConfig {
   id: string;
   dimensions: { width: number; height: number; thickness: number; radius: number };
   artwork: { front: string; back: string; edge: string };
-  lanyard: { width: number; length: number; colour: string; texture?: string };
-  event: { name: string; edition: string; date: string; dateTime: string; location: string; pass: string };
+  lanyard: { width: number; length: number; colour: string; texture?: string; repeatAspect?: number };
+  attachment?: "swivel-clip";
+  event: { name: string; edition: string; date: string; dateTime: string; location: string; pass?: string };
 }
 
 export const archiveTitle = "The Lanyard Archive";
@@ -33,7 +34,7 @@ export const badge: BadgeConfig = {
 };
 
 export type ExhibitionBadge = BadgeConfig & {
-  story: { venue: string; note: string; fictional?: boolean };
+  story: { venue?: string; note?: string; fictional?: boolean; estimatedDimensions?: boolean };
 };
 
 export const exhibition: ExhibitionBadge[] = [
@@ -59,14 +60,18 @@ export const exhibition: ExhibitionBadge[] = [
   },
   {
     id: "003",
-    dimensions: { width: 92, height: 122, thickness: 2.2, radius: 3 },
-    artwork: { front: "/badges/afterhours-front.svg", back: "/badges/afterhours-back.svg", edge: "#5b2a24" },
-    lanyard: { width: 16, length: 102, colour: "#b75843" },
-    event: { name: "After Hours", edition: "2026", date: "26 March 2026", dateTime: "2026-03-26", location: "London, UK", pass: "Volunteer" },
-    story: {
-      venue: "Dalston, London",
-      note: "The volunteer pass came with a roll of tape and a list of jobs. By the end of the evening the room had become a place to trade ideas about keeping small creative communities going.",
-      fictional: true,
+    dimensions: { width: 85, height: 129, thickness: 0.8, radius: 1 },
+    artwork: {
+      front: "/badges/houdini-hivealt.svg",
+      back: "/badges/houdini-hivealt.svg",
+      edge: "#262326",
     },
+    lanyard: {
+      width: 20, length: 109, colour: "#18181c",
+      texture: "/badges/houdini-strap.svg", repeatAspect: 5,
+    },
+    attachment: "swivel-clip",
+    event: { name: "Houdini HIVEalt", edition: "2026", date: "2026", dateTime: "2026", location: "London, UK" },
+    story: { estimatedDimensions: true },
   },
 ];

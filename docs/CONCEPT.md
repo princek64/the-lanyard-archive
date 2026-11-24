@@ -6,4 +6,4 @@ Phase 1 proved the close-up interaction with one card, clip and fabric strap. Vi
 
 Phase 2 tests a short exhibition with three stops and one reusable object viewer. Each stop features one badge in a shared 3D space. In focus, the record gives the event, date, venue, pass type, dimensions and a personal note.
 
-Assembly 2024, Relay 2025 and After Hours 2026 are fictional placeholders. Photographs and notes from the owner will replace them. The full collection, category chapters, maps, timelines, recaps, accounts and a database remain outside this prototype.
+Houdini HIVEalt London 2026 is the first real exhibit. Assembly 2024 and Relay 2025 are fictional placeholders. The full collection, category chapters, maps, timelines, recaps, accounts and a database remain outside this prototype.

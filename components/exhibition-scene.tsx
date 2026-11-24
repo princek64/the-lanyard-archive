@@ -20,8 +20,8 @@ interface Props {
 const spacing = 2.48;
 const depthStep = 0.76;
 
-function PrintedRibbon({ texture, length, width }: { texture: string; length: number; width: number }) {
-  const map = useBadgeTexture(texture, Math.max(1, length / (width * 3)));
+function PrintedRibbon({ texture, repeat }: { texture: string; repeat: number }) {
+  const map = useBadgeTexture(texture, repeat);
   return <meshStandardMaterial map={map} roughness={0.94} />;
 }
 
@@ -57,11 +57,11 @@ function DisplayBadge({ config, index, active, reducedMotion, onInspect }: {
         <mesh position={[0, -length / 2, 0]}>
           <boxGeometry args={[width, length, 0.014]} />
           {config.lanyard.texture
-            ? <PrintedRibbon texture={config.lanyard.texture} length={length} width={width} />
+            ? <PrintedRibbon texture={config.lanyard.texture} repeat={Math.max(1, length / (width * (config.lanyard.repeatAspect ?? 3)))} />
             : <meshStandardMaterial color={config.lanyard.colour} roughness={0.96} />}
         </mesh>
         <group position={[0, -length, 0]}>
-          <BadgeAttachment thickness={config.dimensions.thickness} />
+          <BadgeAttachment config={config} />
           <BadgeMesh config={config} />
         </group>
       </group>

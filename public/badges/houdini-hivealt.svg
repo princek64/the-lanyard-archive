@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="1000" viewBox="0 0 660 1000">
+  <defs>
+    <path id="tab" d="M-16-25h28v25h8v25h-28V4h-8z"/>
+    <g id="mark">
+      <use href="#tab" transform="translate(0 -61)"/>
+      <use href="#tab" transform="rotate(60) translate(0 -61)"/>
+      <use href="#tab" transform="rotate(120) translate(0 -61)"/>
+      <use href="#tab" transform="rotate(180) translate(0 -61)"/>
+      <use href="#tab" transform="rotate(240) translate(0 -61)"/>
+      <use href="#tab" transform="rotate(300) translate(0 -61)"/>
+    </g>
+    <pattern id="stock" width="9" height="11" patternUnits="userSpaceOnUse">
+      <path fill="#fff" opacity=".065" d="M2 2h1v1H2zm5 3h1v1H7zm-4 4h1v1H3z"/>
+    </pattern>
+  </defs>
+  <path fill="#111114" d="M0 0h660v1000H0z"/>
+  <use href="#mark" fill="#ee382c" transform="translate(210 131) rotate(-18) scale(1.02)"/>
+  <use href="#mark" fill="#871f19" transform="translate(627 413) rotate(16) scale(.72)"/>
+  <use href="#mark" fill="#232329" transform="translate(492 530) rotate(-11) scale(.79)"/>
+  <use href="#mark" fill="#202027" transform="translate(650 608) rotate(14) scale(.69)"/>
+  <use href="#mark" fill="#94281f" transform="translate(363 655) rotate(18) scale(.69)"/>
+  <use href="#mark" fill="#241d20" transform="translate(502 833) rotate(13) scale(2.12)"/>
+  <use href="#mark" fill="#96251e" transform="translate(515 833) rotate(13) scale(2.01)"/>
+  <path fill="url(#stock)" d="M0 0h660v1000H0z"/>
+  <g fill="#f6f3f1" font-family="Arial,Helvetica,sans-serif">
+    <text x="405" y="118" text-anchor="middle" font-size="33" font-weight="700">Houdini</text>
+    <text x="405" y="147" text-anchor="middle" font-size="30">HIVEalt</text>
+    <text x="405" y="176" text-anchor="middle" font-size="30">LONDON</text>
+    <text x="405" y="205" text-anchor="middle" font-size="29">2026</text>
+    <path d="M218 239l144-16" stroke="#f6f3f1" stroke-width="4.5"/>
+    <text x="337" y="404" text-anchor="middle" font-size="64" font-weight="800" textLength="310" lengthAdjust="spacingAndGlyphs">PRINCE</text>
+    <text x="350" y="464" text-anchor="middle" font-size="54" font-weight="400" textLength="306" lengthAdjust="spacingAndGlyphs">KUKREJA</text>
+    <text x="374" y="926" font-size="18" font-weight="700" textLength="101" lengthAdjust="spacingAndGlyphs">HOUDINI</text>
+    <path d="M493 893l-20 50" stroke="#f6f3f1" stroke-width="7"/>
+    <text x="496" y="925" font-size="18" font-weight="700" textLength="57" lengthAdjust="spacingAndGlyphs">HIVE</text>
+    <ellipse cx="610" cy="972" rx="47" ry="13" transform="rotate(-9 610 972)" fill="none" stroke="#b4584d" stroke-width="1.2"/>
+    <text x="610" y="978" text-anchor="middle" font-size="22" font-weight="700" textLength="73" lengthAdjust="spacingAndGlyphs">2026</text>
+  </g>
+</svg>
