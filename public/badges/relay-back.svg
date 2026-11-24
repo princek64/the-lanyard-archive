@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 952" width="680" height="952">
+  <rect width="680" height="952" fill="#263022"/>
+  <g fill="#dce989" font-family="monospace" font-size="29">
+    <text x="46" y="112" letter-spacing="3">RELAY / 2025</text>
+    <text x="42" y="222" font-family="Arial,sans-serif" font-size="85" font-weight="bold">In progress</text>
+    <text x="46" y="368">18:30  Doors</text><text x="46" y="477">19:00  Show and tell</text>
+    <text x="46" y="586">20:15  Open tables</text><text x="46" y="695">21:00  Wrap-up</text>
+    <text x="46" y="881" letter-spacing="2">CLERKENWELL / LONDON</text>
+  </g>
+  <path stroke="#a2ae65" stroke-width="2" d="M46 301h588M46 395h588m-588 109h588m-588 109h588m-588 109h588"/>
+</svg>

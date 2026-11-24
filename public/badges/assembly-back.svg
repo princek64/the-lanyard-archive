@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1000" viewBox="0 0 720 1000">
+  <path fill="#263caa" d="M0 0h720v1000H0z"/>
+  <g fill="#edf0f9" font-family="monospace" font-size="27">
+    <text x="44" y="126" letter-spacing="4">ASSEMBLY / LONDON</text>
+    <text x="44" y="227" font-family="Arial,Helvetica,sans-serif" font-size="94" font-weight="bold" letter-spacing="-5">Field notes</text>
+    <text x="44" y="378">09:00      Doors open</text>
+    <text x="44" y="480">10:00      Opening talks</text>
+    <text x="44" y="582">13:30      Studio sessions</text>
+    <text x="44" y="684">17:00      Closing remarks</text>
+    <text x="44" y="935" letter-spacing="4">18 OCTOBER 2024</text>
+  </g>
+  <path stroke="#97a9ff" stroke-width="2" d="M44 298h632M44 411h632M44 513h632M44 615h632M44 717h632M44 857h632"/>
+</svg>

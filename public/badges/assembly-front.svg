@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1000" viewBox="0 0 720 1000">
+  <defs>
+    <pattern id="paper" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path fill="#fff" opacity=".13" d="M1 1h1v1H1zm5 4h1v1H6zm4 4h1v1h-1z"/>
+      <path fill="#131e5b" opacity=".15" d="M3 6h1v1H3zm5-4h1v1H8zm1 9h1v1H9z"/>
+    </pattern>
+    <clipPath id="art"><path d="M0 355h720v485H0z"/></clipPath>
+  </defs>
+  <rect width="720" height="1000" fill="#4965f2"/>
+  <rect width="720" height="1000" fill="url(#paper)"/>
+  <g fill="#f3f2e9">
+    <text x="41" y="119" font-family="monospace" font-size="25" font-weight="bold" letter-spacing="3">LONDON / 18 OCT 2024</text>
+    <text x="35" y="233" font-family="Arial,Helvetica,sans-serif" font-size="109" font-weight="bold" letter-spacing="-7">Assembly</text>
+    <text x="42" y="289" font-family="monospace" font-size="26" letter-spacing="4">DESIGN &amp; TECHNOLOGY</text>
+  </g>
+  <g clip-path="url(#art)" fill="none" stroke="#e5ebff" stroke-width="3">
+    <ellipse cx="393" cy="588" rx="323" ry="205" transform="rotate(-26 393 588)"/>
+    <ellipse cx="393" cy="588" rx="300" ry="181" transform="rotate(-26 393 588)"/>
+    <ellipse cx="393" cy="588" rx="277" ry="157" transform="rotate(-26 393 588)"/>
+    <ellipse cx="393" cy="588" rx="254" ry="133" transform="rotate(-26 393 588)"/>
+    <ellipse cx="393" cy="588" rx="231" ry="109" transform="rotate(-26 393 588)"/>
+    <ellipse cx="393" cy="588" rx="208" ry="85" transform="rotate(-26 393 588)"/>
+    <ellipse cx="393" cy="588" rx="185" ry="61" transform="rotate(-26 393 588)"/>
+    <ellipse cx="393" cy="588" rx="162" ry="37" transform="rotate(-26 393 588)"/>
+    <path d="M42 795h636M42 358h636" opacity=".5"/>
+  </g>
+  <rect x="40" y="849" width="640" height="109" fill="#edf0f9"/>
+  <text x="62" y="919" fill="#192455" font-family="monospace" font-size="34" font-weight="bold" letter-spacing="4">ATTENDEE</text>
+  <text x="581" y="919" fill="#192455" font-family="monospace" font-size="30">001</text>
+</svg>

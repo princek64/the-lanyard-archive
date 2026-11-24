@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 736 976" width="736" height="976">
+  <rect width="736" height="976" fill="#f6ddc4"/>
+  <g fill="#792f27">
+    <text x="48" y="112" font-family="monospace" font-size="27" letter-spacing="4">AFTER HOURS / 2026</text>
+    <text x="43" y="242" font-family="Georgia,serif" font-size="91">The evening</text>
+    <g font-family="monospace" font-size="28">
+      <text x="48" y="398">17:30  Set-up</text><text x="48" y="512">18:30  Doors</text>
+      <text x="48" y="626">19:00  Community talks</text><text x="48" y="740">21:30  Close</text>
+      <text x="48" y="895" letter-spacing="3">DALSTON / LONDON</text>
+    </g>
+  </g>
+  <path stroke="#ad6557" stroke-width="2" d="M48 324h640M48 428h640m-640 114h640m-640 114h640m-640 114h640"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 952" width="680" height="952">
+  <rect width="680" height="952" fill="#d5e571"/>
+  <g fill="#252e1f">
+    <text x="44" y="106" font-family="monospace" font-size="25" letter-spacing="3">LONDON / 12 JUN 2025</text>
+    <text x="31" y="263" font-family="Arial,sans-serif" font-size="157" font-weight="bold" letter-spacing="-8">Relay</text>
+    <text x="45" y="313" font-family="monospace" font-size="25" letter-spacing="2">A NIGHT OF WORK IN PROGRESS</text>
+    <path d="M40 391h359L288 540h146L322 692H40l114-152H40zm600 0v149H490l112 152H459L347 540h136l112-149z"/>
+    <rect x="42" y="815" width="595" height="93"/>
+    <text x="59" y="873" fill="#e8edc6" font-family="monospace" font-size="29" letter-spacing="3">PARTICIPANT</text>
+    <text x="555" y="873" fill="#e8edc6" font-family="monospace" font-size="29">002</text>
+  </g>
+</svg>
