@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="810" viewBox="0 0 128 810">
+  <rect width="128" height="810" fill="#efc629"/>
+  <path d="m0 173 9 29 3-41 7 48 3-66 7 42 4-21 5 39 6-53 8 39 4-20 4 54 7-42 3 14 6-50 7 34 8-45 4 45 6-20 6 37 5-23 7 32 9-25v463l-8-11-8 34-6-49-7 24-5-37-6 61-7-36-4 22-5-56-5 42-4-19-6 49-5-40-8 29-7-45-7 26-3-43-7 31-5-21z" fill="#121217"/>
+  <g transform="translate(88 248) rotate(90)" font-family="Arial,sans-serif" text-anchor="middle">
+    <text x="139" y="0" fill="#f6f2ed" font-size="62" textLength="269" lengthAdjust="spacingAndGlyphs">DEVOX<tspan fill="#ffd24b">X</tspan></text>
+    <text x="139" y="48" fill="#ffd24b" font-size="48">··· UK ···</text>
+  </g>
+</svg>

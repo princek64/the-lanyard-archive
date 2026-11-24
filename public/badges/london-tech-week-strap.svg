@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="1344" viewBox="0 0 128 1344">
+  <defs><linearGradient id="dyed" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#6da6a7"/><stop offset=".32" stop-color="#45688b"/><stop offset=".62" stop-color="#785477"/><stop offset=".78" stop-color="#9d3c63"/><stop offset="1" stop-color="#6da6a7"/></linearGradient></defs>
+  <rect width="128" height="1344" fill="url(#dyed)"/>
+  <g transform="translate(64 20) rotate(90)" fill="#f1f0eb">
+    <path d="m0 0 26-26v52zm26-26h52L52 0zm0 52L52 0l26 26zm52 0v-52l26 26z"/>
+    <text x="123" y="17" font-size="47" font-family="Arial,sans-serif"><tspan font-weight="700">HSBC</tspan> Innovation Banking</text>
+    <text x="748" y="17" font-family="Arial,sans-serif" font-size="47">Here for extraordinary.</text>
+  </g>
+</svg>

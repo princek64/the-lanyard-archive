@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="1050" viewBox="0 0 700 1050">
+  <defs><pattern id="grid" width="65" height="65" patternUnits="userSpaceOnUse"><path d="M0 0h65v65" fill="none" stroke="#e2bc31" stroke-width="1.7"/></pattern></defs>
+  <rect width="700" height="1050" fill="#f6f4ee"/>
+  <g stroke="#dcd9d2" fill="none" stroke-width="1.4" opacity=".7"><path d="M391-10q24 118-19 327t-87 244M-8 423q103 42 125 117t-64 118M519 0q-14 125-4 156"/></g>
+  <path fill="#d9ae12" d="M0 792h700v258H0z"/><path fill="url(#grid)" d="M0 792h700v258H0z"/>
+  <g fill="#111112" font-family="Arial,sans-serif" text-anchor="middle">
+    <g font-size="62" font-weight="900"><text x="190" y="146" textLength="218" lengthAdjust="spacingAndGlyphs">OPEN</text><text x="489" y="146" textLength="264" lengthAdjust="spacingAndGlyphs">HOUSE</text></g>
+    <path fill="#edc828" d="m319 91 10-5 8 6 8 22-8 32-10 4-10-34z"/>
+    <text x="350" y="188" font-size="25" font-weight="700">BY CLICKHOUSE</text>
+    <text x="350" y="313" font-size="64">Prince</text><text x="350" y="380" font-size="48">Kukreja</text><text x="350" y="490" font-size="43">Design Engineer</text>
+    <text x="21" y="767" text-anchor="start" font-size="22">Attendee</text>
+    <path d="M132 890h8v77h-8zm17 0h8v77h-8zm17 0h8v77h-8zm17 0h8v77h-8zm19 26h8v20h-8z"/>
+    <text x="229" y="956" font-size="68" text-anchor="start">ClickHouse</text>
+  </g>
+</svg>

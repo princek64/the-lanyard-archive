@@ -200,6 +200,36 @@ export const exhibition: ExhibitionBadge[] = [
     event: { name: "design+AI", pass: "Volunteer" },
     story: { estimatedDimensions: true, note: "The crease runs right through my name." },
   },
+  {
+    id: "016",
+    label: { inscription: "Prince Kukreja · EXPO", materials: "Printed pass, satin ribbon, two clips", wall: "#a5bcc2", pigment: "#32596c" },
+    dimensions: { width: 86, height: 129, thickness: 0.9, radius: 2 },
+    artwork: { front: "/badges/london-tech-week-front.svg", back: "/badges/london-tech-week-back.svg", edge: "#404451" },
+    lanyard: { width: 19, length: 112, colour: "#669b9e", texture: "/badges/london-tech-week-strap.svg", repeatAspect: 10.5, clipSpread: 57 },
+    attachment: "snap-hook",
+    event: { name: "London Tech Week", edition: "2026", date: "2026", dateTime: "2026", location: "London, UK", pass: "Expo" },
+    story: { estimatedDimensions: true, note: "My name, then Birkbeck, then EXPO. A line to itself for each." },
+  },
+  {
+    id: "017",
+    label: { inscription: "Prince Kukreja · CREW", materials: "Printed card, paper label, satin ribbon", wall: "#a7c8c5", pigment: "#873258" },
+    dimensions: { width: 92, height: 115, thickness: 0.8, radius: 1 },
+    artwork: { front: "/badges/devoxx-front.svg", back: "/badges/devoxx-back.svg", edge: "#83344e" },
+    lanyard: { width: 18, length: 111, colour: "#eec622", texture: "/badges/devoxx-strap.svg", repeatAspect: 6.33 },
+    attachment: "snap-hook",
+    event: { name: "Devoxx UK", edition: "2026", date: "2026", dateTime: "2026", pass: "Crew" },
+    story: { estimatedDimensions: true, note: "My sticker says ‘None’. The pink strip says ‘CREW’." },
+  },
+  {
+    id: "018",
+    label: { inscription: "Prince Kukreja · Design Engineer", materials: "Printed pass, woven ribbon, two clips", wall: "#d5c587", pigment: "#66500f" },
+    dimensions: { width: 84, height: 126, thickness: 0.85, radius: 2 },
+    artwork: { front: "/badges/open-house-front.svg", back: "/badges/open-house-back.svg", edge: "#bb9c28" },
+    lanyard: { width: 18, length: 110, colour: "#151518", texture: "/badges/open-house-strap.svg", repeatAspect: 5.19, clipSpread: 52 },
+    attachment: "snap-hook",
+    event: { name: "Open House by ClickHouse", edition: "2026", date: "2026", dateTime: "2026", location: "London, UK", pass: "Attendee" },
+    story: { estimatedDimensions: true, note: "Design Engineer sits under my name. Attendee is tucked into the corner." },
+  },
 ];
 
 /** Horizontal offsets from the badge centre, in millimetres. */

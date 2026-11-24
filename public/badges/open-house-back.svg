@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="1050" viewBox="0 0 700 1050">
+  <defs><pattern id="grid" width="65" height="65" patternUnits="userSpaceOnUse"><path d="M0 0h65v65" stroke="#f7d959" stroke-width="2" fill="none"/></pattern></defs>
+  <rect width="700" height="1050" fill="#eac51e"/><rect width="700" height="1050" fill="url(#grid)"/>
+  <g fill="#111112" font-family="Arial,sans-serif" font-weight="900" text-anchor="middle">
+    <text x="183" y="210" font-size="61" textLength="216" lengthAdjust="spacingAndGlyphs">OPEN</text>
+    <path d="m312 156 12-5 8 8 7 19-7 31-11 6-11-35z"/>
+    <text x="479" y="210" font-size="61" textLength="261" lengthAdjust="spacingAndGlyphs">HOUSE</text>
+    <text x="350" y="250" font-size="25">BY CLICKHOUSE</text>
+  </g>
+  <g transform="translate(192 355)"><rect width="316" height="316" fill="#f8f6ed"/>
+    <path fill="#151516" d="M89 91h14v134H89zm30 0h14v134h-14zm30 0h14v134h-14zm30 0h14v134h-14zm33 46h14v36h-14z"/>
+  </g>
+  <text x="89" y="856" font-family="Arial,sans-serif" font-size="41" font-weight="900">WiFi Information</text>
+</svg>

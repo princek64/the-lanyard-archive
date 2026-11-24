@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+  <rect width="800" height="1000" fill="#a0d0d1"/>
+  <g text-anchor="middle" font-family="Arial,sans-serif">
+    <text x="400" y="132" font-size="100" textLength="535" lengthAdjust="spacingAndGlyphs" fill="#fff">DEVOX<tspan fill="#111">X</tspan></text>
+    <text x="400" y="212" font-size="91" textLength="185" lengthAdjust="spacingAndGlyphs">UK</text>
+    <path d="M222 183h10v10h-10zm19 0h10v10h-10zm19 0h10v10h-10zm272 0h10v10h-10zm19 0h10v10h-10zm19 0h10v10h-10z" fill="#fff"/>
+  </g>
+  <g fill="none" stroke="#172327" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Ink drawings around the label -->
+    <circle cx="46" cy="351" r="23"/><path d="m20 325-6-7m30 3v-10m24 14 9-8m-60 40-10 3m66-7 11 3m-54 20-5 9m38-10 6 8m-32-36 4 1m11-3 4 1m-12 11q9 6 15-4"/>
+    <path d="m224 302-7-1-5-7-5-2 6-11c-3-16 9-29 25-24 22 3 24 23 11 36l-2 14m-30-44q-9-9-1-14 8-5 13 3 2-12 13-9 7 2 6 10 10-10 17-2 5 7-1 14 13 4 9 14t-18 7m-34 21c-8-6-11-7-18-4l-43 9-15-42-26 4 18 63q2 9 17 9l48-10-45 36-13 17m49-51q32-28 53 2l24 42 38-2q-10-39-47-70m-42 70 8-22 10-6m-7 4 21 23"/>
+    <path d="m133 272-6-13-16-1c-9 0-9-7-1-7h13l-20-4q-5-6 4-7l17 3-14-6q-4-6 3-6l19 6-2-19q3-10 9 0l5 34-4 17m-6-61-3-12m13 11 5-11"/>
+    <path d="M333 348q0-12 12-11 6-22 19-6 13-6 16 9h13m-49-41q4-8 13-6 7-11 16 0h17m118 42q7 11 24 12 4 17-14 18-15 0-20-13-12 9-23 3-4-10 10-17l0-6q-1-15 10-14 11 2 10 15l14 2z"/>
+    <path d="m492 286 0-15 10-3 1 15m-11 2q-8-2-8 4 2 6 8-4m11-2q-7-2-7 4 2 5 7-4"/>
+    <path d="M648 333q-5-32-6-52m66 37q11-34 1-62m55 58 8-43"/>
+    <g fill="#152126"><path d="M643 281c-26-32-16-54-2-52 20 0 22 23 2 52zm65-25c-35-38-26-69-6-68 23-1 34 26 6 68zm64 15c-18-22-15-41-3-41 14-2 20 15 3 41z"/></g>
+    <path d="M704 310q-10 1-12 14l-6 8 10 4 2 11 14 1m-13-33q12-19 22 1l9 13m-21 20-34 20-26-6-3 10 34 13 38-17-5 31m8-50 32 22-20 22-2 22m-12-14 32-18 19 1"/>
+  </g>
+  <rect x="39" y="393" width="725" height="362" rx="38" fill="#faf8f4" stroke="#243236" stroke-width="3"/>
+  <rect x="57" y="413" width="688" height="321" rx="30" fill="none" stroke="#232525" stroke-dasharray="15 15" stroke-width="2.5"/>
+  <g fill="#14191a" font-family="monospace"><text x="85" y="492" font-size="62">Prince</text><text x="85" y="550" font-size="45">Kukreja</text><text x="85" y="610" font-size="21">Birkbeck, University of London</text><text x="85" y="692" font-size="25">None</text></g>
+  <g fill="none" stroke="#192327" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <path d="m114 397 68-4 6 19 3-24 16 1m492-3 11-9 3 21 6-13 3 15 6-14"/>
+    <path d="M255 883h124l49-51-76-5-32 31 51-77q14-18 33-11l40 13 27 68 29 7-5 10-49-5-27-44-15 59-59 10H253zm152-113 2-22q-11-5-10-17 4-24 27-20 14 2 17 18l10 15-9 3-2 13-17-1m-2-46v27l-9 4-3-18"/>
+    <path fill="#172125" d="M398 737q-20 2-15-13-9-11 0-21 0-17 16-15 11-15 21-4 13-6 18 8 20 4 12 17-8 4-24 1l-1 19-11 6-3-12z"/>
+    <path d="m464 881 20-54h83l-18 56zm98 3h-125m156-28h26q0 21-12 22-13 0-14-22zm26 3q15-5 9 7l-10 4m-16-21q-7-5-1-11"/>
+    <path d="m703 654-8-9 10-9q2-25 21-28 23-2 32 18l16 14m-61-20q-10-20 7-31 17-6 20 7 17-6 23 9 10 15-3 22m-54 33 17 9 3 12m-8 4-19 21-31-13-8 10 35 21q8 1 22-11m13-35 27 4 17 26-20 14m-46 0-9 64 38 2 15-56m-48 59-3 81 14 3 13-79m6 0 20 77 15-5-8-80"/>
+    <ellipse cx="711" cy="707" rx="30" ry="25" transform="rotate(-23 711 707)"/><path d="m729 690 44-28 5 7-42 32m-21-2-15 10"/>
+  </g>
+  <path d="M0 888h800v112H0z" fill="#c82369"/><text x="400" y="969" text-anchor="middle" fill="#0e1215" font-family="Arial,sans-serif" font-weight="900" font-size="86">CREW</text>
+</svg>

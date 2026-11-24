@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="1020" viewBox="0 0 680 1020">
+  <defs><linearGradient id="indigo" x2="1" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#352b77"/><stop offset="1" stop-color="#302d78"/></linearGradient></defs>
+  <rect width="680" height="1020" fill="url(#indigo)"/>
+  <path d="M0 594 562 899v121H0z" fill="#191827"/><path d="m562 899 118-68v189H562z" fill="#89cbd8"/>
+  <g font-family="Arial,sans-serif" fill="#faf8f1">
+    <g font-weight="700"><text x="98" y="221" font-size="48">WI-FI NETWORK:</text><text x="98" y="281" font-size="67">LTW26</text></g>
+    <text x="98" y="391" font-size="25" font-weight="700">EVENT APP</text>
+    <g font-size="17"><text x="98" y="419">Download the London Tech Week app.</text><text x="98" y="443">View the event map and agenda,</text><text x="98" y="467">speakers and exhibitors.</text></g>
+    <g transform="translate(438 362)"><rect width="148" height="148" fill="#f8f5ed"/><g font-size="20" font-weight="900" fill="#191827" text-anchor="middle"><text x="74" y="58">LONDON</text><text x="74" y="80">TECH</text><text x="74" y="102">WEEK</text></g></g>
+    <text x="98" y="593" font-size="25" font-weight="700">MANUAL BADGE SCANNING</text>
+    <text font-size="16" x="98" y="620"><tspan x="98">When attending our in-person events, by allowing your badge</tspan><tspan x="98" dy="22">to be scanned by an exhibitor or sponsor, you are providing the</tspan><tspan x="98" dy="22">exhibitor or sponsor with your personal information and in doing so</tspan><tspan x="98" dy="22">the exhibitor or sponsor may contact you in the future about their</tspan><tspan x="98" dy="22">products or services.</tspan></text>
+    <g font-size="27" font-weight="700"><text x="98" y="837">#LTW26</text><text x="98" y="878">#Londontechweek</text><text x="98" y="919">Londontechweek.com</text></g>
+  </g>
+</svg>

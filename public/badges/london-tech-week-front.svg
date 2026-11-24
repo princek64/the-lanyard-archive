@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="1020" viewBox="0 0 680 1020">
+  <rect width="680" height="1020" fill="#f6f3ed"/>
+  <path fill="#111119" d="M0 0h680v315H0zM0 876h680v144H0z"/>
+  <path fill="#82c6d2" d="M0 0h121v315H0zm0 760 126 116v144H0z"/>
+  <g fill="#fdfaf5" font-family="Arial,sans-serif" font-weight="900">
+    <text x="226" y="176" font-size="37">LONDON</text><text x="226" y="229" font-size="61">TECH</text><text x="269" y="280" font-size="61">WEEK</text>
+  </g>
+  <g fill="#111113" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700">
+    <text x="340" y="429" font-size="76" textLength="525" lengthAdjust="spacingAndGlyphs">Prince Kukreja</text>
+    <text x="340" y="540" font-size="64">Birkbeck</text><text x="340" y="651" font-size="64">EXPO</text>
+  </g>
+  <g fill="#eeeae5" font-family="Arial,sans-serif">
+    <path d="m206 919 25-14 24 14v29l-24 14-25-14zM224 946v-26h20m-19 10h15" fill="none" stroke="#eeeae5" stroke-width="2"/>
+    <text x="264" y="922" font-size="10"><tspan x="264">FOUNDERS</tspan><tspan x="264" dy="12">FORUM</tspan><tspan x="264" dy="12">GROUP</tspan></text>
+    <circle cx="361" cy="933" r="17" fill="none" stroke="#eeeae5" stroke-width="2" stroke-dasharray="5 3"/>
+    <text x="355" y="940" font-size="21">i</text><text x="387" y="943" font-size="24">informa</text>
+    <text x="510" y="939" font-weight="700" font-size="25">LONDON</text><text x="531" y="955" font-size="10">&amp; PARTNERS</text>
+  </g>
+</svg>

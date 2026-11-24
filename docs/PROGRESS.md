@@ -89,3 +89,9 @@ All fifteen objects have a wall colour, visible inscription, accession label, ma
 Lint and TypeScript passed. The cloud shell blocked Turbopack’s PostCSS worker from binding a local socket, so its default build is unverified here. An isolated Next.js production build using webpack and worker threads completed. Offline Chromium checks use that build and its static assets.
 
 Chromium verified all fifteen inscriptions and front images, five viewport sizes from 320 to 1440 pixels, sound generation and mute, direct 3D selection, index and sequential navigation, keyboard face selection, native touch scrolling, drag release and the static reverse view. Desktop and phone captures were inspected. Live preview hosting could not bind a socket in this session.
+
+## London Tech Week, Devoxx UK and Open House by ClickHouse
+
+Acc. 016–018 bring the exhibition to eighteen stops. Each has two reconstructed faces and a ribbon texture based on the supplied photographs. The London Tech Week and Open House passes use two snap hooks. Devoxx uses a single hook. Measurements are estimates. The public artwork omits QR payloads, badge identifiers and Wi-Fi passwords.
+
+Lint and typechecking passed. Turbopack could not open its local CSS worker socket in this environment. An isolated webpack production build passed. Chromium verified all nine new textures, index selection, keyboard flipping, the final navigation boundary and all three reverse faces at 320 px without WebGL.

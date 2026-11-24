@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="664" viewBox="0 0 128 664">
+  <rect width="128" height="664" fill="#121317"/>
+  <g transform="translate(64 27) rotate(90)" fill="#d8bb68">
+    <path d="M0-36h7v72H0zm15 0h7v72h-7zm15 0h7v72h-7zm15 0h7v72h-7zm17 24h7V6h-7z"/>
+    <text x="83" y="26" font-size="78" font-family="Arial,sans-serif" textLength="443" lengthAdjust="spacingAndGlyphs">ClickHouse</text>
+  </g>
+</svg>
