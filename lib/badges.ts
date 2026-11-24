@@ -11,7 +11,7 @@ export interface BadgeConfig {
 export const archiveTitle = "The Lanyard Archive";
 
 export type ExhibitionBadge = BadgeConfig & {
-  label: { inscription: string; materials: string; wall: string; pigment: string };
+  label: { captionHeading?: string; inscription: string; materials: string; wall: string; pigment: string };
   story: { venue?: string; note?: string; fictional?: boolean; estimatedDimensions?: boolean };
 };
 
@@ -259,6 +259,16 @@ export const exhibition: ExhibitionBadge[] = [
     attachment: "snap-hook",
     event: { name: "Caffè Culture Show", edition: "2026", date: "29–30 September 2026", dateTime: "2026-09-29", pass: "Visitor" },
     story: { estimatedDimensions: true, note: "My job sits in the middle. VISITOR gets the bottom corner." },
+  },
+  {
+    id: "022",
+    label: { captionHeading: "Printed on the guide", inscription: "Your Birkbeck Journey Starts Here", materials: "Printed campus guide, satin ribbon, metal clip", wall: "#aaa9bd", pigment: "#5c2f69" },
+    dimensions: { width: 90, height: 127.5, thickness: 1.3, radius: 1 },
+    artwork: { front: "/badges/birkbeck-front.svg", back: "/badges/birkbeck-back.svg", edge: "#7e2954" },
+    lanyard: { width: 18, length: 112, colour: "#b41b23", texture: "/badges/birkbeck-strap.svg", repeatAspect: 3.98 },
+    attachment: "snap-hook",
+    event: { name: "Birkbeck campus guide", location: "Bloomsbury, London" },
+    story: { estimatedDimensions: true, note: "Birkbeck usually sits under my name. Here it takes the whole card, with a campus map on the back." },
   },
 ];
 

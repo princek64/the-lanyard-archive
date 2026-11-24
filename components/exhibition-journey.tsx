@@ -171,7 +171,7 @@ export function ExhibitionJourney({ badges, records }: {
           </div>
           <footer className="journey-controls">
             <div className="journey-record" aria-live="polite" aria-atomic="true">
-              <p className="record-kicker">What the badge called me</p>
+              <p className="record-kicker">{badge.label.captionHeading ?? "What the badge called me"}</p>
               <h2>{badge.label.inscription}</h2>
               <p className="record-event">{eventTitle(badge)}</p>
             </div>

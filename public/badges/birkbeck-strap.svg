@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="510" viewBox="0 0 128 510">
+<defs><g id="crest"><path d="M1 1h49v35q0 18-24.5 29Q1 54 1 36z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+<path d="M4 4h43v20H4zm0 22h10v9H4zm10 9h9v10h-9zm-9 10h9v7l-4-3zm28-19h9v9h-9zm9 9h5l-2 10h-3zm-9 10h9v8l-9 6zm-10-19h8v33l-4 3-4-3z" fill="currentColor"/>
+<g fill="#424250"><path d="m10 8 2 5 3 2-3 2v3H8v-3l-3-2 4-2zm27 0 2 5 3 2-3 2v3h-4v-3l-3-2 4-2z"/><path d="m23 7 4 1 3 4-2 3 2 5-5-2-4 2 1-5-3-2 4-2z"/></g></g><g id="wordmark" fill="currentColor"><use xlink:href="#crest"/><text x="59" y="39" font-family="Georgia,serif" font-size="52">Birkbeck</text><text x="60" y="60" font-family="Georgia,serif" font-size="15" letter-spacing=".5">UNIVERSITY OF LONDON</text></g><pattern id="weave" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0 4 4 0" stroke="#e58b72" opacity=".2" stroke-width=".7"/></pattern></defs>
+<rect width="128" height="510" fill="#b41b23"/>
+<rect width="128" height="510" fill="url(#weave)"/>
+<use xlink:href="#wordmark" transform="translate(110 55) rotate(90) scale(1.45)" color="#fff2e5"/>
+</svg>

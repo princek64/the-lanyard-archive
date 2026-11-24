@@ -101,3 +101,9 @@ Lint and typechecking passed. Turbopack could not open its local CSS worker sock
 Stops 019–021 bring the archive to twenty-one. The collector identified the purple-ribbon badge as OpenAI DevDay London. Its name sticker faces forward and the multicoloured circles fill the reverse. The Security LIVE! pass carries alternating AWS and event marks on the ribbon. Its reverse omits the Wi-Fi password. Caffè Culture uses the matching visitor print shown in both close-ups, with the badge identifier and barcode omitted. The September dates come from the pass. All three sets of measurements are estimates.
 
 ESLint, TypeScript and an isolated webpack production build passed. Turbopack’s CSS worker could not bind a local socket in the cloud shell. Chromium checked the twenty-one-entry index, the three new stops, keyboard face selection, the final navigation boundary and the reverse views at 320 px without WebGL.
+
+## Birkbeck campus guide
+
+Accession 022 reproduces the printed welcome message, red Birkbeck ribbon and a simplified drawing of the Bloomsbury campus map. Its caption quotes the guide. The record is undated, dimensions are estimated and the prospectus QR code is omitted.
+
+Lint, typechecking and an isolated webpack production build passed. Chromium verified the 22-entry index, the guide’s caption and textures, keyboard flipping, the last-stop control and the reverse face on the 320-pixel static viewer. The default Turbopack build could not bind its CSS worker socket in the cloud shell.
