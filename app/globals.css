@@ -74,6 +74,9 @@ button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 .object-mount { position: absolute; left: calc(67% + var(--i) * var(--pitch)); height: min(114cqh,175cqw); aspect-ratio: 464/980;
   top: -15cqh; transform: translateX(-50%); pointer-events: none; }
 .hanging { position: relative; display: block; width: 100%; height: 100%; opacity: 0; pointer-events: none; transform-origin: 50% 4.33%; }
+/* The hanging button spans transparent artwork. Mark its visible pickup action for keyboard focus. */
+.hanging:focus-visible { outline: none; }
+.display-wall:has(.hanging:focus-visible) .journey-inspect { outline: 2px solid var(--navy); outline-offset: 3px; }
 .hanging[data-featured="true"] { opacity: 1; }
 .hanging[data-featured="true"]::after { content: ""; position: absolute; inset: 3% 13% 3%; pointer-events: auto; cursor: zoom-in; touch-action: pan-y; }
 .wall-pin { pointer-events: none; }

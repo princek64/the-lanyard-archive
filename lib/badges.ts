@@ -88,6 +88,20 @@ export const exhibition: ExhibitionBadge[] = [
     },
   },
   {
+    id: "020",
+    label: { inscription: "Prince · Design Engineer", materials: "Printed card, paper label, purple ribbon", wall: "#bcaed1", pigment: "#603d83" },
+    dimensions: { width: 85, height: 115, thickness: 0.65, radius: 1 },
+    artwork: { specimen: "/specimens/020.webp", specimenBack: "/specimens/020-back.webp", front: "/badges/openai-devday-front.svg", back: "/badges/openai-devday-back.svg", edge: "#d4cdd7" },
+    lanyard: { width: 11, length: 110, colour: "#54287f", sleeveColour: "#b7afab" },
+    attachment: "snap-hook",
+    event: { name: "OpenAI DevDay London", location: "London, UK", date: "3 November 2026", dateTime: "2026-11-03" },
+    story: {
+      about: "OpenAI’s DevDay Exchange brought London developers and technical founders together for hands-on work and conversations about building products with OpenAI tools.",
+      source: "https://events.openai.com/devdayexchange2026",
+      estimatedDimensions: true
+    },
+  },
+  {
     id: "006",
     label: { inscription: "Prince · Design Engineer", materials: "Printed card, paper label, ink", wall: "#cbafa1", pigment: "#873e2b" },
     dimensions: { width: 77, height: 103, thickness: 0.65, radius: 1 },
@@ -150,6 +164,55 @@ export const exhibition: ExhibitionBadge[] = [
     },
   },
   {
+    id: "014",
+    label: { inscription: "PRINCE", materials: "Printed card, ink, woven ribbon", wall: "#c7aea8", pigment: "#914638" },
+    dimensions: { width: 88, height: 124, thickness: 0.65, radius: 1 },
+    artwork: { specimen: "/specimens/014.webp", specimenBack: "/specimens/014-back.webp", front: "/badges/rnlconf.svg", back: "/badges/rnlconf.svg", edge: "#d3c4c9" },
+    lanyard: { width: 18, length: 110, colour: "#1a191e", texture: "/badges/rnlconf-strap.svg", repeatAspect: 5 },
+    attachment: "snap-hook",
+    event: { name: "RNLConf", date: "13–14 November 2025", dateTime: "2025-11-13" },
+    story: {
+      about: "Theodo’s React Native London Conference brought mobile engineers together for workshops and talks about building and maintaining cross-platform apps.",
+      source: "https://www.reactnativelondon.co.uk/2025",
+      estimatedDimensions: true
+    },
+  },
+  {
+    id: "015",
+    label: { inscription: "Prince Kukreja · Volunteer", materials: "Printed card, paper label, ribbon", wall: "#c3a2b9", pigment: "#70375d" },
+    dimensions: { width: 89, height: 124, thickness: 0.8, radius: 1.5 },
+    artwork: { specimen: "/specimens/015.webp", specimenBack: "/specimens/015-back.webp", front: "/badges/design-ai-front.svg", back: "/badges/design-ai-back.svg", edge: "#64425f" },
+    lanyard: { width: 17, length: 110, colour: "#1a191e", texture: "/badges/design-ai-strap.svg", repeatAspect: 5 },
+    attachment: "snap-hook",
+    event: { name: "design+AI", pass: "Volunteer", date: "24–25 September 2026", dateTime: "2026-09-24" },
+    story: {
+      about: "At Brighton Dome, designers explored how AI changes user research, product design and collaboration through workshops and a day of talks.",
+      source: "https://www.tickettailor.com/events/productunleashed/2185678",
+      estimatedDimensions: true
+    },
+  },
+  {
+    id: "003",
+    label: { inscription: "PRINCE KUKREJA", materials: "Printed pass, ribbon, swivel clip", wall: "#c9b0a6", pigment: "#8e3429" },
+    dimensions: { width: 85, height: 129, thickness: 0.8, radius: 1 },
+    artwork: {
+      specimen: "/specimens/003.webp", specimenBack: "/specimens/003-back.webp", front: "/badges/houdini-hivealt.svg",
+      back: "/badges/houdini-hivealt.svg",
+      edge: "#262326",
+    },
+    lanyard: {
+      width: 20, length: 109, colour: "#18181c",
+      texture: "/badges/houdini-strap.svg", repeatAspect: 5,
+    },
+    attachment: "swivel-clip",
+    event: { name: "Houdini HIVEalt", edition: "2026", location: "London, UK", date: "10 September 2026", dateTime: "2026-09-10" },
+    story: {
+      about: "SideFX invited artists and engineers to show where Houdini goes beyond film and games, from modelling Formula 1 tracks to designing buildings.",
+      source: "https://www.sidefx.com/houdini-hive/hive-alt-2026/",
+      estimatedDimensions: true
+    },
+  },
+  {
     id: "011",
     label: { inscription: "Prince Attendee · Design Engineer", materials: "Printed pass, woven ribbon, two clips", wall: "#c7a3a0", pigment: "#7c282c" },
     dimensions: { width: 85, height: 127, thickness: 1, radius: 2 },
@@ -178,55 +241,6 @@ export const exhibition: ExhibitionBadge[] = [
     story: {
       about: "Tessl brought developers to The Brewery in London to compare how they use coding agents, write specifications and evaluate the software those agents produce.",
       source: "https://tessl.io/events/devcon-ldn-26",
-      estimatedDimensions: true
-    },
-  },
-  {
-    id: "003",
-    label: { inscription: "PRINCE KUKREJA", materials: "Printed pass, ribbon, swivel clip", wall: "#c9b0a6", pigment: "#8e3429" },
-    dimensions: { width: 85, height: 129, thickness: 0.8, radius: 1 },
-    artwork: {
-      specimen: "/specimens/003.webp", specimenBack: "/specimens/003-back.webp", front: "/badges/houdini-hivealt.svg",
-      back: "/badges/houdini-hivealt.svg",
-      edge: "#262326",
-    },
-    lanyard: {
-      width: 20, length: 109, colour: "#18181c",
-      texture: "/badges/houdini-strap.svg", repeatAspect: 5,
-    },
-    attachment: "swivel-clip",
-    event: { name: "Houdini HIVEalt", edition: "2026", location: "London, UK", date: "10 September 2026", dateTime: "2026-09-10" },
-    story: {
-      about: "SideFX invited artists and engineers to show where Houdini goes beyond film and games, from modelling Formula 1 tracks to designing buildings.",
-      source: "https://www.sidefx.com/houdini-hive/hive-alt-2026/",
-      estimatedDimensions: true
-    },
-  },
-  {
-    id: "014",
-    label: { inscription: "PRINCE", materials: "Printed card, ink, woven ribbon", wall: "#c7aea8", pigment: "#914638" },
-    dimensions: { width: 88, height: 124, thickness: 0.65, radius: 1 },
-    artwork: { specimen: "/specimens/014.webp", specimenBack: "/specimens/014-back.webp", front: "/badges/rnlconf.svg", back: "/badges/rnlconf.svg", edge: "#d3c4c9" },
-    lanyard: { width: 18, length: 110, colour: "#1a191e", texture: "/badges/rnlconf-strap.svg", repeatAspect: 5 },
-    attachment: "snap-hook",
-    event: { name: "RNLConf", date: "13–14 November 2025", dateTime: "2025-11-13" },
-    story: {
-      about: "Theodo’s React Native London Conference brought mobile engineers together for workshops and talks about building and maintaining cross-platform apps.",
-      source: "https://www.reactnativelondon.co.uk/2025",
-      estimatedDimensions: true
-    },
-  },
-  {
-    id: "015",
-    label: { inscription: "Prince Kukreja · Volunteer", materials: "Printed card, paper label, ribbon", wall: "#c3a2b9", pigment: "#70375d" },
-    dimensions: { width: 89, height: 124, thickness: 0.8, radius: 1.5 },
-    artwork: { specimen: "/specimens/015.webp", specimenBack: "/specimens/015-back.webp", front: "/badges/design-ai-front.svg", back: "/badges/design-ai-back.svg", edge: "#64425f" },
-    lanyard: { width: 17, length: 110, colour: "#1a191e", texture: "/badges/design-ai-strap.svg", repeatAspect: 5 },
-    attachment: "snap-hook",
-    event: { name: "design+AI", pass: "Volunteer", date: "24–25 September 2026", dateTime: "2026-09-24" },
-    story: {
-      about: "At Brighton Dome, designers explored how AI changes user research, product design and collaboration through workshops and a day of talks.",
-      source: "https://www.tickettailor.com/events/productunleashed/2185678",
       estimatedDimensions: true
     },
   },
@@ -283,20 +297,6 @@ export const exhibition: ExhibitionBadge[] = [
     story: {
       about: "AWS hosted security teams at the Hilton London Metropole to discuss cloud security and how to protect systems as organisations adopt AI.",
       source: "https://www.upwind.io/event/aws-security-live-europe",
-      estimatedDimensions: true
-    },
-  },
-  {
-    id: "020",
-    label: { inscription: "Prince · Design Engineer", materials: "Printed card, paper label, purple ribbon", wall: "#bcaed1", pigment: "#603d83" },
-    dimensions: { width: 85, height: 115, thickness: 0.65, radius: 1 },
-    artwork: { specimen: "/specimens/020.webp", specimenBack: "/specimens/020-back.webp", front: "/badges/openai-devday-front.svg", back: "/badges/openai-devday-back.svg", edge: "#d4cdd7" },
-    lanyard: { width: 11, length: 110, colour: "#54287f", sleeveColour: "#b7afab" },
-    attachment: "snap-hook",
-    event: { name: "OpenAI DevDay London", location: "London, UK", date: "3 November 2026", dateTime: "2026-11-03" },
-    story: {
-      about: "OpenAI’s DevDay Exchange brought London developers and technical founders together for hands-on work and conversations about building products with OpenAI tools.",
-      source: "https://events.openai.com/devdayexchange2026",
       estimatedDimensions: true
     },
   },

@@ -149,3 +149,9 @@ ESLint, TypeScript and an isolated webpack production build passed. The local Tu
 All 22 records have front and reverse captures from the live rig. Desktop Chromium and emulated mobile WebKit opened Solana, Houdini and the landscape Caffè Culture badge with texture loading deliberately delayed. Once loaded, the resting previews and live images matched in framing on both faces. Chromium also verified touch drag and release, native scrolling, keyboard flipping, focus return and the static reverse. A physical handset check remains outstanding.
 
 ESLint, TypeScript and the isolated webpack production build passed. The local default build encountered the sandbox socket restriction in the Turbopack CSS worker.
+
+## Mobile pickup return and exhibition order
+
+OpenAI DevDay London now appears fifth, RNLConf tenth and design+AI eleventh. CampAI moves from fifth to sixth and Houdini from eleventh to twelfth. All 22 accession records retain their artwork and metadata.
+
+Mobile WebKit and Chromium emulation verified the index order, tapping the hanging pass and the pickup button, returning to the same stop, and keyboard face selection and focus restoration. Chromium also checked touch dragging, release and native scrolling. ESLint, TypeScript and the isolated webpack production build passed. The local Turbopack CSS worker was unable to bind its socket. Physical handset testing remains outstanding.

@@ -155,7 +155,7 @@ export function ExhibitionJourney({ badges, records }: {
                     <button type="button" className="hanging" data-featured={i === active}
                       style={{ transform: `rotateZ(${restingAngle(i)}deg)` }}
                       tabIndex={i === active ? 0 : -1} aria-hidden={i !== active} aria-label={`Inspect ${eventTitle(item)}`}
-                      onClick={e => inspect(i, e.currentTarget)}>
+                      onClick={e => inspect(i, e.detail === 0 ? e.currentTarget : undefined)}>
                       {ribbonOffsets(item.lanyard).map(offset => (
                         <span aria-hidden="true" className="wall-pin" key={offset}
                           style={{ left: `${50 + offset / (300 * 464 / 980) * 100}%` }} />

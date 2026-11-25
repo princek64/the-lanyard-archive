@@ -77,3 +77,5 @@ The hanging image and the opening inspection image share a View Transition name 
 ## First-frame lanyard geometry
 
 The rail, pickup transition and static viewer use transparent front and reverse images captured from the inspection rig at rest. The capture script opens each catalogue record and renders its loaded scene with a common orthographic crop. The studio positions this crop using the same badge dimensions and camera clearance as the interactive viewer. The server supplies the rail’s resting angle, and the inspection preview stays visible until the rig has painted the requested face.
+
+A pointer pickup returns focus to the visible Pick up pass button. Keyboard pickup restores focus to its original trigger. When the hanging object has keyboard focus, its equivalent pickup button carries the focus outline so the transparent margins around the artwork stay clear.
