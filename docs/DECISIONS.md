@@ -61,3 +61,7 @@ Reading the print uses the same face artwork at a larger scale in a native scrol
 The overview displays transparent WebP renders of the configured objects. A translating layer moves the row, and nearby passes tilt around the peg according to the rail's velocity. This removes continuous WebGL rendering and texture-loading boundaries from the scroll path. The independent inspection view still loads Three.js and Rapier on demand.
 
 Native scroll supplies the target. A frame-rate-independent exponential response drives one displayed position shared by the hanging objects, caption, contents and index needle. The animation loop stops at rest. A contact-sheet jump, ribbon scrub or reduced-motion preference applies the new position directly. No wheel or touch handlers cancel page scrolling.
+
+## Illustrated London exhibition
+
+The exhibition shares two original guide poses and one transparent skyline across the collection. The existing scroll position moves these layers independently of the pass artwork. The layout puts one pass in focus and keeps direct selection in the contact sheet and ribbon control. The index records inspected IDs in component state for the current visit.

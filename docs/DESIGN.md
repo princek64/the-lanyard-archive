@@ -1,10 +1,10 @@
 # Design
 
-The desktop exhibition is an open catalogue. A black contents column shows the actual pass fronts, event names and the selected entry. A slim masthead and a full-screen contact sheet take its place on phones. Barlow Condensed sets the masthead, STIX Two Text carries the inscriptions and tabular numbers locate each object.
+The exhibition plays out on a cream page framed by yellow graph paper. Each stop pairs the actual pass with its inscription and event name. An original illustrated clasp guides the visitor across a cobalt London skyline. Bricolage Grotesque sets the event lettering and STIX Two Text sets the inscription.
 
-The rail hangs against a lightly grained, event-tinted wall. As a visitor scrolls, the passes follow with a short, damped movement. The fabric tips in the direction of travel and settles when the visitor stops. Turning back immediately reverses the rail. Reduced motion follows the scroll position directly and holds the fabric still.
+The opening view moves from a wide shot into the featured pass. Native scrolling moves the skyline and passes at different speeds, with a small step from the guide as the fabric swings. The camera, swing and step settle when scrolling stops. Reduced motion presents the settled framing immediately. On phones the caption moves above the scene and the entire loop of the lanyard fits on the page.
 
-The caption pairs the inscription with the event. A strip of fabric samples follows the same order as the rail. Drag across the samples to browse by colour or print. With the strip focused, arrow keys move one pass and Home or End moves to either end. Scrolling, Previous, Next and the Object index all select the same stop. The step buttons have a quiet clip sound with a mute control.
+Previous, Next, the ribbon strip and Object index share the same stop. The index is a contact sheet of the badge fronts. Inspecting a pass adds a Viewed stamp for this visit and the guide takes out a magnifying glass. The inspection state lasts until the page is reloaded.
 
 Selecting a hanging object or choosing **Pick up pass** opens a close-up. Its record gives materials, dimensions and available event details. On narrow screens the record follows the viewer. Escape or **Back to exhibition** returns to the same stop and restores focus.
 

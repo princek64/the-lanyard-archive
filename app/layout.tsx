@@ -12,11 +12,11 @@ const exhibitionDisplay = localFont({
   variable: "--archive-display",
 });
 
-const archiveCondensed = localFont({
-  src: "./fonts/barlow-condensed-500.woff2",
-  weight: "500",
+const archiveTitleFace = localFont({
+  src: "./fonts/bricolage-latin.woff2",
+  weight: "400 800",
   display: "swap",
-  variable: "--archive-condensed",
+  variable: "--archive-title",
 });
 
 export const metadata: Metadata = {
@@ -25,5 +25,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en-GB"><body className={`${exhibitionDisplay.variable} ${archiveCondensed.variable}`}>{children}</body></html>;
+  return <html lang="en-GB"><body className={`${exhibitionDisplay.variable} ${archiveTitleFace.variable}`}>{children}</body></html>;
 }

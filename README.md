@@ -1,6 +1,6 @@
 # The Lanyard Archive
 
-A personal exhibition of lanyards and conference badges from London. The prototype presents twenty-two lanyard objects on a scrollable rail, with a physics-driven close-up viewer and a catalogue record for each object.
+A personal exhibition of lanyards and conference badges from London. Twenty-two passes hang above an illustrated London skyline. Each opens into a physics-driven close-up with its own catalogue record.
 
 ## Development
 
@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-Open [localhost:3000](http://localhost:3000). Scroll along the rail, drag across the ribbon samples, use the arrows, or choose a badge from **Object index**. Choose **Pick up pass**, then drag and release to watch it swing. Shift-drag to rotate with a mouse, or use **Flip badge**, **Front** and **Back**. Choose **Read print** for an enlarged, scrollable view of either face. Use Escape or **Back to exhibition** to return to the same stop.
+Open [localhost:3000](http://localhost:3000). Scroll through the exhibition, drag across the ribbon samples, use the arrows, or choose a badge from **Object index**. Choose **Pick up pass**, then drag and release to watch it swing. Shift-drag to rotate with a mouse, or use **Flip badge**, **Front** and **Back**. Choose **Read print** for an enlarged, scrollable view of either face. Use Escape or **Back to exhibition** to return to the same stop.
 
 ```sh
 npm run lint

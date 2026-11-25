@@ -7,6 +7,7 @@ export function useExhibitionRail(count: number) {
   const track = useRef<HTMLElement>(null);
   const stage = useRef<HTMLDivElement>(null);
   const carriage = useRef<HTMLDivElement>(null);
+  const scenery = useRef<HTMLDivElement>(null);
   const needle = useRef<HTMLSpanElement>(null);
   const position = useRef(0);
   const target = useRef(0);
@@ -26,20 +27,28 @@ export function useExhibitionRail(count: number) {
     let start = 0;
     let travel = 1;
     let pitch = 0;
-    let neighbourScale = .84;
+
     let tilt = 0;
     let shown = -1;
     function paint() {
       const p = position.current;
       row!.style.transform = `translate3d(${-p * pitch}px,0,0)`;
+      scenery.current?.style.setProperty("--travel", reducedMotion ? "0" : String(p / Math.max(1, count - 1)));
+      scenery.current?.style.setProperty("--hop", reducedMotion ? "0px" : `${-Math.abs(Math.sin(p * Math.PI * 2)) * Math.min(8, Math.abs(tilt) * 4)}px`);
+      scenery.current?.style.setProperty("--lean", `${tilt.toFixed(2)}deg`);
       if (needle.current) needle.current.style.left = `${(p + 0.5) / count * 100}%`;
-      for (let i = Math.max(0, Math.floor(p) - 3); i <= Math.min(count - 1, Math.ceil(p) + 3); i++) {
+      for (let i = 0; i < objects.length; i++) {
         const offset = i - p;
-        const away = Math.min(Math.abs(offset), 1);
+        const away = Math.abs(offset);
+        if (away >= 1) {
+          if (objects[i].style.opacity !== "0") objects[i].style.opacity = "0";
+          continue;
+        }
         const weight = away * away * (3 - 2 * away);
-        const turn = Math.sign(offset) * weight * -19;
-        objects[i].style.transform = `perspective(1000px) rotateY(${turn}deg) rotateZ(${tilt + Math.sin(i * 5) * 2}deg) scale(${1 - weight * (1 - neighbourScale)})`;
-        objects[i].style.opacity = String(1 - weight * .23);
+        const turn = Math.sign(offset) * weight * -30;
+        const origin = reducedMotion ? 0 : tilt + Math.sin(i * 5 + .6) * 3;
+        objects[i].style.transform = `perspective(1000px) rotateY(${turn}deg) rotateZ(${origin}deg) scale(${1 - weight * .53})`;
+        objects[i].style.opacity = String(1 - weight * weight);
       }
       const next = Math.round(p);
       if (shown !== next) {
@@ -80,9 +89,7 @@ export function useExhibitionRail(count: number) {
     function resize() {
       start = section!.getBoundingClientRect().top + window.scrollY;
       travel = Math.max(1, section!.offsetHeight - panel!.offsetHeight);
-      const compact = viewport!.clientWidth < 620;
-      neighbourScale = compact ? .54 : .84;
-      pitch = Math.min(viewport!.clientWidth * (compact ? .38 : .36), viewport!.clientHeight * .53);
+      pitch = Math.min(viewport!.clientWidth * .38, viewport!.clientHeight * .43);
       row!.style.setProperty("--pitch", pitch + "px");
       if (shown < 0) read(true);
       else {
@@ -114,5 +121,5 @@ export function useExhibitionRail(count: number) {
     refresh.current(immediate);
   }
 
-  return { track, stage, carriage, needle, active, target, navigate };
+  return { track, stage, carriage, needle, active, target, scenery, navigate };
 }

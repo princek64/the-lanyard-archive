@@ -119,3 +119,11 @@ Lint, TypeScript and an isolated webpack production build passed. Chromium verif
 All 22 hanging views were rendered from the catalogue and checked for complete transparent bounds. Browsing loads no WebGL canvas. A Chromium wheel-input recording captured intermediate positions, a reversal during travel and a stop with no further rail transform writes. The contents, printed ribbon scale and caption tracked the selected pass.
 
 The production assets passed Chromium checks at five viewport sizes from 320 to 1440 pixels. Checks covered mouse and touch pickup and release, native touch scrolling, keyboard face selection, reduced motion, direct selection, enlarged print, focus restoration and the WebGL-disabled viewer. Phone checks used emulation. ESLint, TypeScript and an isolated webpack production build passed. The default Turbopack build could not bind the PostCSS worker socket in this environment.
+
+## Illustrated London exhibition
+
+A silver snap-hook guide introduces the 22 passes above an illustrated London skyline. Inspecting a badge changes the guide’s pose and stamps its index entry for the current visit. The opening camera move and scroll parallax respect reduced motion.
+
+Chromium checked all 22 inscriptions and front images, five viewport sizes from 320 to 1440 pixels, and single-pass framing at rest. The motion recording captured 16 intermediate frames during wheel navigation, a reversal before settling, and zero further transform writes at rest. The WebGL canvas loads on pickup. Mouse and emulated touch checks covered dragging, release, native scrolling, ribbon selection and enlarged-print panning. Keyboard face selection, focus return, sound and mute, the viewed stamp and the static viewer passed. A mobile walkthrough records the opening, a stop change and a DDX inspection. Physical phone testing remains outstanding.
+
+ESLint and TypeScript passed. An isolated webpack production build passed. The default Turbopack build could not bind its PostCSS worker socket in the cloud shell.
