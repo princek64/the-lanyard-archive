@@ -3,12 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 
 export function useClipSound() {
-  const [muted, setMuted] = useState(false);
+  const [muted, setMuted] = useState(true);
   const audio = useRef<AudioContext | null>(null);
   useEffect(() => () => { void audio.current?.close(); }, []);
 
-  async function click() {
-    if (muted || !window.AudioContext) return;
+  async function playClip() {
+    if (!window.AudioContext) return;
     try {
       const ctx = audio.current ??= new AudioContext();
       if (ctx.state !== "running") await ctx.resume();
@@ -29,5 +29,10 @@ export function useClipSound() {
       }
     } catch { /* Audio can be unavailable while the page is backgrounded. */ }
   }
-  return { muted, toggle: () => setMuted(value => !value), click };
+  function toggle() {
+    setMuted(!muted);
+    if (muted) void playClip();
+  }
+
+  return { muted, toggle, click: () => { if (!muted) void playClip(); } };
 }

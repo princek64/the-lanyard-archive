@@ -127,3 +127,13 @@ A silver snap-hook guide introduces the 22 passes above an illustrated London sk
 Chromium checked all 22 inscriptions and front images, five viewport sizes from 320 to 1440 pixels, and single-pass framing at rest. The motion recording captured 16 intermediate frames during wheel navigation, a reversal before settling, and zero further transform writes at rest. The WebGL canvas loads on pickup. Mouse and emulated touch checks covered dragging, release, native scrolling, ribbon selection and enlarged-print panning. Keyboard face selection, focus return, sound and mute, the viewed stamp and the static viewer passed. A mobile walkthrough records the opening, a stop change and a DDX inspection. Physical phone testing remains outstanding.
 
 ESLint and TypeScript passed. An isolated webpack production build passed. The default Turbopack build could not bind its PostCSS worker socket in the cloud shell.
+
+## Mobile badge print, exhibition order and event records
+
+The inspection viewer now uses lossless pixel textures for its 3D artwork. All 56 textures match the dimensions of their SVG masters. Mobile WebKit and Chromium at 3× pixel density showed the Houdini print across the whole card. WebKit also rendered both DDX faces, including the handwriting. Checks used emulated phones. A physical iPhone check remains outstanding.
+
+Solana, Vercel and Breakpoint open the exhibition. Houdini is stop 11. Git Nation, BrainStation and Caffè Culture close it. The design+AI sticker was cleaned in the source print, texture and hanging specimen.
+
+The badge records cover 21 dated event passes and one undated campus guide. Public references accompany each description. BrainStation is the Notion Developer Platform Watch Party, identified by the collector. The sound control previews the navigation click on enable and shows its current state. Index cards align at the top of their images and captions, including wrapped titles.
+
+ESLint, TypeScript and an isolated webpack production build passed. The local Turbopack worker was unable to bind a socket.

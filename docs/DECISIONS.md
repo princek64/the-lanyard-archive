@@ -65,3 +65,7 @@ Native scroll supplies the target. A frame-rate-independent exponential response
 ## Illustrated London exhibition
 
 The exhibition shares two original guide poses and one transparent skyline across the collection. The existing scroll position moves these layers independently of the pass artwork. The layout puts one pass in focus and keeps direct selection in the contact sheet and ribbon control. The index records inspected IDs in component state for the current visit.
+
+## Badge textures in the inspection view
+
+The 3D viewer uploads lossless WebP images with fixed pixel bounds for the faces and printed straps. This avoids a mobile SVG-to-WebGL rendering issue that shrank the print into one corner. The catalogue still references the SVG masters for the index, static viewer and enlarged print. After editing artwork, run `python scripts/render-textures.py` and commit the generated WebP siblings with the masters.

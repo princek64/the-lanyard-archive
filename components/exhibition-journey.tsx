@@ -86,11 +86,13 @@ export function ExhibitionJourney({ badges, records }: {
             <h1><span className="ticket-mark" aria-hidden="true" />The Lanyard Archive</h1>
             <p className="credit">Prince Kukreja’s collection</p>
             <div className="top-actions">
-              <button className="sound-toggle" type="button" aria-label="Clip sound" aria-pressed={!sound.muted} onClick={sound.toggle}>
+              <button className="sound-toggle" type="button" aria-label="Navigation clicks" aria-pressed={!sound.muted}
+                title="Play a clasp click on Previous and Next" onClick={sound.toggle}>
                 <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4">
                   <path d="M3 8h3l4-4v12l-4-4H3z" />
                   {sound.muted ? <path d="m13 8 4 4m0-4-4 4"/> : <path d="M13 7a5 5 0 0 1 0 6m2-8a8 8 0 0 1 0 10"/>}
                 </svg>
+                <span>Clicks {sound.muted ? "off" : "on"}</span>
               </button>
               <button ref={indexButton} type="button" className="index-toggle" aria-haspopup="dialog"
                 aria-controls="object-index" aria-expanded={indexOpen} onClick={openIndex}>
