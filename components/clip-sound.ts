@@ -1,38 +1,45 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
-export function useClipSound() {
-  const [muted, setMuted] = useState(true);
-  const audio = useRef<AudioContext | null>(null);
-  useEffect(() => () => { void audio.current?.close(); }, []);
+type SoundStatus = "off" | "starting" | "on" | "unavailable";
 
-  async function playClip() {
-    if (!window.AudioContext) return;
-    try {
-      const ctx = audio.current ??= new AudioContext();
-      if (ctx.state !== "running") await ctx.resume();
-      const t = ctx.currentTime;
-      // Two short, uneven transients suggest a spring gate closing.
-      for (const [pitch, delay, volume] of [[1850, 0, 0.045], [2870, 0.012, 0.018]]) {
-        const ring = ctx.createOscillator();
-        const gain = ctx.createGain();
-        ring.type = "triangle";
-        ring.frequency.setValueAtTime(pitch, t + delay);
-        ring.frequency.exponentialRampToValueAtTime(pitch * 0.6, t + delay + 0.023);
-        gain.gain.setValueAtTime(volume, t + delay);
-        gain.gain.exponentialRampToValueAtTime(0.0001, t + delay + 0.045);
-        ring.connect(gain).connect(ctx.destination);
-        ring.onended = () => { ring.disconnect(); gain.disconnect(); };
-        ring.start(t + delay);
-        ring.stop(t + delay + 0.05);
-      }
-    } catch { /* Audio can be unavailable while the page is backgrounded. */ }
-  }
+export function useClipSound(active: number) {
+  const [status, setStatus] = useState<SoundStatus>("off");
+  const audio = useRef<HTMLAudioElement | null>(null);
+
+  const click = useCallback(() => {
+    const clip = audio.current;
+    if (!clip || !clip.paused) return;
+
+    void clip.play().then(() => {
+      if (audio.current === clip) setStatus("on");
+    }).catch(() => {
+      if (audio.current !== clip) return;
+      audio.current = null;
+      setStatus("unavailable");
+    });
+  }, []);
+
+  useEffect(() => { click(); }, [active, click]);
+  useEffect(() => () => {
+    audio.current?.pause();
+    audio.current = null;
+  }, []);
+
   function toggle() {
-    setMuted(!muted);
-    if (muted) void playClip();
+    if (audio.current) {
+      const clip = audio.current;
+      audio.current = null;
+      clip.pause();
+      setStatus("off");
+      return;
+    }
+
+    audio.current = new Audio("/audio/clasp.wav");
+    setStatus("starting");
+    click();
   }
 
-  return { muted, toggle, click: () => { if (!muted) void playClip(); } };
+  return { status, toggle, click };
 }

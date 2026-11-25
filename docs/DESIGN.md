@@ -4,7 +4,7 @@ The exhibition plays out on a cream page framed by yellow graph paper. Each stop
 
 The opening view shows the featured pass at its resting angle and final size from the first paint. Native scrolling moves the skyline and passes at different speeds, with a small step from the guide as the fabric swings. The camera, swing and step settle when scrolling stops. Reduced motion presents the settled framing immediately. On phones the caption moves above the scene and the entire loop of the lanyard fits on the page.
 
-Previous, Next, the ribbon strip and Object index share the same stop. The index is a contact sheet of the badge fronts. Inspecting a pass adds a Viewed stamp for this visit and the guide takes out a magnifying glass. The inspection state lasts until the page is reloaded.
+Previous, Next, the ribbon strip and Object index share the same stop. The index is a contact sheet of the badge fronts. Sound starts off. Turning it on previews a clasp snap, which also plays when the featured badge changes or a visitor picks up or returns a pass. Inspecting a pass adds a Viewed stamp for this visit and the guide takes out a magnifying glass. The inspection state lasts until the page is reloaded.
 
 Selecting a hanging object or choosing **Pick up pass** opens a close-up. Its record gives materials, dimensions and available event details. On narrow screens the record follows the viewer. Escape or **Back to exhibition** returns to the same stop and restores focus.
 

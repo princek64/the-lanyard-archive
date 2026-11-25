@@ -179,3 +179,9 @@ The pickup hint sits on its own row, 12 pixels below Use badge and the face cont
 All six Solana legends are centered beneath their button caps on the operating case, hanging pass and enlarged print. The CityJS front retains the green handwritten name and removes the check mark and ink smudge. Both front textures and hanging views were regenerated.
 
 Mobile Chromium and WebKit emulation verified clearance and touch-target alignment at 320, 393 and 430 pixels, opening Guide with the controls, and the CityJS index, hanging and print views. Touch drag and release, native scrolling and keyboard face selection also passed in Chromium. ESLint, TypeScript and an isolated webpack production build passed. The local Turbopack CSS worker could not bind its socket. Physical handset testing remains outstanding.
+
+## Opt-in clasp sound
+
+The sound control previews a short clasp snap. Changes to the featured pass, pickups and returns reuse that sound. Muting stops playback immediately. A failed load offers a retry, and muting during a pending load cancels the preview.
+
+Mobile Chromium and WebKit emulation verified playback through the arrows, scrolling, ribbon, index, pickup and return, plus silence after muting and retry after a failed request. Chromium captured non-silent PCM from the media element. Touch drag and release, native scrolling and keyboard face selection passed. ESLint, TypeScript and the isolated webpack build passed. The local Turbopack worker could not bind its socket. Physical handset speaker testing remains outstanding.
