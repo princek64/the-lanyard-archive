@@ -1,0 +1,42 @@
+Lua 5.5.1 (https://www.lua.org/ftp/lua-5.5.1.tar.gz,
+sha256 1c4b4068d67061f2a2231ad2b5422e77acea1487ea9890f6320af614f4373dce),
+src/ only: the core, lauxlib and the base, coroutine, string, table, math and
+utf8 libraries. Not included: lua.c, luac.c, linit.c and the io, os, package
+(loadlib) and debug libraries. Changes, all marked "Solana OS":
+- luaconf.h: LUA_32BITS on, LUAI_MAXCCALLS 64, MAXCCALLS 32;
+  luai_cstackfull() hooks the host's native C stack guard, which ldo.c
+  (ccall) and lstate.c (luaE_incCstack, luaE_checkcstack) also check;
+  luai_userstatethread arms the count hook on new coroutines;
+  LUA_SOLANA_LUAC labels this build's binary chunks (the store's compiler,
+  tools/luac, is built from these sources).
+- lstrlib.c charges pattern matching and plain find work to the host's
+  instruction budget (luai_patternsteps), and leaves string.dump out.
+- lapi.c adds lua_pushfilled (declared in lua.h), a string filled in place,
+  so file reads need no second buffer.
+- lauxlib.c/.h: luaL_newlib makes lazy libraries (luaL_newlazylib): an empty
+  table whose functions come from the library's static luaL_Reg array on
+  first use, so the arrays stay in flash.
+- lstring.c grows the string table at two strings per slot, not one.
+- ldump.c: strip level 2 drops only local variable names, keeping line info,
+  source and upvalue names.
+
+Copyright (C) 1994-2026 Lua.org, PUC-Rio.
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

@@ -163,3 +163,9 @@ The mobile caption reserves two title lines. Narrow phones also reserve a second
 Mobile WebKit and Chromium emulation captured intermediate frames on pickup and return from both entry points. Other checks covered returning from a print or a scrolled record, interrupting the pickup, reduced motion, native touch scrolling, drag release, keyboard flipping, focus return and static fallback. A delayed first load kept the drag prompt hidden until the target was available. Print details for Solana, DDX and RNLConf remain pannable. Physical handset testing remains outstanding.
 
 ESLint, TypeScript and an isolated webpack production build passed. The sandbox blocked the local Turbopack CSS worker from binding its socket.
+
+## Solana OS on the electronic pass
+
+Use badge boots the official WebAssembly firmware into the archived case. Mobile Chromium and WebKit emulation verified the launcher, opening Guide with the physical controls, returning with Escape, BOOT, keyboard navigation and preserving X Dex through put-down and pickup. Back to exhibition ends the session. The neighbouring Vercel pass retained its inspection controls. A failed firmware download recovered with Restart. The binary is fetched only on first use within an inspection.
+
+Touch drag and release, native scrolling, keyboard flipping, reduced motion, focus restoration and the static reverse passed the Chromium checks. Lint, typechecking and an isolated webpack production build passed. The local Turbopack CSS worker was blocked from binding its socket. Physical phone testing remains outstanding.

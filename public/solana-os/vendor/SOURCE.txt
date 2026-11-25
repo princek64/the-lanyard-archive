@@ -1,0 +1,7 @@
+Solana OS, official Breakpoint 2026 browser firmware.
+Distribution: https://solana.com/breakpoint/badge/emulator/
+Artifacts: solana-os.js, solana-os.wasm
+Upstream: https://github.com/solana-foundation/solana-os
+Release manifest at retrieval: Solana OS 2.5.0, 9078402 (2026-11-24).
+The bundled firmware and loader are unmodified. Fonts and marks remain inside
+the firmware. See the accompanying upstream and third-party notices.

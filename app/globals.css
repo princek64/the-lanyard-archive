@@ -273,3 +273,16 @@ button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
   .clasp-guide { left: 35%; height: 37cqh; }
 }
 @media (prefers-reduced-motion:reduce) { .print-sun { transition: none; } }
+
+.badge-console { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.use-badge { display: inline-flex; align-items: center; gap: 12px; min-height: 38px; padding: 0 16px;
+  border-radius: 22px; background: #172341; color: #fffaf0; font: 700 14px/1 system-ui,sans-serif; }
+.use-badge:hover { background: #1646b0; }
+.use-badge:focus-visible { outline-color: #172341; }
+@media (max-width:759px) { .studio[data-operating] { height: clamp(420px, calc(100svh - 118px), 640px); } }
+
+@media (max-width:480px) {
+  .viewer-footer:has(.use-badge) { flex-wrap: wrap; column-gap: 8px; }
+  .viewer-footer:has(.use-badge) .viewer-instruction { order: 3; width: 100%; min-height: 0; }
+  .viewer-footer:has(.use-badge) .viewer-instruction:not(:empty) { padding-bottom: 8px; }
+}

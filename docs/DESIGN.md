@@ -11,3 +11,5 @@ Selecting a hanging object or choosing **Pick up pass** opens a close-up. Its re
 Drag the badge to move it and release it to watch it settle. Shift-drag with a mouse to rotate and snap to the nearer face. Flip badge and the Front and Back controls work with touch and keyboard. **Read print** lays the selected face flat at a larger scale. Visitors can pan or scroll over the artwork, flip it or return to **Whole pass**. Only the focused badge hit target captures drag gestures, so the rest of the panel scrolls normally.
 
 The archive opens with server-rendered images. Picking up a pass loads the live 3D viewer. Its static fallback preserves both faces, the enlarged print and the event record.
+
+The Solana pass has a **Use badge** control beneath the viewer. Its LCD and indicator lights run Solana OS. Tap the six buttons on the case or use the arrow keys, Enter and Escape. Home returns to the firmware launcher. **Put down** resumes the hanging view and keeps the current app available until the visitor returns to the wall.

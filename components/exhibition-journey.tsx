@@ -245,7 +245,12 @@ export function ExhibitionJourney({ badges, records }: {
         </div>
       </dialog>
       <dialog ref={dialog} className="focus-dialog" style={{ "--wall": badge.label.wall, "--pigment": badge.label.pigment } as CSSProperties} aria-labelledby="focus-title" onClose={close}
-        onCancel={event => { event.preventDefault(); putBack(); }}>
+        onCancel={event => {
+          event.preventDefault();
+          // Chromium also sends a modal cancel when Escape is handled inside a nested frame.
+          const consoleFrame = event.currentTarget.querySelector(".badge-console:not([hidden])");
+          if (!consoleFrame || document.activeElement !== consoleFrame) putBack();
+        }}>
         {focused !== null && (
           <>
             <header className="focus-header">

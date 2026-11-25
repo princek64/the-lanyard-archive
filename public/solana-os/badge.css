@@ -1,0 +1,38 @@
+* { box-sizing: border-box; }
+body { margin: 0; color: #172341; font: 14px system-ui, sans-serif; }
+main { height: 100dvh; display: grid; grid-template-rows: minmax(0,1fr) auto; justify-items: center; align-items: center; padding: 14px 8px 5px; }
+.device {
+  position: relative; width: min(100%, calc((100dvh - 75px) * .72), 460px); aspect-ratio: 720 / 1000;
+  background: url('../badges/solana-device-front.svg') center / 100% 100%;
+  border-radius: 2.5%; box-shadow: 2px 4px 0 #4d3969, 6px 12px 15px #39264b38;
+}
+canvas, .boot-status { position: absolute; inset: 23.7% auto auto 17.22%; width: 65.56%; height: 32.6%; border-radius: 1.2%; background: #10121b; }
+canvas { image-rendering: pixelated; }
+.boot-status { display: grid; place-content: center; padding: 8px; text-align: center; color: #e5deff; font: 13px/1.4 monospace; }
+.boot-status[hidden] { display: none; }
+.leds { position: absolute; left: 30%; top: 7.7%; width: 40%; display: flex; justify-content: space-between; }
+.leds i { width: 4%; aspect-ratio: 1; border-radius: 1px; }
+button { touch-action: manipulation; cursor: pointer; color: inherit; -webkit-tap-highlight-color: transparent; }
+.device button[data-key] {
+  position: absolute; width: 12%; height: 8.4%; padding: 0; transform: translate(-50%,-50%);
+  border: 0; border-radius: 50%; background: transparent; user-select: none; -webkit-user-select: none;
+}
+.device button[data-key]::after { content: ''; position: absolute; inset: 14%; border-radius: 50%; }
+.device button[data-key]:focus-visible { outline: 3px solid #ffdf59; }
+.device button[data-key][data-held]::after { background: #ad94ff55; box-shadow: inset 1px 2px 4px #0008; }
+[data-key="0"] { left: 28.89%; top: 71.5%; }
+[data-key="1"] { left: 28.89%; top: 86.2%; }
+[data-key="2"] { left: 15.97%; top: 78.8%; }
+[data-key="3"] { left: 40%; top: 78.7%; }
+[data-key="4"] { left: 66.81%; top: 82.4%; }
+[data-key="5"] { left: 80.42%; top: 72.7%; }
+.legend { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; font-size: 12px; }
+.legend button { background: #fffaf0; color: #172341; border: 1px solid currentColor; border-radius: 18px; padding: 7px 12px; font: inherit; }
+.legend button[data-held] { background: #ffdf59; }
+.touch-help { display: none; }
+@media (pointer:coarse) { .touch-help { display: inline; } .key-help { display: none; } }
+
+.restart { margin: 8px auto; font: inherit; color: white; background: transparent; border: 1px solid currentColor; border-radius: 4px; }
+
+body:focus { outline: none; }
+.app-name { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }

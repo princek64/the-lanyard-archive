@@ -85,3 +85,7 @@ A pointer pickup returns focus to the visible Pick up pass button. Keyboard pick
 The close transition captures the visible badge into the same specimen frame used on the wall. A live scene keeps its current pose. The print reader and the static preview supply their own image when active. Closing a record scrolled beyond the badge uses the page transition alone. Reduced motion and interrupted pickups close directly. The viewer module starts loading at pickup, while the interactive rig mounts after the opening transition. Readiness requires a painted pose, a physics body and a mounted drag target.
 
 A catalogue entry may specify a front detail as a fractional centre and visible width. Read print uses these values to position the complete artwork in its scrollable viewport.
+
+## Operating an electronic badge
+
+The Solana record opts into a local emulator directory. Choosing Use badge loads the Solana Foundation’s published browser firmware and passes its WebAssembly bytes into a scripts-only sandboxed iframe. The host draws the firmware’s framebuffer inside the archived front artwork and sends the six switch inputs and BOOT through the firmware’s input API. The sandbox has an opaque origin, no external network access and no physical radios. The instance stays mounted while inspecting the same pass, releases held keys and suspends painting when hidden, and ends when the visitor leaves the pass. Release provenance and upstream notices ship beside the firmware.

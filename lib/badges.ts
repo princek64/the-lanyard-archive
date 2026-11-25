@@ -5,6 +5,7 @@ export interface BadgeConfig {
   lanyard: { width: number; length: number; colour: string; texture?: string; repeatAspect?: number; clipSpread?: number; sleeveColour?: string };
   /** Centre of the front detail and visible width, as fractions of the print. */
   frontDetail?: { x: number; y: number; width: number };
+  emulator?: string;
   body?: "electronic";
   attachment?: "swivel-clip" | "snap-hook";
   event: { name: string; edition?: string; date?: string; dateTime?: string; location?: string; pass?: string };
@@ -33,6 +34,7 @@ export const exhibition: ExhibitionBadge[] = [
       texture: "/badges/solana-strap.svg", repeatAspect: 5, clipSpread: 53,
     },
     body: "electronic",
+    emulator: "/solana-os",
     attachment: "swivel-clip",
     event: { name: "Solana electronic badge", date: "15–17 November 2026", dateTime: "2026-11-15" },
     story: {

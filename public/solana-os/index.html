@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self'; connect-src blob:; base-uri 'none'; form-action 'none'">
+  <title>Solana Breakpoint badge</title>
+  <link rel="stylesheet" href="badge.css">
+  <script defer src="vendor/solana-os.js"></script>
+  <script defer src="badge.js"></script>
+</head>
+<body tabindex="-1">
+  <main>
+    <div class="device" role="group" aria-label="Solana badge controls">
+      <span class="app-name" role="status"></span>
+      <canvas width="320" height="240" aria-label="Solana OS display"></canvas>
+      <div class="boot-status" role="status"><span>Powering on…</span><button class="restart" hidden>Restart</button></div>
+      <div class="leds" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <button data-key="0" aria-label="Up"></button>
+      <button data-key="1" aria-label="Down"></button>
+      <button data-key="2" aria-label="Left"></button>
+      <button data-key="3" aria-label="Right"></button>
+      <button data-key="4" aria-label="Select"></button>
+      <button data-key="5" aria-label="Cancel"></button>
+    </div>
+    <div class="legend">
+      <button data-key="6" aria-label="Boot, return to launcher">⌂ Home</button>
+      <span class="touch-help">Use the six buttons on the badge.</span>
+      <span class="key-help">Arrows · Enter to select · Esc to cancel</span>
+    </div>
+  </main>
+</body>
+</html>
