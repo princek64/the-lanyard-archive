@@ -113,3 +113,9 @@ Lint, typechecking and an isolated webpack production build passed. Chromium ver
 All 22 stops share a metal rail. The paper label and collector commentary have been removed from the wall. Visitors can drag across the ribbon samples to select a pass. Picking up a pass opens its record and the Read print control for inspecting either face.
 
 Lint, TypeScript and an isolated webpack production build passed. Chromium verified all 22 inscriptions and front images, five viewport sizes from 320 to 1440 pixels, touch and mouse scrubbing, keyboard range controls, physical badge selection, native page scrolling, touch release, keyboard flipping, focus restoration, clip sound and mute. The enlarged print scrolls and preserves the selected face when returning to the whole pass, including with WebGL disabled. The default Turbopack build remains unverified in this environment because the CSS worker cannot bind its local socket. Mobile checks used emulation.
+
+## Scroll motion and catalogue
+
+All 22 hanging views were rendered from the catalogue and checked for complete transparent bounds. Browsing loads no WebGL canvas. A Chromium wheel-input recording captured intermediate positions, a reversal during travel and a stop with no further rail transform writes. The contents, printed ribbon scale and caption tracked the selected pass.
+
+The production assets passed Chromium checks at five viewport sizes from 320 to 1440 pixels. Checks covered mouse and touch pickup and release, native touch scrolling, keyboard face selection, reduced motion, direct selection, enlarged print, focus restoration and the WebGL-disabled viewer. Phone checks used emulation. ESLint, TypeScript and an isolated webpack production build passed. The default Turbopack build could not bind the PostCSS worker socket in this environment.

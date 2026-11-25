@@ -9,3 +9,7 @@
 ## Exhibition records
 
 The exhibition order is defined in the `exhibition` array in `lib/badges.ts`. Each badge has a unique ID, display date and ISO date, plus a venue and a short note about the event. Remove the fictional marker only when replacing a placeholder with a real record. Use distinctly readable artwork so that each badge stays recognisable when seen from a distance.
+
+## Hanging views
+
+The catalogue's `artwork.specimen` points to a transparent WebP render. To regenerate a single item, run `blender -b -t 4 --python-exit-code 1 -P scripts/render-specimens.py -- 007` from the repository root. Omit the accession number to render the collection. The offline script reads the catalogue with Node 24, rasterises the printed art with Inkscape and exports WebP with Pillow inside Blender. The website build consumes the committed images.

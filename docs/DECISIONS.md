@@ -55,3 +55,9 @@ The wall uses a continuous rail and leaves the space around the passes clear. Ma
 Ribbon samples reuse each object's strap texture or fabric colour. One native range input tracks the entire strip and scrolls the existing exhibition to the selected stop. The rail, caption, strip and object index share one selection. The static viewer uses the same navigation and records.
 
 Reading the print uses the same face artwork at a larger scale in a native scroll region. It releases the close-up physics scene while open and works in the static viewer. Returning to the whole pass keeps the selected face.
+
+## Composited exhibition rail
+
+The overview displays transparent WebP renders of the configured objects. A translating layer moves the row, and nearby passes tilt around the peg according to the rail's velocity. This removes continuous WebGL rendering and texture-loading boundaries from the scroll path. The independent inspection view still loads Three.js and Rapier on demand.
+
+Native scroll supplies the target. A frame-rate-independent exponential response drives one displayed position shared by the hanging objects, caption, contents and index needle. The animation loop stops at rest. A contact-sheet jump, ribbon scrub or reduced-motion preference applies the new position directly. No wheel or touch handlers cancel page scrolling.

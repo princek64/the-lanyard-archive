@@ -1,6 +1,6 @@
 # The Lanyard Archive
 
-A personal exhibition of lanyards and conference badges from London. The prototype presents twenty-two lanyard objects in a scrollable 3D space, with a physics-driven close-up viewer and a catalogue record for each object.
+A personal exhibition of lanyards and conference badges from London. The prototype presents twenty-two lanyard objects on a scrollable rail, with a physics-driven close-up viewer and a catalogue record for each object.
 
 ## Development
 
