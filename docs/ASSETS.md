@@ -12,4 +12,4 @@ The exhibition order is defined in the `exhibition` array in `lib/badges.ts`. Ea
 
 ## Hanging views
 
-The catalogue's `artwork.specimen` points to a transparent WebP render. To regenerate a single item, run `blender -b -t 4 --python-exit-code 1 -P scripts/render-specimens.py -- 007` from the repository root. Omit the accession number to render the collection. The offline script reads the catalogue with Node 24, rasterises the printed art with Inkscape and exports WebP with Pillow inside Blender. The website build consumes the committed images.
+The catalogue points to transparent WebP images of the front and back of each hanging object. These are captured from the running inspection viewer with its own artwork, straps, fastenings, lights and resting pose. Start the archive locally, then run `python scripts/render-specimens.py 007` from the repository root. Omit the accession number to capture the collection. The offline script requires Node 24, Python, Pillow and Playwright with Chromium. Use `--url` for a different local server or `--chromium` for an installed browser executable. The website build uses the committed images.

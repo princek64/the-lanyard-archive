@@ -3,11 +3,11 @@
 import Image from "next/image";
 import { flushSync } from "react-dom";
 import { useRef, useState, type CSSProperties, type ReactNode } from "react";
-import type { ExhibitionBadge } from "../lib/badges";
+import { ribbonOffsets, type ExhibitionBadge } from "../lib/badges";
 import { BadgeExhibition } from "./badge-exhibition";
 import { Hand } from "./icons";
 import { useClipSound } from "./clip-sound";
-import { useExhibitionRail } from "./use-exhibition-rail";
+import { restingAngle, useExhibitionRail } from "./use-exhibition-rail";
 
 const number = (value: number) => String(value).padStart(2, "0");
 const eventTitle = ({ event }: ExhibitionBadge) => [event.name, event.edition].filter(Boolean).join(" ");
@@ -153,8 +153,13 @@ export function ExhibitionJourney({ badges, records }: {
                 {badges.map((item, i) => (
                   <div key={item.id} className="object-mount" style={{ "--i": i } as CSSProperties}>
                     <button type="button" className="hanging" data-featured={i === active}
+                      style={{ transform: `rotateZ(${restingAngle(i)}deg)` }}
                       tabIndex={i === active ? 0 : -1} aria-hidden={i !== active} aria-label={`Inspect ${eventTitle(item)}`}
                       onClick={e => inspect(i, e.currentTarget)}>
+                      {ribbonOffsets(item.lanyard).map(offset => (
+                        <span aria-hidden="true" className="wall-pin" key={offset}
+                          style={{ left: `${50 + offset / (300 * 464 / 980) * 100}%` }} />
+                      ))}
                       <Image src={item.artwork.specimen} width={464} height={980} alt=""
                         loading={i < 3 ? "eager" : "lazy"} fetchPriority={i === 0 ? "high" : "auto"} unoptimized />
                     </button>

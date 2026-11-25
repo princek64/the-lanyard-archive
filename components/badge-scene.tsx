@@ -1,9 +1,9 @@
 "use client";
 
 import { OrthographicCamera } from "@react-three/drei";
-import { Canvas, useThree } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Physics } from "@react-three/rapier";
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import type { BadgeConfig } from "../lib/badges";
 import { BadgeRig } from "./badge-rig";
 import { units } from "./badge-mesh";
@@ -48,7 +48,11 @@ function StudioCamera({ config, onUnavailable }: Pick<SceneProps, "config" | "on
 }
 
 function Ready({ onReady }: Pick<SceneProps, "onReady">) {
-  useEffect(onReady, [onReady]);
+  const frames = useRef(0);
+  useFrame(() => {
+    // The preceding frame has painted the posed rig and uploaded its textures.
+    if (frames.current < 2 && ++frames.current === 2) onReady();
+  });
   return null;
 }
 

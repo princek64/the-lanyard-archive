@@ -39,18 +39,10 @@ export function BadgeExhibition({ config, sceneEnabled }: { config: BadgeConfig;
               width={config.dimensions.width * 8} height={config.dimensions.height * 8} unoptimized />
           </div>
         )}
-        {!reading && !back && status !== "unavailable" && (
+        {!reading && (
           <div className="pickup-preview" data-ready={status === "ready"} aria-hidden={status === "ready"}>
-            <Image src={config.artwork.specimen} alt={`${config.event.name} badge, front`} width={464} height={980}
+            <Image src={back ? config.artwork.specimenBack : config.artwork.specimen} alt={`${config.event.name} badge, ${back ? "back" : "front"}`} width={464} height={980}
               style={{ viewTransitionName: sceneEnabled ? undefined : "inspected-badge" }} unoptimized priority />
-          </div>
-        )}
-        {!reading && status !== "ready" && (back || status === "unavailable") && (
-          <div className={`flat-badge ${status}`}>
-            <Image src={back ? config.artwork.back : config.artwork.front}
-              alt={`${config.event.name} badge, ${back ? "back" : "front"}`}
-              width={config.dimensions.width * 8} height={config.dimensions.height * 8}
-              unoptimized priority />
           </div>
         )}
         {!reading && sceneEnabled && status !== "unavailable" && (

@@ -73,3 +73,7 @@ The 3D viewer uploads lossless WebP images with fixed pixel bounds for the faces
 ## Picking up a badge
 
 The hanging image and the opening inspection image share a View Transition name for the duration of a pickup. Both use the same catalogue specimen. The inspection image uses the live camera's framing so its card face stays aligned as the 3D scene fades in. Mounting the physics viewer after the transition keeps its initialisation out of the pickup animation. The native modal retains focus handling. Browsers without View Transitions use a short entrance fade, and reduced motion opens the modal directly.
+
+## First-frame lanyard geometry
+
+The rail, pickup transition and static viewer use transparent front and reverse images captured from the inspection rig at rest. The capture script opens each catalogue record and renders its loaded scene with a common orthographic crop. The studio positions this crop using the same badge dimensions and camera clearance as the interactive viewer. The server supplies the rail’s resting angle, and the inspection preview stays visible until the rig has painted the requested face.

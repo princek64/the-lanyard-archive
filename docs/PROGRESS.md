@@ -143,3 +143,9 @@ ESLint, TypeScript and an isolated webpack production build passed. The local Tu
 Both the hanging badge and Pick up pass now carry the selected specimen into the close-up. Mobile Chromium and WebKit captured intermediate positions for both entry points. The same checks verified keyboard flipping and focus return after repeated opens. Chromium also verified touch dragging and release, native dialog scrolling, reduced motion, the entrance without View Transitions and the WebGL-disabled reverse face. These were emulated phone checks.
 
 ESLint, TypeScript and an isolated webpack production build passed. The local Turbopack build was blocked by its CSS worker's socket restriction.
+
+## First-frame lanyard geometry
+
+All 22 records have front and reverse captures from the live rig. Desktop Chromium and emulated mobile WebKit opened Solana, Houdini and the landscape Caffè Culture badge with texture loading deliberately delayed. Once loaded, the resting previews and live images matched in framing on both faces. Chromium also verified touch drag and release, native scrolling, keyboard flipping, focus return and the static reverse. A physical handset check remains outstanding.
+
+ESLint, TypeScript and the isolated webpack production build passed. The local default build encountered the sandbox socket restriction in the Turbopack CSS worker.

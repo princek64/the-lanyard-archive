@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "./viewer-support";
 
+export const restingAngle = (index: number) => Math.sin(index * 5 + .6) * 3;
+
 export function useExhibitionRail(count: number) {
   const track = useRef<HTMLElement>(null);
   const stage = useRef<HTMLDivElement>(null);
@@ -46,7 +48,7 @@ export function useExhibitionRail(count: number) {
         }
         const weight = away * away * (3 - 2 * away);
         const turn = Math.sign(offset) * weight * -30;
-        const origin = reducedMotion ? 0 : tilt + Math.sin(i * 5 + .6) * 3;
+        const origin = restingAngle(i) + (reducedMotion ? 0 : tilt);
         objects[i].style.transform = `perspective(1000px) rotateY(${turn}deg) rotateZ(${origin}deg) scale(${1 - weight * .53})`;
         objects[i].style.opacity = String(1 - weight * weight);
       }

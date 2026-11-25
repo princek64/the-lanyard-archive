@@ -31,8 +31,10 @@ export function BadgeRig({ config, back, reducedMotion, onFlip }: {
   const active = useRef<Drag | null>(null);
   const control = useRef<HTMLButtonElement>(null);
   const previousScale = useRef(0);
+  const posed = useRef(false);
   const { rapier } = useRapier();
-  const { camera } = useThree();
+  const { camera, gl } = useThree();
+  const hitPortal = useMemo(() => ({ current: gl.domElement.parentElement! }), [gl]);
   const width = units(config.dimensions.width);
   const height = units(config.dimensions.height);
   const restY = anchorY - units(config.lanyard.length);
@@ -44,8 +46,9 @@ export function BadgeRig({ config, back, reducedMotion, onFlip }: {
     }
     if (pivot.current) {
       const angle = drag?.rotation ?? (back ? Math.PI : 0) + displayYaw;
-      pivot.current.rotation.y = reducedMotion ? angle
+      pivot.current.rotation.y = reducedMotion || !posed.current ? angle
         : MathUtils.damp(pivot.current.rotation.y, angle, 12, delta);
+      posed.current = true;
       const scale = (camera as OrthographicCamera).zoom;
       if (control.current && previousScale.current !== scale) {
         previousScale.current = scale;
@@ -123,7 +126,7 @@ export function BadgeRig({ config, back, reducedMotion, onFlip }: {
           <BadgeAttachment config={config} />
           <BadgeMesh config={config} />
         </group>
-        <Html center position={[0, -clipLength - height / 2, 0]} zIndexRange={[4, 4]}
+        <Html center portal={hitPortal} position={[0, -clipLength - height / 2, 0]} zIndexRange={[4, 4]}
           style={{ pointerEvents: "none" }}>
           <button ref={control} type="button" className="badge-hit"
             aria-label="Badge. Press Enter or Space to turn it over."

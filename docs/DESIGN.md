@@ -2,7 +2,7 @@
 
 The exhibition plays out on a cream page framed by yellow graph paper. Each stop pairs the actual pass with its inscription and event name. An original illustrated clasp guides the visitor across a cobalt London skyline. Bricolage Grotesque sets the event lettering and STIX Two Text sets the inscription.
 
-The opening view moves from a wide shot into the featured pass. Native scrolling moves the skyline and passes at different speeds, with a small step from the guide as the fabric swings. The camera, swing and step settle when scrolling stops. Reduced motion presents the settled framing immediately. On phones the caption moves above the scene and the entire loop of the lanyard fits on the page.
+The opening view shows the featured pass at its resting angle and final size from the first paint. Native scrolling moves the skyline and passes at different speeds, with a small step from the guide as the fabric swings. The camera, swing and step settle when scrolling stops. Reduced motion presents the settled framing immediately. On phones the caption moves above the scene and the entire loop of the lanyard fits on the page.
 
 Previous, Next, the ribbon strip and Object index share the same stop. The index is a contact sheet of the badge fronts. Inspecting a pass adds a Viewed stamp for this visit and the guide takes out a magnifying glass. The inspection state lasts until the page is reloaded.
 
