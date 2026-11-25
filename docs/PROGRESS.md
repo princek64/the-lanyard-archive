@@ -169,3 +169,7 @@ ESLint, TypeScript and an isolated webpack production build passed. The sandbox 
 Use badge boots the official WebAssembly firmware into the archived case. Mobile Chromium and WebKit emulation verified the launcher, opening Guide with the physical controls, returning with Escape, BOOT, keyboard navigation and preserving X Dex through put-down and pickup. Back to exhibition ends the session. The neighbouring Vercel pass retained its inspection controls. A failed firmware download recovered with Restart. The binary is fetched only on first use within an inspection.
 
 Touch drag and release, native scrolling, keyboard flipping, reduced motion, focus restoration and the static reverse passed the Chromium checks. Lint, typechecking and an isolated webpack production build passed. The local Turbopack CSS worker was blocked from binding its socket. Physical phone testing remains outstanding.
+
+## Solana mobile control spacing
+
+The pickup hint sits on its own row, 12 pixels below Use badge and the face controls. Mobile WebKit and Chromium emulation verified the spacing from 320 to 600 pixels wide, plus the reading, operating and put-down states and keyboard face selection. ESLint, TypeScript and the isolated webpack build passed. The local Turbopack CSS worker could not bind its socket.

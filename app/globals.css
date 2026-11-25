@@ -281,8 +281,12 @@ button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 .use-badge:focus-visible { outline-color: #172341; }
 @media (max-width:759px) { .studio[data-operating] { height: clamp(420px, calc(100svh - 118px), 640px); } }
 
-@media (max-width:480px) {
-  .viewer-footer:has(.use-badge) { flex-wrap: wrap; column-gap: 8px; }
-  .viewer-footer:has(.use-badge) .viewer-instruction { order: 3; width: 100%; min-height: 0; }
-  .viewer-footer:has(.use-badge) .viewer-instruction:not(:empty) { padding-bottom: 8px; }
+@media (max-width: 600px) {
+  .viewer-footer:has(.use-badge) {
+    display: grid; grid-template-columns: 1fr auto; align-items: center;
+    gap: 12px; padding-block: 12px;
+  }
+  .viewer-footer .use-badge { grid-column: 1; grid-row: 1; justify-self: start; min-height: 44px; }
+  .viewer-footer:has(.use-badge) .view-controls { grid-column: 2; grid-row: 1; min-height: 44px; }
+  .viewer-footer:has(.use-badge) .viewer-instruction { grid-column: 1 / -1; grid-row: 2; min-height: 18px; }
 }
