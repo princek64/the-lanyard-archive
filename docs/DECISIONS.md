@@ -89,3 +89,7 @@ A catalogue entry may specify a front detail as a fractional centre and visible 
 ## Operating an electronic badge
 
 The Solana record opts into a local emulator directory. Choosing Use badge loads the Solana Foundation’s published browser firmware and passes its WebAssembly bytes into a scripts-only sandboxed iframe. The host draws the firmware’s framebuffer inside the archived front artwork and sends the six switch inputs and BOOT through the firmware’s input API. The sandbox has an opaque origin, no external network access and no physical radios. The instance stays mounted while inspecting the same pass, releases held keys and suspends painting when hidden, and ends when the visitor leaves the pass. Release provenance and upstream notices ship beside the firmware.
+
+## Visitor analytics
+
+The root App Router layout mounts Vercel Web Analytics once for the archive. Browsing and handling badges on the same URL count as part of the same page view.

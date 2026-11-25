@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { archiveTitle } from "../lib/badges";
@@ -25,5 +26,12 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en-GB"><body className={`${exhibitionDisplay.variable} ${archiveTitleFace.variable}`}>{children}</body></html>;
+  return (
+    <html lang="en-GB">
+      <body className={`${exhibitionDisplay.variable} ${archiveTitleFace.variable}`}>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  );
 }

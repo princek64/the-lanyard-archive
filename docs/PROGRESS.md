@@ -185,3 +185,7 @@ Mobile Chromium and WebKit emulation verified clearance and touch-target alignme
 The sound control previews a short clasp snap. Changes to the featured pass, pickups and returns reuse that sound. Muting stops playback immediately. A failed load offers a retry, and muting during a pending load cancels the preview.
 
 Mobile Chromium and WebKit emulation verified playback through the arrows, scrolling, ribbon, index, pickup and return, plus silence after muting and retry after a failed request. Chromium captured non-silent PCM from the media element. Touch drag and release, native scrolling and keyboard face selection passed. ESLint, TypeScript and the isolated webpack build passed. The local Turbopack worker could not bind its socket. Physical handset speaker testing remains outstanding.
+
+## Visitor analytics
+
+Installed the Next.js integration for Vercel Web Analytics in the root layout. ESLint, TypeScript and the production build passed. The exhibition route is still statically prerendered.
