@@ -101,7 +101,16 @@ button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
   .journey-view { animation: approach 1.05s cubic-bezier(.19,.78,.2,1) both; transform-origin: 60% 74%; }
   .caption-print { animation: ink-in .3s ease-out both; }
   .viewed-stamp { animation: impress .25s ease-out both; }
-  .focus-dialog[open] .focus-content,.index-dialog[open] .object-index { animation: unfold .28s cubic-bezier(.16,.83,.25,1) both; transform-origin: 50% 70%; }
+  .index-dialog[open] .object-index { animation: unfold .28s cubic-bezier(.16,.83,.25,1) both; transform-origin: 50% 70%; }
+  ::view-transition-group(inspected-badge) {
+    animation-duration: 460ms;
+    animation-timing-function: cubic-bezier(.22,.75,.18,1);
+  }
+  ::view-transition-old(inspected-badge), ::view-transition-new(inspected-badge) { animation-duration: 460ms; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 320ms; }
+  .focus-dialog[data-fade-in="true"][open] { animation: open-inspection 340ms ease-out both; }
+  .focus-dialog[data-fade-in="true"]::backdrop { background: transparent; }
+  @keyframes open-inspection { from { opacity: 0; transform: translateY(10px); } }
   @keyframes unfold { from { transform: translateY(10px) scale(.98); opacity: .3; } }
   @keyframes arrive { from { transform: translate(-22%,8%) rotate(-10deg) scale(.58); } }
   @keyframes approach { from { transform: scale(.84); opacity: .25; } }
@@ -146,7 +155,22 @@ button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 .focus-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 31%); min-height: calc(100svh - 61px); }
 .exhibition { min-width: 0; }
 .studio { position: relative; overflow: hidden; height: max(370px, calc(100svh - 112px)); background: radial-gradient(ellipse at 42% 25%, #fff8ee88, transparent 74%), var(--wall); isolation: isolate; }
-.scene { position: absolute; inset: 0; pointer-events: none; }
+.studio { container-type: size; }
+.pickup-preview { position: absolute; inset: 0; pointer-events: none; }
+.pickup-preview img {
+  /* The offline specimen spans 300 mm vertically; use the live camera's fit. */
+  --mm: min(calc(100cqh / var(--frame-height)), calc(100cqw / var(--frame-width)));
+  --clearance: 34;
+  position: absolute; left: 50%; top: calc(50% + (var(--specimen-offset) - var(--clearance)) * var(--mm));
+  height: calc(300 * var(--mm)); width: auto; max-width: none; transform: translate(-50%,-50%);
+}
+@container (width < 480px) { .pickup-preview img { --clearance: 41; } }
+.scene { position: absolute; inset: 0; pointer-events: none; opacity: 0; }
+.scene[data-ready="true"] { opacity: 1; }
+.pickup-preview[data-ready="true"] { opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .scene, .pickup-preview { transition: opacity 220ms ease-in-out; }
+}
 .badge-hit { display: block; pointer-events: auto; touch-action: none; cursor: grab; background: transparent; border: 0; user-select: none; -webkit-tap-highlight-color: transparent; }
 .badge-hit[data-dragging] { cursor: grabbing; }
 .flat-badge { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; }

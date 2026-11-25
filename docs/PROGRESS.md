@@ -137,3 +137,9 @@ Solana, Vercel and Breakpoint open the exhibition. Houdini is stop 11. Git Natio
 The badge records cover 21 dated event passes and one undated campus guide. Public references accompany each description. BrainStation is the Notion Developer Platform Watch Party, identified by the collector. The sound control previews the navigation click on enable and shows its current state. Index cards align at the top of their images and captions, including wrapped titles.
 
 ESLint, TypeScript and an isolated webpack production build passed. The local Turbopack worker was unable to bind a socket.
+
+## Pickup motion
+
+Both the hanging badge and Pick up pass now carry the selected specimen into the close-up. Mobile Chromium and WebKit captured intermediate positions for both entry points. The same checks verified keyboard flipping and focus return after repeated opens. Chromium also verified touch dragging and release, native dialog scrolling, reduced motion, the entrance without View Transitions and the WebGL-disabled reverse face. These were emulated phone checks.
+
+ESLint, TypeScript and an isolated webpack production build passed. The local Turbopack build was blocked by its CSS worker's socket restriction.

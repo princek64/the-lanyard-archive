@@ -69,3 +69,7 @@ The exhibition shares two original guide poses and one transparent skyline acros
 ## Badge textures in the inspection view
 
 The 3D viewer uploads lossless WebP images with fixed pixel bounds for the faces and printed straps. This avoids a mobile SVG-to-WebGL rendering issue that shrank the print into one corner. The catalogue still references the SVG masters for the index, static viewer and enlarged print. After editing artwork, run `python scripts/render-textures.py` and commit the generated WebP siblings with the masters.
+
+## Picking up a badge
+
+The hanging image and the opening inspection image share a View Transition name for the duration of a pickup. Both use the same catalogue specimen. The inspection image uses the live camera's framing so its card face stays aligned as the 3D scene fades in. Mounting the physics viewer after the transition keeps its initialisation out of the pickup animation. The native modal retains focus handling. Browsers without View Transitions use a short entrance fade, and reduced motion opens the modal directly.

@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
+import { flushSync } from "react-dom";
+import { useRef, useState, type CSSProperties, type ReactNode } from "react";
 import type { ExhibitionBadge } from "../lib/badges";
 import { BadgeExhibition } from "./badge-exhibition";
 import { Hand } from "./icons";
@@ -24,6 +25,8 @@ export function ExhibitionJourney({ badges, records }: {
   const { track, stage, carriage, needle, active, target, scenery, navigate } = useExhibitionRail(badges.length);
   const [indexOpen, setIndexOpen] = useState(false);
   const [focused, setFocused] = useState<number | null>(null);
+  const [sceneEnabled, setSceneEnabled] = useState(false);
+  const pickup = useRef<ViewTransition | null>(null);
   const [seen, setSeen] = useState<Set<string>>(() => new Set());
   const dialog = useRef<HTMLDialogElement>(null);
   const indexDialog = useRef<HTMLDialogElement>(null);
@@ -41,19 +44,44 @@ export function ExhibitionJourney({ badges, records }: {
   }
 
   function inspect(index: number, trigger?: HTMLElement) {
-    navigate(index, true);
+    const panel = dialog.current;
+    if (!panel || panel.open || pickup.current) return;
+    const specimen = carriage.current?.children[index]?.querySelector("img");
+    const animate = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     returnFocus.current = trigger ?? inspectButton.current;
-    setSeen(previous => previous.has(badges[index].id) ? previous : new Set([...previous, badges[index].id]));
-    setFocused(index);
+
+    const open = () => {
+      specimen?.style.removeProperty("view-transition-name");
+      flushSync(() => {
+        navigate(index, true);
+        setSceneEnabled(false);
+        setSeen(previous => previous.has(badges[index].id) ? previous : new Set([...previous, badges[index].id]));
+        setFocused(index);
+      });
+      panel.showModal();
+      panel.scrollTop = 0;
+      closeButton.current?.focus({ preventScroll: true });
+    };
+
+    if (animate && specimen && document.startViewTransition) {
+      delete panel.dataset.fadeIn;
+      specimen.style.viewTransitionName = "inspected-badge";
+      const transition = document.startViewTransition(open);
+      pickup.current = transition;
+      void transition.finished.then(() => {
+        if (pickup.current === transition && panel.open) setSceneEnabled(true);
+        if (pickup.current === transition) pickup.current = null;
+      });
+    } else {
+      panel.dataset.fadeIn = String(animate);
+      open();
+      setSceneEnabled(true);
+    }
   }
 
-  useEffect(() => {
-    if (focused === null) return;
-    dialog.current?.showModal();
-    closeButton.current?.focus();
-  }, [focused]);
-
   function close() {
+    pickup.current?.skipTransition();
+    pickup.current = null;
     setFocused(null);
     requestAnimationFrame(() => {
       const opener = returnFocus.current?.isConnected ? returnFocus.current : inspectButton.current;
@@ -189,7 +217,7 @@ export function ExhibitionJourney({ badges, records }: {
               </button>
             </header>
             <div className="focus-content">
-              <BadgeExhibition key={badges[focused].id} config={badges[focused]} />
+              <BadgeExhibition key={badges[focused].id} config={badges[focused]} sceneEnabled={sceneEnabled} />
               {records[focused]}
             </div>
           </>

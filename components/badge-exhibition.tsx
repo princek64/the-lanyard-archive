@@ -2,13 +2,13 @@
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import { SceneBoundary, useReducedMotion } from "./viewer-support";
 import type { BadgeConfig } from "../lib/badges";
 import { Flip, Hand } from "./icons";
 
 const BadgeScene = dynamic(() => import("./badge-scene"), { ssr: false });
-export function BadgeExhibition({ config }: { config: BadgeConfig }) {
+export function BadgeExhibition({ config, sceneEnabled }: { config: BadgeConfig; sceneEnabled: boolean }) {
   const [back, setBack] = useState(false);
   const [reading, setReading] = useState(false);
   const print = useRef<HTMLDivElement>(null);
@@ -26,7 +26,11 @@ export function BadgeExhibition({ config }: { config: BadgeConfig }) {
 
   return (
     <section className="exhibition" aria-label="Badge viewer">
-      <div className="studio">
+      <div className="studio" style={{
+        "--frame-height": config.dimensions.height + config.lanyard.length + 20,
+        "--frame-width": config.dimensions.width + 95,
+        "--specimen-offset": 137 - (config.dimensions.height + config.lanyard.length) / 2,
+      } as CSSProperties}>
         {reading && (
           <div ref={print} className="enlarged-print" role="region" tabIndex={0}
             aria-label={`Enlarged ${back ? "back" : "front"} print`}>
@@ -35,7 +39,13 @@ export function BadgeExhibition({ config }: { config: BadgeConfig }) {
               width={config.dimensions.width * 8} height={config.dimensions.height * 8} unoptimized />
           </div>
         )}
-        {!reading && status !== "ready" && (
+        {!reading && !back && status !== "unavailable" && (
+          <div className="pickup-preview" data-ready={status === "ready"} aria-hidden={status === "ready"}>
+            <Image src={config.artwork.specimen} alt={`${config.event.name} badge, front`} width={464} height={980}
+              style={{ viewTransitionName: sceneEnabled ? undefined : "inspected-badge" }} unoptimized priority />
+          </div>
+        )}
+        {!reading && status !== "ready" && (back || status === "unavailable") && (
           <div className={`flat-badge ${status}`}>
             <Image src={back ? config.artwork.back : config.artwork.front}
               alt={`${config.event.name} badge, ${back ? "back" : "front"}`}
@@ -43,8 +53,8 @@ export function BadgeExhibition({ config }: { config: BadgeConfig }) {
               unoptimized priority />
           </div>
         )}
-        {!reading && status !== "unavailable" && (
-          <div className="scene">
+        {!reading && sceneEnabled && status !== "unavailable" && (
+          <div className="scene" data-ready={status === "ready"}>
             <SceneBoundary onUnavailable={unavailable}>
               <BadgeScene config={config} back={back} reducedMotion={reducedMotion}
                 onFlip={flip} onReady={ready} onUnavailable={unavailable} />
