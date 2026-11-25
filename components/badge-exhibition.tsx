@@ -2,12 +2,17 @@
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
+import { useCallback, useLayoutEffect, useRef, useState, type CSSProperties } from "react";
 import { SceneBoundary, useReducedMotion } from "./viewer-support";
 import type { BadgeConfig } from "../lib/badges";
 import { Flip, Hand } from "./icons";
 
 const BadgeScene = dynamic(() => import("./badge-scene"), { ssr: false });
+export function preloadBadgeScene() {
+  // A failed speculative load still goes through the viewer's normal fallback on mount.
+  void import("./badge-scene").catch(() => {});
+}
+
 export function BadgeExhibition({ config, sceneEnabled }: { config: BadgeConfig; sceneEnabled: boolean }) {
   const [back, setBack] = useState(false);
   const [reading, setReading] = useState(false);
@@ -17,11 +22,21 @@ export function BadgeExhibition({ config, sceneEnabled }: { config: BadgeConfig;
   const flip = useCallback(() => setBack(value => !value), []);
   const ready = useCallback(() => setStatus("ready"), []);
   const unavailable = useCallback(() => setStatus("unavailable"), []);
-  useEffect(() => {
-    if (!reading || !print.current) return;
+  const detail = !back || config.artwork.front === config.artwork.back ? config.frontDetail : undefined;
+  const framePrint = useCallback(() => {
     const sheet = print.current;
-    sheet.scrollTo({ left: (sheet.scrollWidth - sheet.clientWidth) / 2, top: 0 });
-    sheet.focus({ preventScroll: true });
+    if (!sheet) return;
+    sheet.scrollTo({
+      left: sheet.scrollWidth * (detail?.x ?? 0.5) - sheet.clientWidth / 2,
+      top: detail ? sheet.scrollHeight * detail.y - sheet.clientHeight / 2 : 0,
+    });
+  }, [detail]);
+
+  useLayoutEffect(() => {
+    if (reading) framePrint();
+  }, [reading, back, framePrint]);
+  useLayoutEffect(() => {
+    if (reading) print.current?.focus({ preventScroll: true });
   }, [reading]);
 
   return (
@@ -36,6 +51,7 @@ export function BadgeExhibition({ config, sceneEnabled }: { config: BadgeConfig;
             aria-label={`Enlarged ${back ? "back" : "front"} print`}>
             <Image src={back ? config.artwork.back : config.artwork.front}
               alt={`${config.event.name} badge, ${back ? "back" : "front"}`}
+              onLoad={framePrint} style={detail ? { width: `${100 / detail.width}%` } : undefined}
               width={config.dimensions.width * 8} height={config.dimensions.height * 8} unoptimized />
           </div>
         )}
@@ -46,11 +62,13 @@ export function BadgeExhibition({ config, sceneEnabled }: { config: BadgeConfig;
           </div>
         )}
         {!reading && sceneEnabled && status !== "unavailable" && (
-          <div className="scene" data-ready={status === "ready"}>
-            <SceneBoundary onUnavailable={unavailable}>
-              <BadgeScene config={config} back={back} reducedMotion={reducedMotion}
-                onFlip={flip} onReady={ready} onUnavailable={unavailable} />
-            </SceneBoundary>
+          <div className="rig-frame">
+            <div className="scene" data-ready={status === "ready"}>
+              <SceneBoundary onUnavailable={unavailable}>
+                <BadgeScene config={config} back={back} reducedMotion={reducedMotion}
+                  onFlip={flip} onReady={ready} onUnavailable={unavailable} />
+              </SceneBoundary>
+            </div>
           </div>
         )}
         <button type="button" className="read-print" aria-pressed={reading} onClick={() => {
@@ -64,7 +82,7 @@ export function BadgeExhibition({ config, sceneEnabled }: { config: BadgeConfig;
       </div>
       <div className="viewer-footer">
         <span className="viewer-instruction">
-          {reading ? "Scroll to read" : status === "unavailable" ? "Static preview" : <><Hand /><span>Drag to pick up</span></>}
+          {reading ? "Scroll to read" : status === "unavailable" ? "Static preview" : status === "ready" ? <><Hand /><span>Drag to pick up</span></> : null}
         </span>
         <div className="view-controls" role="group" aria-label="Badge face">
           <button type="button" aria-pressed={!back} onClick={() => setBack(false)}>Front</button>

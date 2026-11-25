@@ -21,8 +21,8 @@ type Drag = {
   rotation?: number;
 };
 
-export function BadgeRig({ config, back, reducedMotion, onFlip }: {
-  config: BadgeConfig; back: boolean; reducedMotion: boolean; onFlip: () => void;
+export function BadgeRig({ config, back, reducedMotion, onFlip, onReady }: {
+  config: BadgeConfig; back: boolean; reducedMotion: boolean; onFlip: () => void; onReady: () => void;
 }) {
   const bodies = useMemo(() => Array.from({ length: linkCount + 1 },
     () => createRef<RapierRigidBody>()), []);
@@ -32,6 +32,7 @@ export function BadgeRig({ config, back, reducedMotion, onFlip }: {
   const control = useRef<HTMLButtonElement>(null);
   const previousScale = useRef(0);
   const posed = useRef(false);
+  const interactive = useRef(false);
   const { rapier } = useRapier();
   const { camera, gl } = useThree();
   const hitPortal = useMemo(() => ({ current: gl.domElement.parentElement! }), [gl]);
@@ -48,13 +49,17 @@ export function BadgeRig({ config, back, reducedMotion, onFlip }: {
       const angle = drag?.rotation ?? (back ? Math.PI : 0) + displayYaw;
       pivot.current.rotation.y = reducedMotion || !posed.current ? angle
         : MathUtils.damp(pivot.current.rotation.y, angle, 12, delta);
-      posed.current = true;
       const scale = (camera as OrthographicCamera).zoom;
       if (control.current && previousScale.current !== scale) {
         previousScale.current = scale;
         control.current.style.width = `${Math.max(48, width * scale)}px`;
         control.current.style.height = `${height * scale}px`;
       }
+      if (!interactive.current && posed.current && card.current && control.current?.isConnected && scale > 1) {
+        interactive.current = true;
+        onReady();
+      }
+      posed.current = true;
     }
   });
 

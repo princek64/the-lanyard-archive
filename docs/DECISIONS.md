@@ -79,3 +79,9 @@ The hanging image and the opening inspection image share a View Transition name 
 The rail, pickup transition and static viewer use transparent front and reverse images captured from the inspection rig at rest. The capture script opens each catalogue record and renders its loaded scene with a common orthographic crop. The studio positions this crop using the same badge dimensions and camera clearance as the interactive viewer. The server supplies the rail’s resting angle, and the inspection preview stays visible until the rig has painted the requested face.
 
 A pointer pickup returns focus to the visible Pick up pass button. Keyboard pickup restores focus to its original trigger. When the hanging object has keyboard focus, its equivalent pickup button carries the focus outline so the transparent margins around the artwork stay clear.
+
+## Returning an inspected badge
+
+The close transition captures the visible badge into the same specimen frame used on the wall. A live scene keeps its current pose. The print reader and the static preview supply their own image when active. Closing a record scrolled beyond the badge uses the page transition alone. Reduced motion and interrupted pickups close directly. The viewer module starts loading at pickup, while the interactive rig mounts after the opening transition. Readiness requires a painted pose, a physics body and a mounted drag target.
+
+A catalogue entry may specify a front detail as a fractional centre and visible width. Read print uses these values to position the complete artwork in its scrollable viewport.

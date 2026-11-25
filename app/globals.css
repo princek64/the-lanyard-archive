@@ -159,15 +159,18 @@ button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 .studio { position: relative; overflow: hidden; height: max(370px, calc(100svh - 112px)); background: radial-gradient(ellipse at 42% 25%, #fff8ee88, transparent 74%), var(--wall); isolation: isolate; }
 .studio { container-type: size; }
 .pickup-preview { position: absolute; inset: 0; pointer-events: none; }
-.pickup-preview img {
+.pickup-preview img, .rig-frame {
   /* The offline specimen spans 300 mm vertically; use the live camera's fit. */
   --mm: min(calc(100cqh / var(--frame-height)), calc(100cqw / var(--frame-width)));
   --clearance: 34;
   position: absolute; left: 50%; top: calc(50% + (var(--specimen-offset) - var(--clearance)) * var(--mm));
   height: calc(300 * var(--mm)); width: auto; max-width: none; transform: translate(-50%,-50%);
 }
-@container (width < 480px) { .pickup-preview img { --clearance: 41; } }
-.scene { position: absolute; inset: 0; pointer-events: none; opacity: 0; }
+.rig-frame { width: calc(300 * var(--mm) * 464 / 980); pointer-events: none; }
+@container (width < 480px) { .pickup-preview img, .rig-frame { --clearance: 41; } }
+/* Keep the canvas studio-sized inside a frame that matches the wall specimen's crop. */
+.scene { position: absolute; left: 50%; top: calc(50% - (var(--specimen-offset) - var(--clearance)) * var(--mm));
+  width: 100cqw; height: 100cqh; transform: translate(-50%,-50%); pointer-events: none; opacity: 0; }
 .scene[data-ready="true"] { opacity: 1; }
 .pickup-preview[data-ready="true"] { opacity: 0; }
 @media (prefers-reduced-motion: no-preference) {
@@ -231,7 +234,7 @@ button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
   .display-wall { display: grid; grid-template-rows: auto minmax(0,1fr); }
   .journey-record { position: relative; left: auto; top: auto; width: 100%; padding: clamp(11px,2.8svh,26px) 6% 0; }
   .accession { font-size: 10px; margin-bottom: 7px; }
-  .record-event { max-width: 19ch; font-size: clamp(29px,min(9.6vw,6.3svh),54px); }
+  .record-event { min-height: 2lh; max-width: 19ch; font-size: clamp(29px,min(9.6vw,6.3svh),54px); }
   .inscription { margin-top: 6px; font-size: clamp(15px,4.4vw,20px); }
   .journey-inspect { margin-top: 9px; min-height: 36px; font-size: 12px; padding-inline: 12px; }
   .journey-view { position: relative; min-height: 0; }
@@ -246,6 +249,9 @@ button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
   .swatch i { width: 62%; height: 16px; }
   .swatch-track { height: 44px; }
   .needle { top: 8px; height: 28px; border-radius: 3px; }
+}
+@media (max-width: 374px) and (orientation: portrait) {
+  .journey-record .inscription { min-height: 2lh; }
 }
 @media (max-width: 759px) {
   :root { --pad: 16px; }

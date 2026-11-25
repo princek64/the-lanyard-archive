@@ -155,3 +155,11 @@ ESLint, TypeScript and the isolated webpack production build passed. The local d
 OpenAI DevDay London now appears fifth, RNLConf tenth and design+AI eleventh. CampAI moves from fifth to sixth and Houdini from eleventh to twelfth. All 22 accession records retain their artwork and metadata.
 
 Mobile WebKit and Chromium emulation verified the index order, tapping the hanging pass and the pickup button, returning to the same stop, and keyboard face selection and focus restoration. Chromium also checked touch dragging, release and native scrolling. ESLint, TypeScript and the isolated webpack production build passed. The local Turbopack CSS worker was unable to bind its socket. Physical handset testing remains outstanding.
+
+## Mobile framing, return motion and print details
+
+The mobile caption reserves two title lines. Narrow phones also reserve a second inscription line. At a 390-pixel viewport the previously measured 35-pixel change between OpenAI and CampAI fell to zero. Across all 22 stops at widths of 320, 375, 390, 430 and 640 pixels the gallery and pickup button stayed within one pixel of their starting heights.
+
+Mobile WebKit and Chromium emulation captured intermediate frames on pickup and return from both entry points. Other checks covered returning from a print or a scrolled record, interrupting the pickup, reduced motion, native touch scrolling, drag release, keyboard flipping, focus return and static fallback. A delayed first load kept the drag prompt hidden until the target was available. Print details for Solana, DDX and RNLConf remain pannable. Physical handset testing remains outstanding.
+
+ESLint, TypeScript and an isolated webpack production build passed. The sandbox blocked the local Turbopack CSS worker from binding its socket.

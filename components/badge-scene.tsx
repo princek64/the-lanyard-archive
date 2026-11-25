@@ -1,9 +1,9 @@
 "use client";
 
 import { OrthographicCamera } from "@react-three/drei";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import { Physics } from "@react-three/rapier";
-import { Suspense, useEffect, useRef } from "react";
+import { Suspense, useEffect } from "react";
 import type { BadgeConfig } from "../lib/badges";
 import { BadgeRig } from "./badge-rig";
 import { units } from "./badge-mesh";
@@ -47,15 +47,6 @@ function StudioCamera({ config, onUnavailable }: Pick<SceneProps, "config" | "on
     position={[0, anchorY - displayHeight / 2 - bottomClearance, 6]} near={0.1} far={30} />;
 }
 
-function Ready({ onReady }: Pick<SceneProps, "onReady">) {
-  const frames = useRef(0);
-  useFrame(() => {
-    // The preceding frame has painted the posed rig and uploaded its textures.
-    if (frames.current < 2 && ++frames.current === 2) onReady();
-  });
-  return null;
-}
-
 export default function BadgeScene(props: SceneProps) {
   return (
     <Canvas orthographic camera={{ position: [0, 0, 6], near: 0.1, far: 30 }}
@@ -66,7 +57,6 @@ export default function BadgeScene(props: SceneProps) {
       <Suspense fallback={null}>
         <Physics gravity={[0, -9.81, 0]} timeStep={1 / 60} numSolverIterations={8}>
           <BadgeRig {...props} />
-          <Ready onReady={props.onReady} />
         </Physics>
       </Suspense>
     </Canvas>

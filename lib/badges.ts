@@ -3,6 +3,8 @@ export interface BadgeConfig {
   dimensions: { width: number; height: number; thickness: number; radius: number };
   artwork: { specimen: string; specimenBack: string; front: string; back: string; edge: string };
   lanyard: { width: number; length: number; colour: string; texture?: string; repeatAspect?: number; clipSpread?: number; sleeveColour?: string };
+  /** Centre of the front detail and visible width, as fractions of the print. */
+  frontDetail?: { x: number; y: number; width: number };
   body?: "electronic";
   attachment?: "swivel-clip" | "snap-hook";
   event: { name: string; edition?: string; date?: string; dateTime?: string; location?: string; pass?: string };
@@ -18,6 +20,7 @@ export type ExhibitionBadge = BadgeConfig & {
 export const exhibition: ExhibitionBadge[] = [
   {
     id: "002",
+    frontDetail: { x: 0.49, y: 0.79, width: 0.94 },
     label: { inscription: "@pixelprincedev", materials: "Display, buttons, plastic case", wall: "#b2a5bf", pigment: "#594778" },
     dimensions: { width: 82, height: 114, thickness: 15, radius: 5 },
     artwork: {
@@ -117,6 +120,7 @@ export const exhibition: ExhibitionBadge[] = [
   },
   {
     id: "007",
+    frontDetail: { x: 0.47, y: 0.78, width: 0.82 },
     label: { inscription: "Prince · Design Engineer", materials: "Printed card, ink, woven ribbon", wall: "#473a3e", pigment: "#ad2926" },
     dimensions: { width: 90, height: 125, thickness: 0.75, radius: 1 },
     artwork: { specimen: "/specimens/007.webp", specimenBack: "/specimens/007-back.webp", front: "/badges/ddx-front.svg", back: "/badges/ddx-back.svg", edge: "#1d1d20" },
@@ -165,6 +169,7 @@ export const exhibition: ExhibitionBadge[] = [
   },
   {
     id: "014",
+    frontDetail: { x: 0.50, y: 0.46, width: 0.79 },
     label: { inscription: "PRINCE", materials: "Printed card, ink, woven ribbon", wall: "#c7aea8", pigment: "#914638" },
     dimensions: { width: 88, height: 124, thickness: 0.65, radius: 1 },
     artwork: { specimen: "/specimens/014.webp", specimenBack: "/specimens/014-back.webp", front: "/badges/rnlconf.svg", back: "/badges/rnlconf.svg", edge: "#d3c4c9" },

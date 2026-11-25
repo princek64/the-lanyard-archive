@@ -4,7 +4,7 @@ import Image from "next/image";
 import { flushSync } from "react-dom";
 import { useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { ribbonOffsets, type ExhibitionBadge } from "../lib/badges";
-import { BadgeExhibition } from "./badge-exhibition";
+import { BadgeExhibition, preloadBadgeScene } from "./badge-exhibition";
 import { Hand } from "./icons";
 import { useClipSound } from "./clip-sound";
 import { restingAngle, useExhibitionRail } from "./use-exhibition-rail";
@@ -46,6 +46,7 @@ export function ExhibitionJourney({ badges, records }: {
   function inspect(index: number, trigger?: HTMLElement) {
     const panel = dialog.current;
     if (!panel || panel.open || pickup.current) return;
+    preloadBadgeScene();
     const specimen = carriage.current?.children[index]?.querySelector("img");
     const animate = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     returnFocus.current = trigger ?? inspectButton.current;
@@ -79,9 +80,40 @@ export function ExhibitionJourney({ badges, records }: {
     }
   }
 
+  function putBack() {
+    const panel = dialog.current;
+    if (!panel?.open || panel.hasAttribute("data-returning")) return;
+    const destination = focused === null ? null : carriage.current?.children[focused]?.querySelector("img");
+    if (!destination || pickup.current || !document.startViewTransition ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      panel.close();
+      return;
+    }
+
+    panel.dataset.returning = "";
+    const source = panel.querySelector<HTMLElement>('.rig-frame:has(.scene[data-ready="true"])')
+      ?? panel.querySelector<HTMLImageElement>(".pickup-preview img, .enlarged-print img");
+    const studio = panel.querySelector(".studio")?.getBoundingClientRect();
+    const inView = source && studio && studio.bottom > (panel.querySelector("header")?.offsetHeight ?? 0);
+    if (inView) source.style.viewTransitionName = "inspected-badge";
+    const transition = document.startViewTransition(() => {
+      source?.style.removeProperty("view-transition-name");
+      panel.close();
+      if (inView) destination.style.viewTransitionName = "inspected-badge";
+    });
+    pickup.current = transition;
+    void transition.finished.finally(() => {
+      destination.style.removeProperty("view-transition-name");
+      delete panel.dataset.returning;
+      if (pickup.current === transition) pickup.current = null;
+    });
+  }
+
   function close() {
-    pickup.current?.skipTransition();
-    pickup.current = null;
+    if (!dialog.current?.hasAttribute("data-returning")) {
+      pickup.current?.skipTransition();
+      pickup.current = null;
+    }
     setFocused(null);
     requestAnimationFrame(() => {
       const opener = returnFocus.current?.isConnected ? returnFocus.current : inspectButton.current;
@@ -212,12 +244,13 @@ export function ExhibitionJourney({ badges, records }: {
           ))}
         </div>
       </dialog>
-      <dialog ref={dialog} className="focus-dialog" style={{ "--wall": badge.label.wall, "--pigment": badge.label.pigment } as CSSProperties} aria-labelledby="focus-title" onClose={close}>
+      <dialog ref={dialog} className="focus-dialog" style={{ "--wall": badge.label.wall, "--pigment": badge.label.pigment } as CSSProperties} aria-labelledby="focus-title" onClose={close}
+        onCancel={event => { event.preventDefault(); putBack(); }}>
         {focused !== null && (
           <>
             <header className="focus-header">
               <span>{number(focused + 1)} / {number(badges.length)}</span>
-              <button ref={closeButton} type="button" onClick={() => dialog.current?.close()}>
+              <button ref={closeButton} type="button" onClick={putBack}>
                 Back to exhibition <span aria-hidden="true">×</span>
               </button>
             </header>
