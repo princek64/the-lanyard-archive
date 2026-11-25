@@ -1,13 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="1000" viewBox="0 0 720 1000">
- <defs><radialGradient id="red"><stop stop-color="#c9291f"/><stop offset="1" stop-color="#540e18"/></radialGradient><radialGradient id="ink"><stop stop-color="#ca3122" stop-opacity=".6"/><stop offset="1" stop-color="#f1eeea" stop-opacity="0"/></radialGradient></defs>
+ <defs><radialGradient id="red"><stop stop-color="#c9291f"/><stop offset="1" stop-color="#540e18"/></radialGradient></defs>
  <rect width="720" height="1000" fill="#efede9"/><path fill="url(#red)" d="M0 0h720v564H0z"/>
- <ellipse cx="362" cy="586" rx="170" ry="178" fill="url(#ink)"/>
  <g fill="none" stroke="#f6e2dd" stroke-opacity=".75" stroke-width="1.2">
   <circle cx="360" cy="280" r="140"/><ellipse cx="360" cy="280" rx="96" ry="140" transform="rotate(35 360 280)"/><ellipse cx="360" cy="280" rx="57" ry="140" transform="rotate(35 360 280)"/><ellipse cx="360" cy="280" rx="117" ry="140" transform="rotate(-25 360 280)"/><ellipse cx="360" cy="280" rx="140" ry="65" transform="rotate(30 360 280)"/><ellipse cx="360" cy="280" rx="138" ry="101" transform="rotate(-21 360 280)"/>
   <path d="M249 195l125-55 104 65 17 125-80 74-122-5-69-102zM265 361l-21-122 119-76 108 98-21 106-79 53z"/>
  </g>
  <g fill="#fff8f4" text-anchor="middle" font-family="Arial,sans-serif"><text x="360" y="316" font-size="118">CityJS</text><text x="360" y="487" font-size="39">London 2026</text><text x="360" y="526" font-size="24">Celebrating 30 Years of JavaScript</text></g>
  <text x="347" y="691" fill="#35813f" text-anchor="middle" font-family="cursive" font-size="125" font-style="italic" transform="rotate(3 347 691)">Prince</text>
- <path d="M160 731q12-17 40 82 20-65 77-139" fill="none" stroke="#131216" stroke-linecap="round" stroke-width="12"/>
  <g fill="#17151a" font-family="Arial,sans-serif" text-anchor="middle"><text x="389" y="779" font-size="48">CityJS</text><text x="360" y="827" font-size="19">Sponsored by</text><text x="360" y="898" font-size="20">Zephyr Cloud   ·   tether.   ·   imagekit.io</text><text x="360" y="938" font-size="20">Sticker Mule   ·   VOID</text></g>
 </svg>

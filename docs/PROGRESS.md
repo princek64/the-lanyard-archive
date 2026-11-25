@@ -173,3 +173,9 @@ Touch drag and release, native scrolling, keyboard flipping, reduced motion, foc
 ## Solana mobile control spacing
 
 The pickup hint sits on its own row, 12 pixels below Use badge and the face controls. Mobile WebKit and Chromium emulation verified the spacing from 320 to 600 pixels wide, plus the reading, operating and put-down states and keyboard face selection. ESLint, TypeScript and the isolated webpack build passed. The local Turbopack CSS worker could not bind its socket.
+
+## Solana button legends and CityJS front
+
+All six Solana legends are centered beneath their button caps on the operating case, hanging pass and enlarged print. The CityJS front retains the green handwritten name and removes the check mark and ink smudge. Both front textures and hanging views were regenerated.
+
+Mobile Chromium and WebKit emulation verified clearance and touch-target alignment at 320, 393 and 430 pixels, opening Guide with the controls, and the CityJS index, hanging and print views. Touch drag and release, native scrolling and keyboard face selection also passed in Chromium. ESLint, TypeScript and an isolated webpack production build passed. The local Turbopack CSS worker could not bind its socket. Physical handset testing remains outstanding.
